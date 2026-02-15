@@ -1,291 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durand Future Health&reg; | Predictive Health Intelligence</title>
+    <meta name="description" content="Durand Future Health - Advanced EAP with world-class predictive health intelligence. Epigenetic testing, AI health coaching, and care navigation for benefits brokers, employers, and individuals.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-deep: #1B2D6B;
+            --blue: #2E5EA8;
+            --teal: #2BA5A5;
+            --green: #44B878;
+            --lime: #8CC63F;
+            --dark: #1a1f36;
+            --gray-900: #212529;
+            --gray-700: #495057;
+            --gray-500: #6c757d;
+            --gray-200: #e9ecef;
+            --gray-100: #f8f9fa;
+            --white: #ffffff;
+            --warm: #F8F6F3;
+            --font-serif: 'Fraunces', Georgia, serif;
+            --gradient-brand: linear-gradient(135deg, #1B2D6B 0%, #2BA5A5 50%, #8CC63F 100%);
+            --gradient-hero: linear-gradient(135deg, #0a1628 0%, #1B2D6B 30%, #1a5050 70%, #2d5a1a 100%);
+            --gradient-card: linear-gradient(135deg, rgba(27,45,107,0.05), rgba(43,165,165,0.05));
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+            --radius: 16px;
+            --radius-sm: 8px;
+            --radius-full: 50px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--gray-900); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-￼
+        /* NAV */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); transition: all 0.3s; }
+        .nav.scrolled { box-shadow: var(--shadow-md); }
+        .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .nav-logo img { height: 52px; width: auto; }
+        .nav-links { display: flex; align-items: center; gap: 8px; }
+        .nav-links a { text-decoration: none; color: var(--gray-700); font-size: 14px; font-weight: 500; padding: 8px 16px; border-radius: var(--radius-full); transition: all 0.2s; }
+        .nav-links a:hover { color: var(--dark); background: var(--gray-100); }
+        .nav-links a.active { color: var(--teal); background: rgba(43,165,165,0.08); }
+        .nav-cta { background: var(--gradient-brand) !important; color: white !important; font-weight: 600 !important; padding: 10px 24px !important; }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+        .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--dark); margin: 5px 0; transition: 0.3s; }
+
+        /* HERO */
+        .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; background: var(--gradient-hero); padding-top: 72px; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(43,165,165,0.15) 0%, transparent 60%), radial-gradient(ellipse at 80% 30%, rgba(140,198,63,0.1) 0%, transparent 50%); }
+        .hero-particles { position: absolute; inset: 0; overflow: hidden; }
+        .hero-particles .particle { position: absolute; width: 4px; height: 4px; background: rgba(43,165,165,0.3); border-radius: 50%; animation: float-up linear infinite; }
+        @keyframes float-up { 0% { transform: translateY(100vh) scale(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-10vh) scale(1); opacity: 0; } }
+        .hero-inner { max-width: 1280px; margin: 0 auto; padding: 80px 24px; position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero-content { color: white; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-full); font-size: 13px; font-weight: 500; margin-bottom: 24px; backdrop-filter: blur(10px); }
+        .hero-badge .dot { width: 8px; height: 8px; background: var(--lime); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .hero h1 { font-family: var(--font-serif); font-size: clamp(36px, 5vw, 64px); font-weight: 700; line-height: 1.08; letter-spacing: -2px; margin-bottom: 20px; }
+        .hero h1 .gradient-text { background: linear-gradient(135deg, #44B878, #8CC63F, #B8D432); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { font-size: 18px; line-height: 1.7; opacity: 0.85; margin-bottom: 32px; max-width: 520px; }
+        .hero-variant { animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+        .hero-stats { display: flex; gap: 40px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .hero-stat-value { font-size: 28px; font-weight: 800; letter-spacing: -1px; }
+        .hero-stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; margin-top: 4px; }
+
+        /* HERO VISUAL — DNA helix */
+        .hero-visual { display: flex; justify-content: center; align-items: center; }
+        .dna-visual { position: relative; width: 460px; height: 560px; }
+        .dna-helix { position: absolute; inset: 0; }
+        .dna-helix svg { width: 100%; height: 100%; }
+        .dna-glow { position: absolute; top: 50%; left: 50%; width: 300px; height: 300px; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(43,165,165,0.25), transparent 70%); border-radius: 50%; animation: glow-pulse 4s ease-in-out infinite; }
+        @keyframes glow-pulse { 0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); } }
+        .dna-label { position: absolute; background: rgba(255,255,255,0.12); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 10px 16px; color: white; font-size: 12px; font-weight: 500; white-space: nowrap; }
+        .dna-label strong { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--lime); margin-bottom: 2px; }
+        .dna-label .dna-label-text { transition: opacity 0.4s ease, transform 0.4s ease; }
+        .dna-label .dna-label-text.fade-out { opacity: 0; transform: translateY(-6px); }
+        .dna-label-1 { top: 0%; left: -18%; animation: float-label 7s ease-in-out infinite; }
+        .dna-label-2 { top: 14%; right: -20%; animation: float-label 7s ease-in-out 0.7s infinite; }
+        .dna-label-3 { top: 28%; left: -16%; animation: float-label 7s ease-in-out 1.4s infinite; }
+        .dna-label-4 { top: 42%; right: -18%; animation: float-label 7s ease-in-out 2.1s infinite; }
+        .dna-label-5 { top: 56%; left: -14%; animation: float-label 7s ease-in-out 2.8s infinite; }
+        .dna-label-6 { top: 70%; right: -16%; animation: float-label 7s ease-in-out 3.5s infinite; }
+        .dna-label-7 { top: 84%; left: -18%; animation: float-label 7s ease-in-out 4.2s infinite; }
+        @keyframes float-label { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+        /* BUTTONS */
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: var(--radius-full); font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; }
+        .btn-primary { background: linear-gradient(135deg, #44B878, #8CC63F); color: white; box-shadow: 0 4px 15px rgba(68,184,120,0.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(68,184,120,0.4); }
+        .btn-outline { background: rgba(255,255,255,0.08); color: white; border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(10px); }
+        .btn-outline:hover { background: rgba(255,255,255,0.15); }
+        .btn-gradient { background: var(--gradient-brand); color: white; box-shadow: 0 4px 15px rgba(43,165,165,0.3); }
+        .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(43,165,165,0.4); }
+
+        /* SECTION TABS */
+        .section-tabs { position: sticky; top: 72px; z-index: 100; background: white; border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-sm); }
+        .section-tabs-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; }
+        .section-tab { padding: 16px 32px; font-size: 15px; font-weight: 600; color: var(--gray-500); border-bottom: 3px solid transparent; transition: all 0.2s; cursor: pointer; background: none; border-top: none; border-left: none; border-right: none; font-family: inherit; }
+        .section-tab:hover { color: var(--dark); }
+        .section-tab.active { color: var(--teal); border-bottom-color: var(--teal); }
+
+        /* SECTIONS */
+        .section { padding: 100px 24px; }
+        .section-inner { max-width: 1280px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 64px; }
+        .section-label { display: inline-block; padding: 4px 14px; background: rgba(43,165,165,0.08); color: var(--teal); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border-radius: var(--radius-full); margin-bottom: 16px; }
+        .section-title { font-family: var(--font-serif); font-size: clamp(32px, 4vw, 48px); font-weight: 700; letter-spacing: -1.5px; line-height: 1.12; color: var(--dark); margin-bottom: 16px; }
+        .section-subtitle { font-size: 18px; color: var(--gray-500); max-width: 640px; margin: 0 auto; line-height: 1.7; }
+        .section-dark { background: #2a3a5c; color: white; }
+        .section-dark .section-title { color: white; }
+        .section-dark .section-subtitle { color: rgba(255,255,255,0.9); }
+        .section-gradient { background: var(--gradient-hero); color: white; }
+        .section-gradient .section-title { color: white; }
+        .section-light { background: var(--gray-100); }
+        .page-panel { display: none; }
+        .page-panel.active { display: block; }
+
+        /* CARD ICONS — SVG-based */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .card { background: white; border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.04); transition: all 0.3s; position: relative; }
+        .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .card-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; position: relative; overflow: hidden; }
+        .card-icon::before { content: ''; position: absolute; inset: 0; background: var(--gradient-brand); opacity: 0.08; }
+        .card-icon svg { width: 28px; height: 28px; position: relative; z-index: 1; }
+        .card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.3px; }
+        .card p { color: var(--gray-500); font-size: 15px; line-height: 1.7; }
+        .card-dark { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.25); }
+        .card-dark h3 { color: white; }
+        .card-dark p { color: rgba(255,255,255,0.9); }
+        .card-dark .card-icon::before { opacity: 0.2; }
+
+        /* IMAGE CARDS */
+        .card-img { padding: 0; overflow: hidden; }
+        .card-img-photo { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .card-img-body { padding: 28px 32px 32px; }
+        .card-img-body h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+        .card-img-body p { color: var(--gray-500); font-size: 14px; line-height: 1.7; }
+
+        /* VALUE BANNER */
+        .value-banner { background: var(--gradient-brand); border-radius: var(--radius); padding: 48px; text-align: center; color: white; margin: 40px 0; position: relative; overflow: hidden; }
+        .value-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.08), transparent 60%); }
+        .value-banner h3 { font-family: var(--font-serif); font-size: 28px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; position: relative; }
+        .value-banner p { font-size: 17px; opacity: 0.9; max-width: 700px; margin: 0 auto; position: relative; }
+
+        /* COMPARISON TABLE */
+        .comparison-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); }
+        .comparison-table thead th { background: var(--dark); color: white; padding: 16px 24px; font-size: 14px; font-weight: 600; text-align: left; }
+        .comparison-table thead th:first-child { border-radius: var(--radius) 0 0 0; }
+        .comparison-table thead th:last-child { border-radius: 0 var(--radius) 0 0; }
+        .comparison-table thead th.highlight { background: var(--teal); }
+        .comparison-table td { padding: 14px 24px; font-size: 14px; border-bottom: 1px solid var(--gray-200); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table td:first-child { font-weight: 600; color: var(--dark); }
+        .comparison-table .check { color: var(--green); font-weight: 700; font-size: 18px; }
+        .comparison-table .cross { color: #dc3545; font-weight: 700; font-size: 18px; }
+        .comparison-table td.highlight-col { background: rgba(43,165,165,0.04); }
+
+        /* STATS */
+        .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin: 48px 0; }
+        .stat-box { text-align: center; padding: 32px 20px; background: rgba(255,255,255,0.14); border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.25); }
+        .stat-number { font-size: 42px; font-weight: 900; letter-spacing: -2px; background: linear-gradient(135deg, #44B878, #B8D432); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+        .stat-label { font-size: 14px; opacity: 0.92; margin-top: 8px; }
+
+        /* STEPS */
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; counter-reset: step; }
+        .step { position: relative; padding: 32px; background: white; border-radius: var(--radius); box-shadow: var(--shadow-sm); counter-increment: step; }
+        .step::before { content: counter(step); position: absolute; top: -14px; left: 24px; width: 36px; height: 36px; background: var(--gradient-brand); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; }
+        .step h4 { font-size: 17px; font-weight: 700; margin-bottom: 8px; margin-top: 8px; }
+        .step p { color: var(--gray-500); font-size: 14px; line-height: 1.7; }
+
+        /* PRICING */
+        .pricing-card { background: white; border-radius: var(--radius); padding: 48px; text-align: center; box-shadow: var(--shadow-lg); border: 2px solid transparent; transition: all 0.3s; position: relative; overflow: hidden; }
+        .pricing-card.featured { border-color: var(--teal); }
+        .pricing-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: 16px; right: -32px; background: var(--gradient-brand); color: white; font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 4px 40px; transform: rotate(45deg); }
+        .pricing-price { font-size: 56px; font-weight: 900; letter-spacing: -3px; color: var(--dark); line-height: 1; }
+        .pricing-price span { font-size: 18px; font-weight: 500; color: var(--gray-500); letter-spacing: 0; }
+        .pricing-features { list-style: none; margin: 32px 0; text-align: left; }
+        .pricing-features li { padding: 10px 0; font-size: 15px; color: var(--gray-700); display: flex; align-items: flex-start; gap: 12px; }
+        .pricing-features li::before { content: ''; width: 20px; height: 20px; flex-shrink: 0; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='10' fill='%2344B878' fill-opacity='0.12'/%3E%3Cpath d='M6 10l3 3 5-5' stroke='%2344B878' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center; margin-top: 2px; }
+
+        /* TESTIMONIAL */
+        .testimonial { background: var(--gradient-card); border-radius: var(--radius); padding: 48px; position: relative; }
+        .testimonial::before { content: ''; position: absolute; top: 24px; left: 32px; width: 40px; height: 32px; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 40 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20l2-12h10L10 20H0zm22 0l2-12h10L32 20H22z' fill='%232BA5A5' fill-opacity='0.15'/%3E%3C/svg%3E") no-repeat; }
+        .testimonial p { font-size: 18px; font-style: italic; line-height: 1.8; color: var(--gray-700); margin-bottom: 20px; }
+        .testimonial-author { font-weight: 700; color: var(--dark); }
+        .testimonial-role { font-size: 13px; color: var(--gray-500); }
+
+        /* TWO-COL */
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .two-col-text h2 { font-family: var(--font-serif); font-size: 36px; font-weight: 700; letter-spacing: -1px; margin-bottom: 16px; }
+        .two-col-text p { color: var(--gray-500); font-size: 16px; line-height: 1.8; margin-bottom: 24px; }
+        .feature-list { list-style: none; }
+        .feature-list li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; font-size: 15px; color: var(--gray-700); }
+        .feature-list li .icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='12' fill='%232BA5A5' fill-opacity='0.1'/%3E%3Cpath d='M7 12l4 4 6-6' stroke='%232BA5A5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center; }
+
+        /* EXPERIENCE VISUAL */
+        .experience-visual { background: var(--gradient-brand); border-radius: var(--radius); padding: 48px; color: white; text-align: center; position: relative; overflow: hidden; }
+        .experience-visual::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.1), transparent 60%); }
+        .experience-visual h3 { font-size: 24px; font-weight: 800; margin-bottom: 12px; position: relative; }
+        .experience-visual p { opacity: 0.85; font-size: 15px; position: relative; line-height: 1.7; }
+        .kit-visual { position: relative; margin-bottom: 24px; }
+        .kit-visual svg { width: 120px; height: 120px; }
+
+        /* HSA BADGE */
+        .hsa-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; background: rgba(68,184,120,0.1); border: 1px solid rgba(68,184,120,0.2); border-radius: var(--radius-full); color: var(--green); font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+
+        /* CTA */
+        .cta-section { text-align: center; padding: 120px 24px; background: var(--gradient-hero); position: relative; overflow: hidden; }
+        .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 100%, rgba(43,165,165,0.2) 0%, transparent 60%); }
+        .cta-section h2 { font-family: var(--font-serif); font-size: clamp(32px, 5vw, 56px); font-weight: 700; color: white; letter-spacing: -2px; margin-bottom: 16px; position: relative; }
+        .cta-section p { color: rgba(255,255,255,0.88); font-size: 18px; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; position: relative; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+
+        /* FOOTER */
+        .footer { background: var(--dark); color: white; padding: 64px 24px 32px; }
+        .footer-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+        .footer-brand p { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 16px; line-height: 1.7; }
+        .footer h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; color: var(--teal); }
+        .footer a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 14px; display: block; margin-bottom: 10px; transition: color 0.2s; }
+        .footer a:hover { color: white; }
+        .footer-bottom { max-width: 1280px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15); display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(255,255,255,0.6); }
+
+        /* ANIMATIONS */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* STORY SECTION */
+        .story-section { position: relative; overflow: hidden; }
+        .story-section::before { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: var(--gradient-brand); opacity: 0.03; border-radius: 0 0 0 200px; }
+
+        /* APP SHOWCASE */
+        .app-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+        .app-phone { position: relative; max-width: 340px; margin: 0 auto; }
+        .app-phone-frame { background: var(--dark); border-radius: 32px; padding: 12px; box-shadow: 0 24px 60px rgba(0,0,0,0.3); position: relative; overflow: hidden; }
+        .app-phone-notch { width: 120px; height: 24px; background: var(--dark); border-radius: 0 0 16px 16px; position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 2; }
+        .app-phone-screen { background: white; border-radius: 22px; padding: 40px 20px 24px; min-height: 480px; position: relative; overflow: hidden; }
+        .app-screen-header { text-align: center; margin-bottom: 20px; }
+        .app-screen-header img { height: 28px; width: auto; margin-bottom: 4px; }
+        .app-screen-header h4 { font-size: 16px; font-weight: 700; color: var(--dark); }
+        .app-screen-header p { font-size: 11px; color: var(--gray-500); }
+        .app-health-card { background: var(--gradient-card); border: 1px solid rgba(43,165,165,0.12); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+        .app-health-card h5 { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+        .app-health-card h5 svg { width: 18px; height: 18px; }
+        .app-health-card p { font-size: 11px; color: var(--gray-500); line-height: 1.5; }
+        .app-health-card .score { display: inline-block; background: var(--gradient-brand); color: white; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-top: 6px; }
+        .app-lang-bar { display: flex; gap: 6px; justify-content: center; margin-bottom: 16px; }
+        .app-lang-pill { padding: 4px 10px; border-radius: 20px; font-size: 10px; font-weight: 600; border: 1px solid var(--gray-200); color: var(--gray-500); }
+        .app-lang-pill.active { background: var(--teal); color: white; border-color: var(--teal); }
+        .app-features-list { margin-top: 32px; }
+        .app-features-list h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
+        .app-features-list > p { color: var(--gray-500); font-size: 15px; line-height: 1.7; margin-bottom: 24px; }
+        .app-feature-item { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--gray-200); }
+        .app-feature-item:last-child { border-bottom: none; }
+        .app-feature-item .card-icon { width: 44px; height: 44px; border-radius: 11px; flex-shrink: 0; margin-bottom: 0; }
+        .app-feature-item .card-icon svg { width: 22px; height: 22px; }
+        .app-feature-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+        .app-feature-item p { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+
+        /* TRASH VISUAL */
+        .trash-visual { display: flex; justify-content: center; margin-top: 32px; }
+        .trash-can-svg { width: 100%; max-width: 800px; height: auto; }
+        .trash-app { animation: wobble-float 4s ease-in-out infinite; }
+        .trash-app-1 { animation-delay: 0s; }
+        .trash-app-2 { animation-delay: 0.6s; }
+        .trash-app-3 { animation-delay: 1.2s; }
+        .trash-app-4 { animation-delay: 1.8s; }
+        .trash-app-5 { animation-delay: 2.4s; }
+        .trash-app-6 { animation-delay: 3s; }
+        @keyframes wobble-float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(4px, -6px) rotate(1.5deg); }
+            50% { transform: translate(-2px, -3px) rotate(-1deg); }
+            75% { transform: translate(3px, -8px) rotate(2deg); }
+        }
+
+        /* VIDEO SHOWCASE */
+        .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+        .video-card { background: var(--dark); border-radius: var(--radius); overflow: hidden; transition: all 0.3s; }
+        .video-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+        .video-card video { width: 100%; display: block; border-radius: var(--radius) var(--radius) 0 0; }
+        .video-card-info { padding: 20px; }
+        .video-card-info h4 { color: white; font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .video-card-info p { color: rgba(255,255,255,0.75); font-size: 13px; }
+
+        /* TRUST BAR */
+        .trust-bar { padding: 28px 24px; background: var(--white); border-bottom: 1px solid var(--gray-200); }
+        .trust-bar-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+        .trust-bar-label { font-size: 11px; color: var(--gray-500); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+        .trust-bar-items { display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
+        .trust-bar-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--gray-700); }
+        .trust-bar-icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; background: rgba(43,165,165,0.08); }
+
+        /* HUMAN STORY */
+        .story-card { background: white; border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow-md); margin-top: 40px; }
+        .story-card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--teal); margin-bottom: 12px; }
+        .story-card-lead { font-family: var(--font-serif); font-size: 18px; font-weight: 300; font-style: italic; line-height: 1.7; color: var(--gray-700); margin-bottom: 32px; }
+        .story-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+        .story-step { text-align: center; position: relative; }
+        .story-step-num { width: 36px; height: 36px; border-radius: 50%; margin: 0 auto 10px; background: var(--gradient-brand); color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+        .story-step h4 { font-weight: 700; font-size: 13px; margin-bottom: 4px; color: var(--dark); }
+        .story-step p { font-size: 12px; color: var(--gray-500); line-height: 1.5; }
+        .story-step::after { content: '\2192'; position: absolute; right: -8px; top: 6px; color: var(--gray-200); font-size: 16px; }
+        .story-step:last-child::after { content: '\21BA'; color: var(--teal); }
+        .story-footer { text-align: center; padding: 24px 16px 0; font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--dark); line-height: 1.5; }
+        .story-footer em { color: var(--teal); font-style: normal; }
+
+        /* CATEGORY CREATION */
+        .category-card { background: white; border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow-md); margin-top: 32px; }
+        .category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+        .category-item { padding: 18px; background: var(--gray-100); border-radius: 12px; }
+        .category-item h4 { font-family: var(--font-serif); font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+        .category-item p { font-size: 13px; color: var(--gray-500); line-height: 1.5; }
+        .category-footer { font-size: 15px; color: var(--gray-700); margin-top: 20px; line-height: 1.7; }
+        .category-footer strong { color: var(--dark); }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero-visual { order: -1; }
+            .dna-visual { width: 280px; height: 320px; }
+            .dna-label { display: none; }
+            .hero-buttons { justify-content: center; }
+            .hero-stats { justify-content: center; }
+            .hero p { margin-left: auto; margin-right: auto; }
+            .two-col { grid-template-columns: 1fr; }
+            #panel-longevity .section-inner > div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; text-align: center; }
+            .app-showcase { grid-template-columns: 1fr; }
+            .app-phone { order: -1; }
+            .video-grid { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            .nav-links { display: none; }
+            .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: white; padding: 16px; box-shadow: var(--shadow-lg); }
+            .nav-mobile-toggle { display: block; }
+            .section-tabs-inner { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .section-tab { white-space: nowrap; padding: 16px 20px; font-size: 13px; }
+        }
+        @media (max-width: 640px) {
+            .hero-stats { flex-direction: column; gap: 20px; align-items: center; }
+            .footer-inner { grid-template-columns: 1fr; }
+            .comparison-table { font-size: 12px; }
+            .comparison-table td, .comparison-table th { padding: 10px 12px; }
+            .stats-row { grid-template-columns: 1fr 1fr; }
+            .story-steps { grid-template-columns: 1fr !important; gap: 16px; }
+            .story-step { text-align: left; display: flex; gap: 12px; align-items: flex-start; }
+            .story-step-num { margin: 0; flex-shrink: 0; }
+            .story-step::after { display: none; }
+            .category-grid { grid-template-columns: 1fr; }
+            .trust-bar-inner { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- INLINE SVG ICONS (hidden, referenced via use) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+        <linearGradient id="ig" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2BA5A5"/><stop offset="100%" stop-color="#8CC63F"/></linearGradient>
+    </defs>
+    <symbol id="icon-dna" viewBox="0 0 28 28"><path d="M5 2v2c0 5 4 9 9 9s9-4 9-9V2" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M5 26v-2c0-5 4-9 9-9s9 4 9 9v2" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linecap="round"/><line x1="7" y1="8" x2="21" y2="8" stroke="url(#ig)" stroke-width="1.5" stroke-linecap="round"/><line x1="7" y1="20" x2="21" y2="20" stroke="url(#ig)" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 28 28"><path d="M14 2L3 7v6c0 7.2 4.7 13.5 11 16 6.3-2.5 11-8.8 11-16V7L14 2z" stroke="url(#ig)" stroke-width="2" fill="none"/><path d="M9 14l4 4 6-6" stroke="url(#ig)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="icon-brain" viewBox="0 0 28 28"><path d="M14 26V14m0 0C14 8 10 4 7 4S2 7 2 10c0 2 1 4 3 5m9-1c0-6 4-10 7-10s5 3 5 6c0 2-1 4-3 5" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="7" cy="18" r="3" stroke="url(#ig)" stroke-width="2" fill="none"/><circle cx="21" cy="18" r="3" stroke="url(#ig)" stroke-width="2" fill="none"/></symbol>
+    <symbol id="icon-heart-pulse" viewBox="0 0 28 28"><path d="M3 14h4l3-6 4 12 3-6h8" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 6c-1.5-2-4-3-6-2S4 8 4 10c0 5 10 14 10 14s10-9 10-14c0-2-1-5-4-6s-4.5 0-6 2z" stroke="url(#ig)" stroke-width="1.5" fill="none" opacity="0.3"/></symbol>
+    <symbol id="icon-home" viewBox="0 0 28 28"><path d="M4 14l10-10 10 10" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v10a2 2 0 002 2h12a2 2 0 002-2V12" stroke="url(#ig)" stroke-width="2" fill="none"/><path d="M11 24v-6h6v6" stroke="url(#ig)" stroke-width="2" fill="none"/></symbol>
+    <symbol id="icon-lock" viewBox="0 0 28 28"><rect x="5" y="12" width="18" height="13" rx="3" stroke="url(#ig)" stroke-width="2" fill="none"/><path d="M9 12V8a5 5 0 0110 0v4" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="14" cy="19" r="2" fill="url(#ig)"/></symbol>
+    <symbol id="icon-chart" viewBox="0 0 28 28"><path d="M3 25h22" stroke="url(#ig)" stroke-width="2" stroke-linecap="round"/><path d="M6 25V15" stroke="url(#ig)" stroke-width="2" stroke-linecap="round"/><path d="M11 25V10" stroke="url(#ig)" stroke-width="2" stroke-linecap="round"/><path d="M16 25V17" stroke="url(#ig)" stroke-width="2" stroke-linecap="round"/><path d="M21 25V5" stroke="url(#ig)" stroke-width="2" stroke-linecap="round"/><path d="M3 18l5-5 5 3 5-7 5-4" stroke="url(#ig)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/></symbol>
+    <symbol id="icon-handshake" viewBox="0 0 28 28"><path d="M2 12l5-5 5 3 4-4 5 5-3 3" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 18l-3 3-4-4" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 15l3 3-5 5-2-2" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-target" viewBox="0 0 28 28"><circle cx="14" cy="14" r="11" stroke="url(#ig)" stroke-width="2" fill="none"/><circle cx="14" cy="14" r="7" stroke="url(#ig)" stroke-width="1.5" fill="none" opacity="0.5"/><circle cx="14" cy="14" r="3" fill="url(#ig)"/></symbol>
+    <symbol id="icon-watch" viewBox="0 0 28 28"><circle cx="14" cy="14" r="9" stroke="url(#ig)" stroke-width="2" fill="none"/><path d="M14 8v6l4 4" stroke="url(#ig)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M10 3h8M10 25h8" stroke="url(#ig)" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="icon-globe" viewBox="0 0 28 28"><circle cx="14" cy="14" r="11" stroke="url(#ig)" stroke-width="2" fill="none"/><path d="M3 14h22M14 3c-4 4-4 18 0 22m0-22c4 4 4 18 0 22" stroke="url(#ig)" stroke-width="1.5" fill="none"/></symbol>
+    <symbol id="icon-vault" viewBox="0 0 28 28"><rect x="3" y="5" width="22" height="18" rx="3" stroke="url(#ig)" stroke-width="2" fill="none"/><circle cx="14" cy="14" r="5" stroke="url(#ig)" stroke-width="2" fill="none"/><path d="M14 11v6M11 14h6" stroke="url(#ig)" stroke-width="1.5" stroke-linecap="round"/><path d="M22 10h3M22 18h3" stroke="url(#ig)" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="icon-compass" viewBox="0 0 28 28"><circle cx="14" cy="14" r="11" stroke="url(#ig)" stroke-width="2" fill="none"/><polygon points="14,6 17,14 14,22 11,14" stroke="url(#ig)" stroke-width="1.5" fill="none"/><circle cx="14" cy="14" r="2" fill="url(#ig)"/></symbol>
+    <symbol id="icon-ai" viewBox="0 0 28 28"><rect x="5" y="5" width="18" height="18" rx="4" stroke="url(#ig)" stroke-width="2" fill="none"/><circle cx="10" cy="12" r="1.5" fill="url(#ig)"/><circle cx="18" cy="12" r="1.5" fill="url(#ig)"/><path d="M10 18c1.5 2 6.5 2 8 0" stroke="url(#ig)" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M2 10h3M2 18h3M23 10h3M23 18h3" stroke="url(#ig)" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="icon-microscope" viewBox="0 0 28 28"><circle cx="12" cy="8" r="5" stroke="url(#ig)" stroke-width="2" fill="none"/><path d="M12 13v7" stroke="url(#ig)" stroke-width="2" stroke-linecap="round"/><path d="M6 24h16" stroke="url(#ig)" stroke-width="2" stroke-linecap="round"/><path d="M8 20h12" stroke="url(#ig)" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="icon-kit" viewBox="0 0 28 28"><rect x="4" y="8" width="20" height="16" rx="3" stroke="url(#ig)" stroke-width="2" fill="none"/><path d="M10 8V5a4 4 0 018 0v3" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 13v6M11 16h6" stroke="url(#ig)" stroke-width="2" stroke-linecap="round"/></symbol>
+    <!-- NEW ICONS: sleep, cognitive, cancer, inflammation, organ, weight -->
+    <symbol id="icon-sleep" viewBox="0 0 28 28"><path d="M21 13A9 9 0 1111.5 3a7 7 0 009.5 10z" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M16 4l2 2-2 2" stroke="url(#ig)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 3v3h-3" stroke="url(#ig)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-cog" viewBox="0 0 28 28"><circle cx="14" cy="14" r="4" stroke="url(#ig)" stroke-width="2" fill="none"/><path d="M14 2v3M14 23v3M2 14h3M23 14h3M5.1 5.1l2.1 2.1M20.8 20.8l2.1 2.1M5.1 22.9l2.1-2.1M20.8 7.2l2.1-2.1" stroke="url(#ig)" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="icon-flame" viewBox="0 0 28 28"><path d="M14 2c0 6-8 10-8 16a8 8 0 0016 0c0-6-8-10-8-16z" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 14c0 3-3 4-3 6a3 3 0 006 0c0-2-3-3-3-6z" stroke="url(#ig)" stroke-width="1.5" fill="none" opacity="0.5"/></symbol>
+    <symbol id="icon-organ" viewBox="0 0 28 28"><path d="M14 4c-3 0-6 2-7 5s0 7 2 9l5 8 5-8c2-2 3-6 2-9s-4-5-7-5z" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M10 12h8M11 16h6" stroke="url(#ig)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></symbol>
+    <symbol id="icon-weight" viewBox="0 0 28 28"><circle cx="14" cy="10" r="4" stroke="url(#ig)" stroke-width="2" fill="none"/><path d="M6 25l2-11h12l2 11H6z" stroke="url(#ig)" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M11 19h6" stroke="url(#ig)" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="icon-cancer" viewBox="0 0 28 28"><circle cx="14" cy="14" r="5" stroke="url(#ig)" stroke-width="2" fill="none"/><circle cx="14" cy="14" r="10" stroke="url(#ig)" stroke-width="1.5" fill="none" opacity="0.3"/><path d="M14 2v4M14 22v4M2 14h4M22 14h4" stroke="url(#ig)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/><circle cx="14" cy="14" r="2" fill="url(#ig)" opacity="0.6"/></symbol>
+</svg>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="#" class="nav-logo" onclick="showPanel('brokers')">
+            <img src="logo-horizontal.png?v=2" alt="Durand Future Health">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="#" class="active" data-panel="brokers" onclick="showPanel('brokers')">For Brokers</a>
+            <a href="#" data-panel="employers" onclick="showPanel('employers')">For Employers</a>
+            <a href="#" data-panel="longevity" onclick="showPanel('longevity')">Get Tested &mdash; $499</a>
+            <a href="#" data-panel="about" onclick="showPanel('about')">About</a>
+            <a href="#contact" class="nav-cta">Get Started</a>
+        </div>
+        <button class="nav-mobile-toggle" onclick="toggleMobileNav()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-inner">
+        <div class="hero-content">
+            <!-- HERO: Brokers (default) -->
+            <div class="hero-variant" id="hero-brokers">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    Now Available in Canada &amp; USA
+                </div>
+                <h1>
+                    Replace the EAP.<br>
+                    <span class="gradient-text">Add Prevention.</span><br>
+                    Save Millions.
+                </h1>
+                <p>
+                    Your clients&rsquo; EAP has 3% utilization and zero health intelligence. Replace it with an EHAP &mdash; same PEPM cost, but now your EAP includes 6 counseling sessions to get the right help plus a predictive health system that can see risks 5-10 years early with Durand&rsquo;s advanced testing not available in traditional labs. Avoid a fatal or expensive cardiac event, a late-stage cancer diagnosis through early intervention, or a failed GLP-1 outcome with a net weight gain after spending thousands of health care dollars. Just part of where the millions are saved.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Partner With Us</a>
+                    <a href="#" class="btn btn-outline" onclick="showPanel('longevity')">Get Tested &mdash; $499</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-value">40+</div>
+                        <div class="hero-stat-label">Health Risk Factors Assessed</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-value">30+</div>
+                        <div class="hero-stat-label">Wearable Integrations</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-value">5 Yrs</div>
+                        <div class="hero-stat-label">Clinical Validation</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HERO: Employers -->
+            <div class="hero-variant" id="hero-employers" style="display:none;">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    Now Available in Canada &amp; USA
+                </div>
+                <h1>
+                    Healthier Employees.<br>
+                    <span class="gradient-text">Lower Claims.</span><br>
+                    Same Budget.
+                </h1>
+                <p>
+                    Your EAP has 3% utilization. Replace it with an EHAP from Durand &mdash; same PEPM cost &mdash; and give your workforce predictive health intelligence that catches risks 5-10 years early. Fewer surprise claims. Healthier, more productive employees. Ask your benefits broker about the Durand EHAP.
+                </p>
+                <div class="hero-buttons">
+                    <a href="mailto:info@durandfuturehealth.com" class="btn btn-primary">Ask Your Broker About EHAP</a>
+                    <a href="#" class="btn btn-outline" onclick="showPanel('longevity')">Get Tested Personally &mdash; $499</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-value">40+</div>
+                        <div class="hero-stat-label">Health Risks Identified Early</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-value">5-10 Yr</div>
+                        <div class="hero-stat-label">Predictive Risk Window</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-value">$0</div>
+                        <div class="hero-stat-label">Incremental Cost to Employer</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HERO: Consumer / Get Tested -->
+            <div class="hero-variant" id="hero-longevity" style="display:none;">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    Available Across the US &amp; Canada
+                </div>
+                <h1>
+                    Your Body Knows<br>
+                    <span class="gradient-text">What&rsquo;s Coming.</span><br>
+                    Now You Can Too.
+                </h1>
+                <p>
+                    Advanced epigenetic testing reveals what traditional labs can&rsquo;t &mdash; your risk for heart disease, cognitive decline, cancer, and more, up to 10 years before symptoms appear. A painless home test, a personal Health Agent, and a one-on-one clinical review. All for $499.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary" id="hero-buy-btn">Buy Now &mdash; $499</a>
+                    <a href="#" class="btn btn-outline" onclick="document.querySelector('#panel-longevity .comparison-table').scrollIntoView({behavior:'smooth'});">See How We Compare</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-value">$499</div>
+                        <div class="hero-stat-label">USD or CDN &bull; HSA/FSA May Apply</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-value">40+</div>
+                        <div class="hero-stat-label">Organ Health Scores</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-value">365</div>
+                        <div class="hero-stat-label">Days of Health Agent Support</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HERO: About -->
+            <div class="hero-variant" id="hero-about" style="display:none;">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    5+ Years of Clinical Validation
+                </div>
+                <h1>
+                    Fortune 500 Leadership.<br>
+                    <span class="gradient-text">Startup Velocity.</span>
+                </h1>
+                <p>
+                    Built by physicians and scientists. Led by executives who&rsquo;ve scaled globally. 4,000+ patients assessed. A platform that&rsquo;s built, not vaporware &mdash; and a mission to make predictive health accessible to everyone.
+                </p>
+                <div class="hero-buttons">
+                    <a href="mailto:info@durandfuturehealth.com" class="btn btn-primary">Get in Touch</a>
+                    <a href="#" class="btn btn-outline" onclick="showPanel('brokers')">See Our Solutions</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-value">4,000+</div>
+                        <div class="hero-stat-label">Patients Assessed</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-value">100%</div>
+                        <div class="hero-stat-label">AI-Native Platform</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-value">30+</div>
+                        <div class="hero-stat-label">App &amp; Wearable Integrations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="dna-visual">
+                <div class="dna-glow"></div>
+                <svg class="dna-helix" viewBox="0 0 400 440" fill="none">
+                    <defs>
+                        <linearGradient id="dna-g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8CC63F"/><stop offset="50%" stop-color="#2BA5A5"/><stop offset="100%" stop-color="#1B2D6B"/></linearGradient>
+                        <linearGradient id="dna-g2" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1B2D6B"/><stop offset="50%" stop-color="#2BA5A5"/><stop offset="100%" stop-color="#8CC63F"/></linearGradient>
+                    </defs>
+                    <!-- Strand 1 -->
+                    <path d="M120,40 C180,80 280,120 260,180 C240,240 140,260 160,320 C180,380 280,400 260,440" stroke="url(#dna-g1)" stroke-width="3" fill="none" opacity="0.8">
+                        <animate attributeName="d" dur="8s" repeatCount="indefinite" values="M120,40 C180,80 280,120 260,180 C240,240 140,260 160,320 C180,380 280,400 260,440;M140,40 C200,80 300,120 280,180 C260,240 160,260 180,320 C200,380 300,400 280,440;M120,40 C180,80 280,120 260,180 C240,240 140,260 160,320 C180,380 280,400 260,440"/>
+                    </path>
+                    <!-- Strand 2 -->
+                    <path d="M280,40 C220,80 120,120 140,180 C160,240 260,260 240,320 C220,380 120,400 140,440" stroke="url(#dna-g2)" stroke-width="3" fill="none" opacity="0.8">
+                        <animate attributeName="d" dur="8s" repeatCount="indefinite" values="M280,40 C220,80 120,120 140,180 C160,240 260,260 240,320 C220,380 120,400 140,440;M260,40 C200,80 100,120 120,180 C140,240 240,260 220,320 C200,380 100,400 120,440;M280,40 C220,80 120,120 140,180 C160,240 260,260 240,320 C220,380 120,400 140,440"/>
+                    </path>
+                    <!-- Connecting rungs -->
+                    <line x1="145" y1="100" x2="255" y2="100" stroke="rgba(43,165,165,0.3)" stroke-width="1.5"/>
+                    <line x1="175" y1="140" x2="225" y2="140" stroke="rgba(43,165,165,0.2)" stroke-width="1.5"/>
+                    <line x1="200" y1="180" x2="200" y2="180" stroke="rgba(43,165,165,0.15)" stroke-width="1.5"/>
+                    <line x1="165" y1="220" x2="235" y2="220" stroke="rgba(43,165,165,0.3)" stroke-width="1.5"/>
+                    <line x1="175" y1="260" x2="225" y2="260" stroke="rgba(43,165,165,0.2)" stroke-width="1.5"/>
+                    <line x1="155" y1="300" x2="245" y2="300" stroke="rgba(43,165,165,0.3)" stroke-width="1.5"/>
+                    <line x1="185" y1="340" x2="215" y2="340" stroke="rgba(43,165,165,0.2)" stroke-width="1.5"/>
+                    <line x1="170" y1="380" x2="230" y2="380" stroke="rgba(43,165,165,0.25)" stroke-width="1.5"/>
+                    <!-- Data points -->
+                    <circle cx="145" cy="100" r="4" fill="#8CC63F" opacity="0.8"><animate attributeName="opacity" dur="3s" repeatCount="indefinite" values="0.4;1;0.4"/></circle>
+                    <circle cx="255" cy="100" r="4" fill="#2BA5A5" opacity="0.8"><animate attributeName="opacity" dur="3s" repeatCount="indefinite" values="1;0.4;1"/></circle>
+                    <circle cx="165" cy="220" r="4" fill="#44B878" opacity="0.8"><animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0.6;1;0.6"/></circle>
+                    <circle cx="235" cy="220" r="4" fill="#1B2D6B" opacity="0.8"><animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="1;0.5;1"/></circle>
+                    <circle cx="155" cy="300" r="4" fill="#2BA5A5" opacity="0.8"><animate attributeName="opacity" dur="3.5s" repeatCount="indefinite" values="0.5;1;0.5"/></circle>
+                    <circle cx="245" cy="300" r="4" fill="#8CC63F" opacity="0.8"><animate attributeName="opacity" dur="3.5s" repeatCount="indefinite" values="1;0.6;1"/></circle>
+                </svg>
+                <div class="dna-label dna-label-1" data-slot="0">
+                    <div class="dna-label-text"><strong>Epigenetics</strong>40+ Organ Health Scores</div>
+                </div>
+                <div class="dna-label dna-label-2" data-slot="1">
+                    <div class="dna-label-text"><strong>Lab History</strong>Upload Historical Blood Work</div>
+                </div>
+                <div class="dna-label dna-label-3" data-slot="2">
+                    <div class="dna-label-text"><strong>Cognitive Health</strong>Validated Brain Assessment</div>
+                </div>
+                <div class="dna-label dna-label-4" data-slot="3">
+                    <div class="dna-label-text"><strong>Medical Imaging</strong>CT, MRI &amp; X-Ray Reports</div>
+                </div>
+                <div class="dna-label dna-label-5" data-slot="4">
+                    <div class="dna-label-text"><strong>Family History</strong>Hereditary Risk Mapping</div>
+                </div>
+                <div class="dna-label dna-label-6" data-slot="5">
+                    <div class="dna-label-text"><strong>Wearables</strong>30+ Devices Integrated</div>
+                </div>
+                <div class="dna-label dna-label-7" data-slot="6">
+                    <div class="dna-label-text"><strong>Medications</strong>Drug Interaction Analysis</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+    <div class="trust-bar-inner">
+        <div class="trust-bar-label">Built with</div>
+        <div class="trust-bar-items">
+            <div class="trust-bar-item"><div class="trust-bar-icon">&#129516;</div> 5,100+ Clinician Network</div>
+            <div class="trust-bar-item"><div class="trust-bar-icon" style="background:rgba(68,184,120,0.08);">&#128300;</div> Epigenetic Science</div>
+            <div class="trust-bar-item"><div class="trust-bar-icon">&#128274;</div> HIPAA &amp; PIPEDA Compliant</div>
+            <div class="trust-bar-item"><div class="trust-bar-icon" style="background:rgba(68,184,120,0.08);">&#129302;</div> 100% AI-Native Platform</div>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION TABS -->
+<div class="section-tabs" id="sectionTabs">
+    <div class="section-tabs-inner">
+        <button class="section-tab active" data-panel="brokers" onclick="showPanel('brokers')">For Benefits Brokers</button>
+        <button class="section-tab" data-panel="employers" onclick="showPanel('employers')">For Employers</button>
+        <button class="section-tab" data-panel="longevity" onclick="showPanel('longevity')">Get Tested &mdash; $499</button>
+    </div>
+</div>
 
 
+<!-- ===== PANEL: FOR BROKERS ===== -->
+<div class="page-panel active" id="panel-brokers">
+
+    <!-- SCIENCE STORY -->
+    <section class="section story-section">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">For Benefits Brokers</div>
+                <h2 class="section-title">Built by Scientists &amp; Physicians.<br>Delivered Through You.</h2>
+                <p class="section-subtitle">Our team of physicians, lab scientists, and AI researchers have spent 5 years building a clinically validated predictive health system. Now, we're making it available through benefits brokers — at EAP pricing.</p>
+            </div>
+
+            <div class="value-banner fade-in">
+                <h3>Same Price. 100x the Value.</h3>
+                <p>Most EAPs see 3-5% utilization. The Durand EHAP includes an Advanced EAP with 6 counseling sessions — plus epigenetic testing, AI health coaching, cognitive assessment, and care navigation. At the same PEPM.</p>
+            </div>
+
+            <div class="card-grid" style="margin-top: 48px;">
+                <div class="card card-img fade-in">
+                    <img class="card-img-photo" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop&crop=center" alt="Business professional reviewing financial documents">
+                    <div class="card-img-body">
+                        <h3>No Incremental Cost</h3>
+                        <p>We match your client's current EAP spend. They get an Advanced EAP with 6 counseling sessions plus Durand's full health intelligence platform. Zero budget increase needed.</p>
+                    </div>
+                </div>
+                <div class="card card-img fade-in">
+                    <img class="card-img-photo" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=400&fit=crop&crop=face" alt="Professional woman presenting to clients">
+                    <div class="card-img-body">
+                        <h3>A Differentiated Offering</h3>
+                        <p>Stand out from every other broker. Offer something no one else can: home-based epigenetic testing and AI-powered predictive health, backed by a physician-led clinical team.</p>
+                    </div>
+                </div>
+                <div class="card card-img fade-in">
+                    <img class="card-img-photo" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop&crop=center" alt="Medical professional with gloves handling lab sample">
+                    <div class="card-img-body">
+                        <h3>Millions in Savings</h3>
+                        <p>Help your clients reduce chronic disease costs by catching risks 5-10 years early. Our physicians and AI identify what's coming — so prevention can start before treatment is needed.</p>
+                    </div>
+                </div>
+                <div class="card card-img fade-in">
+                    <img class="card-img-photo" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&crop=center" alt="Business partners in professional meeting">
+                    <div class="card-img-body">
+                        <h3>Brokers Protected</h3>
+                        <p>Your client relationships are sacred. We work exclusively through brokers — never around them. Full transparency, dedicated support, and a partnership built on trust.</p>
+                    </div>
+                </div>
+                <div class="card card-img fade-in">
+                    <img class="card-img-photo" src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop&crop=center" alt="Home health testing kit on table">
+                    <div class="card-img-body">
+                        <h3>Home-Based. No Lab Visits.</h3>
+                        <p>No scheduling. No needles. No 20 vials of blood. A painless peel-and-stick collection device is mailed home. Our lab scientists analyze it — then a personal Health Agent takes over, year-round.</p>
+                    </div>
+                </div>
+                <div class="card card-img fade-in">
+                    <img class="card-img-photo" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop&crop=center" alt="Secure server room with blue lighting">
+                    <div class="card-img-body">
+                        <h3>Enterprise-Grade Privacy</h3>
+                        <p>We NEVER sell or monetize biodata. Local data centres per geography. Samples never leave North America. Legally unattainable without employee consent.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPS ARE DEAD -->
+    <section class="section" style="overflow: hidden; background: #2a3a5c; color: white;">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label" style="background: rgba(255,107,107,0.15); color: #ff6b6b;">The End of Single-Purpose Apps</div>
+                <h2 class="section-title" style="color: white;">Your Employees Don't Need<br>Another App. They Need an Agent.</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.88);">The average employee has 12 health apps they never open. Vitality, nutrition trackers, women's health, Hims &amp; Hers — fragmented, disconnected, and abandoned. One intelligent Health Agent replaces them all.</p>
+            </div>
+
+            <div class="trash-visual fade-in">
+                <!-- Trash Can (Apple-style) -->
+                <svg class="trash-can-svg" viewBox="0 0 800 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Trash Can Body -->
+                    <rect x="320" y="140" width="160" height="220" rx="12" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                    <!-- Trash Can Lid -->
+                    <rect x="305" y="120" width="190" height="24" rx="6" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+                    <!-- Lid Handle -->
+                    <rect x="380" y="108" width="40" height="16" rx="4" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                    <!-- Trash lines -->
+                    <line x1="365" y1="180" x2="365" y2="320" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="400" y1="180" x2="400" y2="320" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="435" y1="180" x2="435" y2="320" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-linecap="round"/>
+                    <!-- Recycling circle on can -->
+                    <circle cx="400" cy="250" r="28" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" fill="none"/>
+
+                    <!-- Flying App Cards being thrown in -->
+                    <!-- Vitality App -->
+                    <g class="trash-app trash-app-1">
+                        <rect x="60" y="60" width="140" height="56" rx="10" fill="rgba(255,107,107,0.2)" stroke="rgba(255,107,107,0.55)" stroke-width="1.5"/>
+                        <circle cx="86" cy="88" r="12" fill="rgba(255,107,107,0.35)"/>
+                        <text x="86" y="93" text-anchor="middle" fill="rgba(255,107,107,0.85)" font-size="14">V</text>
+                        <text x="108" y="84" fill="rgba(255,255,255,0.92)" font-size="11" font-weight="600" font-family="Inter, sans-serif">Vitality App</text>
+                        <text x="108" y="100" fill="rgba(255,255,255,0.78)" font-size="9" font-family="Inter, sans-serif">3% utilization</text>
+                    </g>
+
+                    <!-- Nutrition App -->
+                    <g class="trash-app trash-app-2">
+                        <rect x="600" y="30" width="150" height="56" rx="10" fill="rgba(140,198,63,0.18)" stroke="rgba(140,198,63,0.5)" stroke-width="1.5"/>
+                        <circle cx="626" cy="58" r="12" fill="rgba(140,198,63,0.3)"/>
+                        <text x="626" y="63" text-anchor="middle" fill="rgba(140,198,63,0.85)" font-size="14">N</text>
+                        <text x="648" y="54" fill="rgba(255,255,255,0.92)" font-size="11" font-weight="600" font-family="Inter, sans-serif">Nutrition App</text>
+                        <text x="648" y="70" fill="rgba(255,255,255,0.78)" font-size="9" font-family="Inter, sans-serif">Abandoned week 2</text>
+                    </g>
+
+                    <!-- Women's Health App -->
+                    <g class="trash-app trash-app-3">
+                        <rect x="80" y="200" width="170" height="56" rx="10" fill="rgba(200,100,220,0.18)" stroke="rgba(200,100,220,0.5)" stroke-width="1.5"/>
+                        <circle cx="106" cy="228" r="12" fill="rgba(200,100,220,0.3)"/>
+                        <text x="106" y="233" text-anchor="middle" fill="rgba(200,100,220,0.85)" font-size="14">W</text>
+                        <text x="128" y="224" fill="rgba(255,255,255,0.92)" font-size="11" font-weight="600" font-family="Inter, sans-serif">Women's Health App</text>
+                        <text x="128" y="240" fill="rgba(255,255,255,0.78)" font-size="9" font-family="Inter, sans-serif">Siloed data, no integration</text>
+                    </g>
+
+                    <!-- Hims & Hers App -->
+                    <g class="trash-app trash-app-4">
+                        <rect x="590" y="180" width="160" height="56" rx="10" fill="rgba(100,180,220,0.18)" stroke="rgba(100,180,220,0.5)" stroke-width="1.5"/>
+                        <circle cx="616" cy="208" r="12" fill="rgba(100,180,220,0.3)"/>
+                        <text x="616" y="213" text-anchor="middle" fill="rgba(100,180,220,0.85)" font-size="14">H</text>
+                        <text x="638" y="204" fill="rgba(255,255,255,0.92)" font-size="11" font-weight="600" font-family="Inter, sans-serif">Hims &amp; Hers</text>
+                        <text x="638" y="220" fill="rgba(255,255,255,0.78)" font-size="9" font-family="Inter, sans-serif">No predictive insights</text>
+                    </g>
+
+                    <!-- Sleep Tracker App -->
+                    <g class="trash-app trash-app-5">
+                        <rect x="40" y="320" width="150" height="56" rx="10" fill="rgba(80,130,200,0.18)" stroke="rgba(80,130,200,0.5)" stroke-width="1.5"/>
+                        <circle cx="66" cy="348" r="12" fill="rgba(80,130,200,0.3)"/>
+                        <text x="66" y="353" text-anchor="middle" fill="rgba(80,130,200,0.85)" font-size="14">S</text>
+                        <text x="88" y="344" fill="rgba(255,255,255,0.92)" font-size="11" font-weight="600" font-family="Inter, sans-serif">Sleep Tracker</text>
+                        <text x="88" y="360" fill="rgba(255,255,255,0.78)" font-size="9" font-family="Inter, sans-serif">Just one data point</text>
+                    </g>
+
+                    <!-- Mental Health App -->
+                    <g class="trash-app trash-app-6">
+                        <rect x="610" y="310" width="155" height="56" rx="10" fill="rgba(220,180,80,0.18)" stroke="rgba(220,180,80,0.5)" stroke-width="1.5"/>
+                        <circle cx="636" cy="338" r="12" fill="rgba(220,180,80,0.3)"/>
+                        <text x="636" y="343" text-anchor="middle" fill="rgba(220,180,80,0.85)" font-size="14">M</text>
+                        <text x="658" y="334" fill="rgba(255,255,255,0.92)" font-size="11" font-weight="600" font-family="Inter, sans-serif">Mental Wellness</text>
+                        <text x="658" y="350" fill="rgba(255,255,255,0.78)" font-size="9" font-family="Inter, sans-serif">No clinical validation</text>
+                    </g>
+
+                    <!-- Dashed throw arcs -->
+                    <path d="M200,88 Q300,20 340,140" stroke="rgba(255,107,107,0.35)" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+                    <path d="M600,58 Q500,10 460,140" stroke="rgba(140,198,63,0.35)" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+                    <path d="M250,228 Q310,180 350,200" stroke="rgba(200,100,220,0.3)" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+                    <path d="M590,208 Q520,170 460,200" stroke="rgba(100,180,220,0.3)" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+                    <path d="M190,348 Q290,280 350,300" stroke="rgba(80,130,200,0.25)" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+                    <path d="M610,338 Q530,280 460,300" stroke="rgba(220,180,80,0.25)" stroke-width="1.5" stroke-dasharray="6 4" fill="none"/>
+                </svg>
+            </div>
+
+            <div style="text-align: center; margin-top: 48px;">
+                <p style="color: rgba(255,255,255,0.88); font-size: 15px; max-width: 600px; margin: 0 auto 32px;">Vitality. Nutrition trackers. Sleep apps. Women's health. Hims &amp; Hers. Mental wellness. Your employees downloaded them all — and abandoned them all. Because none of them talk to each other, none of them know your biology, and none of them predict what's coming.</p>
+                <div style="display: inline-block; background: rgba(43,165,165,0.1); border: 1px solid rgba(43,165,165,0.2); border-radius: var(--radius); padding: 24px 40px; text-align: center;">
+                    <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: var(--lime); font-weight: 700; margin-bottom: 8px;">The Replacement</div>
+                    <div style="font-size: 28px; font-weight: 900; color: white; letter-spacing: -1px;">One Health Agent. Every Data Source. Every Language.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE HUMAN STORY -->
+    <section class="section" style="background: var(--warm);">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">The Human Story</div>
+                <h2 class="section-title">He&rsquo;s Not a Data Point.<br>He&rsquo;s Invisibly Falling Through the Cracks.</h2>
+                <p class="section-subtitle">Every other system waits for a crisis. DFH builds the complete picture and guides the person forward &mdash; so the crisis never arrives.</p>
+            </div>
+
+            <div class="story-card fade-in">
+                <div class="story-card-label">Real Scenario</div>
+                <p class="story-card-lead">A 42-year-old male employee. 250 lbs. He&rsquo;s busy. He&rsquo;s afraid of needles. He doesn&rsquo;t have a family doctor. No bloodwork in two years. FIT test for colon screening overdue. Shingles vaccine missing. In every other system &mdash; every wellness app, every EAP, every insurance plan &mdash; this person is invisible until a cardiac event or late-stage diagnosis costs the plan $50,000+ and the company loses a friend.</p>
+                <div class="story-steps" style="grid-template-columns: repeat(6, 1fr);">
+                    <div class="story-step"><div class="story-step-num">1</div><div><h4>Full Picture Built</h4><p>Epigenetics, cognitive, sleep, medical records, wearables &mdash; one holistic health intelligence profile</p></div></div>
+                    <div class="story-step"><div class="story-step-num">2</div><div><h4>Guided Forward</h4><p>AI translates the picture into plain-language guidance &mdash; what to watch, what to do, why it matters</p></div></div>
+                    <div class="story-step"><div class="story-step-num">3</div><div><h4>Missing Signals Found</h4><p>No bloodwork. No FIT test. Missing vaccines. The platform sees what&rsquo;s absent, not just what&rsquo;s present</p></div></div>
+                    <div class="story-step"><div class="story-step-num">4</div><div><h4>Action Generated</h4><p>NP-authorized requisitions delivered in employer-branded Health Agent with nearest lab location</p></div></div>
+                    <div class="story-step"><div class="story-step-num">5</div><div><h4>Doctor Empowered</h4><p>He&rsquo;s encouraged to visit his doctor with his results &mdash; a copy is sent with his permission, bridging the gap between insight and clinical care</p></div></div>
+                    <div class="story-step"><div class="story-step-num">6</div><div><h4>Loop Compounds</h4><p>Results flow back. Picture gets richer. Guidance gets smarter. Population health improves.</p></div></div>
+                </div>
+                <p style="font-size: 12px; color: var(--gray-500); margin-top: 20px; padding: 12px 16px; background: var(--gray-100); border-radius: 8px; line-height: 1.6;"><strong style="color: var(--gray-700);">DFH Legal:</strong> This functionality makes best efforts to find gaps in care and will, over time, arrange for missing screenings that are already covered by public or private health care &mdash; avoiding paying for things twice.</p>
+            </div>
+
+            <div class="story-footer fade-in">The employer would rather <em>reward him to join and get followed</em> than pay for coronary treatment, disability, disruption, and the loss of a valued colleague. The math isn&rsquo;t close.</div>
+        </div>
+    </section>
+
+    <!-- WHY EHAP -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="category-card fade-in">
+                <div class="section-label">Why EHAP</div>
+                <h3 style="font-family: var(--font-serif); font-size: 26px; font-weight: 700; color: var(--dark); line-height: 1.3; margin-top: 12px;">EHAP by Durand&reg; &mdash; Enhanced <u>E</u>AP + Proactive <u>H</u>ealth Management</h3>
+                <p style="font-size: 16px; color: var(--gray-700); line-height: 1.8; margin-top: 16px;">North American employers spend <strong style="color: var(--dark);">$1.2 trillion annually</strong> on healthcare &mdash; almost entirely on <em>repair</em>. Treating disease after it arrives. Paying for surgeries, drugs, and disability after the damage is done. It&rsquo;s a crash repair world with no crash avoidance system.</p>
+                <div class="category-grid" style="margin-top: 24px;">
+                    <div class="category-item" style="border-left: 3px solid #ff6b6b;">
+                        <h4>The Repair Model</h4>
+                        <p>Wait for disease. Treat symptoms. Pay catastrophic claims. Lose productivity. Repeat. This is how $1.2T is spent today.</p>
+                    </div>
+                    <div class="category-item" style="border-left: 3px solid var(--teal);">
+                        <h4>The EHAP Model</h4>
+                        <p>Build the complete health picture. Predict what&rsquo;s coming. Intervene early. Keep employees productive. Bend the cost curve.</p>
+                    </div>
+                    <div class="category-item" style="border-left: 3px solid var(--lime);">
+                        <h4>The Employer Impact</h4>
+                        <p>Healthier employees. Fewer catastrophic claims. Lower disability. Higher retention. Measurable ROI on every health dollar spent.</p>
+                    </div>
+                </div>
+                <p class="category-footer" style="margin-top: 24px;"><strong>The EHAP by Durand&reg; empowers employers to help employees stay healthy and productive</strong> &mdash; shifting health spending from reactive repair to proactive prevention. It&rsquo;s the same budget line, but now it&rsquo;s working to avoid the crash instead of paying to fix the wreckage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE GLP-1 TRAP -->
+    <section class="section section-dark">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label" style="background: rgba(255,107,107,0.15); color: #ff6b6b;">The GLP-1 Trap</div>
+                <h2 class="section-title">She Lost the Weight.<br>Then She Lost Everything Else.</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.85);">Well-meaning employers are spending billions on GLP-1 drugs with no long-term outcome management. The results are devastating.</p>
+            </div>
+
+            <div class="story-card fade-in" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);">
+                <div class="story-card-label" style="color: #ff6b6b;">Real Scenario</div>
+                <p class="story-card-lead" style="color: rgba(255,255,255,0.92);">Maria, 38, drives for a courier company. At 200 lbs, a GLP-1 app provider puts her on medication &mdash; covered by her employer&rsquo;s benefits plan at thousands of dollars per year. She loses 50 lbs and feels great. Then she stops the drug. Within 18 months, she puts back 70 lbs &mdash; ending up at 220, <strong style="color: #ff6b6b;">twenty pounds heavier than when she started</strong>. Worse: up to 40% of the weight she originally lost was lean muscle mass, not fat. Her body is weaker, her metabolism is slower, and she&rsquo;s now clinically depressed. No one offered CBT alongside the drug. No one guided her on muscle-protective nutrition or resistance training. No one managed the outcome. Her employer spent thousands &mdash; and she&rsquo;s worse off than before.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 28px 0;">
+                    <div style="text-align: center; padding: 20px 12px; background: rgba(255,107,107,0.15); border: 1px solid rgba(255,107,107,0.3); border-radius: 12px;">
+                        <div style="font-family: var(--font-serif); font-weight: 700; font-size: 28px; color: #ff6b6b; line-height: 1;">&#8532;</div>
+                        <div style="font-size: 11px; color: rgba(255,255,255,0.85); margin-top: 6px;">Weight regained within 18 months of stopping</div>
+                    </div>
+                    <div style="text-align: center; padding: 20px 12px; background: rgba(255,107,107,0.15); border: 1px solid rgba(255,107,107,0.3); border-radius: 12px;">
+                        <div style="font-family: var(--font-serif); font-weight: 700; font-size: 28px; color: #ff6b6b; line-height: 1;">25-40%</div>
+                        <div style="font-size: 11px; color: rgba(255,255,255,0.85); margin-top: 6px;">Of weight lost is lean muscle mass, not fat</div>
+                    </div>
+                    <div style="text-align: center; padding: 20px 12px; background: rgba(255,107,107,0.15); border: 1px solid rgba(255,107,107,0.3); border-radius: 12px;">
+                        <div style="font-family: var(--font-serif); font-weight: 700; font-size: 28px; color: #ff6b6b; line-height: 1;">$0</div>
+                        <div style="font-size: 11px; color: rgba(255,255,255,0.85); margin-top: 6px;">Spent on CBT, nutrition, or resistance training</div>
+                    </div>
+                    <div style="text-align: center; padding: 20px 12px; background: rgba(255,107,107,0.15); border: 1px solid rgba(255,107,107,0.3); border-radius: 12px;">
+                        <div style="font-family: var(--font-serif); font-weight: 700; font-size: 28px; color: #ff6b6b; line-height: 1;">$B+</div>
+                        <div style="font-size: 11px; color: rgba(255,255,255,0.85); margin-top: 6px;">In employer losses with no long-term health ROI</div>
+                    </div>
+                </div>
+
+                <p style="font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 24px;">Sources: STEP 1 Extension Trial (2022) showed two-thirds weight regain within one year of stopping semaglutide. Oxford/BMJ meta-analysis (Jan 2026) confirmed GLP-1 rebound is faster than behavioral weight loss. Metabolism review (2025) found 25-40% of GLP-1 weight loss is lean muscle mass.</p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                    <div style="padding: 24px; background: rgba(255,107,107,0.12); border: 1px solid rgba(255,107,107,0.25); border-radius: 12px;">
+                        <h4 style="color: #ff6b6b; font-size: 14px; font-weight: 700; margin-bottom: 8px;">&#10007; &nbsp;The Current Approach</h4>
+                        <ul style="list-style: none; font-size: 13px; color: rgba(255,255,255,0.88); line-height: 1.8;">
+                            <li>&bull; Prescribe GLP-1 with no outcome management</li>
+                            <li>&bull; No CBT or mental health support alongside</li>
+                            <li>&bull; No muscle-protective nutrition guidance</li>
+                            <li>&bull; No resistance training program</li>
+                            <li>&bull; Patient stops drug, regains weight + more</li>
+                            <li>&bull; Employer pays thousands with zero long-term ROI</li>
+                        </ul>
+                    </div>
+                    <div style="padding: 24px; background: rgba(43,165,165,0.12); border: 1px solid rgba(43,165,165,0.25); border-radius: 12px;">
+                        <h4 style="color: var(--lime); font-size: 14px; font-weight: 700; margin-bottom: 8px;">&#10003; &nbsp;The DFH Approach</h4>
+                        <ul style="list-style: none; font-size: 13px; color: rgba(255,255,255,0.88); line-height: 1.8;">
+                            <li>&bull; Navigate to outcome-focused care providers</li>
+                            <li>&bull; Full treatment beyond pharmaceuticals alone</li>
+                            <li>&bull; CBT and mental health support integrated</li>
+                            <li>&bull; Muscle-protective nutrition &amp; exercise guidance</li>
+                            <li>&bull; Continuous monitoring via wearables &amp; Health Agent</li>
+                            <li>&bull; Maximize health $ ROI for employer &amp; insurer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-footer fade-in" style="color: rgba(255,255,255,0.92);">DFH doesn&rsquo;t just write prescriptions. We find care providers who are <em>long-term outcome focused</em> &mdash; offering the full range of treatments beyond pharmaceuticals to get better results and maximize health dollar ROI for the employer and insurer.</div>
+        </div>
+    </section>
+
+    <!-- YOUR HEALTH AGENT -->
+    <section class="section section-light">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">Your Health Agent</div>
+                <h2 class="section-title">Health Intelligence,<br>In Their Language</h2>
+                <p class="section-subtitle">Employees don't just get data — they get understanding. Your Health Agent explains complex conditions like fatty liver, inflammation markers, and cognitive decline in plain language, in any language.</p>
+            </div>
+
+            <div class="app-showcase fade-in">
+                <div class="app-phone">
+                    <div class="app-phone-frame">
+                        <div class="app-phone-notch"></div>
+                        <div class="app-phone-screen">
+                            <div class="app-screen-header">
+                                <img src="logo-horizontal.png?v=2" alt="Durand Future Health">
+                                <p>Your Health Agent</p>
+                            </div>
+                            <div class="app-lang-bar">
+                                <span class="app-lang-pill active">English</span>
+                                <span class="app-lang-pill">Hindi</span>
+                                <span class="app-lang-pill">French</span>
+                                <span class="app-lang-pill">Spanish</span>
+                                <span class="app-lang-pill">+40</span>
+                            </div>
+                            <div class="app-health-card">
+                                <h5><svg><use href="#icon-organ"/></svg> Liver Health</h5>
+                                <p>Your epigenetic markers indicate early-stage fatty liver risk. Here's what that means and how to reverse it with diet and activity changes...</p>
+                                <span class="score">Risk Score: Moderate</span>
+                            </div>
+                            <div class="app-health-card">
+                                <h5><svg><use href="#icon-brain"/></svg> Cognitive Health</h5>
+                                <p>Your cognitive assessment shows strong memory recall. Sleep optimization could improve processing speed by 12-15%...</p>
+                                <span class="score">Score: 82/100</span>
+                            </div>
+                            <div class="app-health-card">
+                                <h5><svg><use href="#icon-flame"/></svg> Inflammation</h5>
+                                <p>Chronic inflammation markers are slightly elevated. Your Health Agent has a personalized plan involving omega-3 intake and stress reduction...</p>
+                                <span class="score">Trending Down</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-features-list">
+                    <h3>Your Employees Learn About Their Bodies — Not Just Numbers</h3>
+                    <p>Most health platforms hand people a spreadsheet. Durand gives them a conversation. Your Health Agent explains what fatty liver actually means, why inflammation matters, and what to do about it — in the language they speak at home.</p>
+                    <div class="app-feature-item">
+                        <div class="card-icon"><svg><use href="#icon-ai"/></svg></div>
+                        <div>
+                            <h4>AI Health Agent in 40+ Languages</h4>
+                            <p>Physician-supervised AI explains health results in plain language — Hindi, French, Spanish, Mandarin, and more. Employees understand their health, not just their numbers.</p>
+                        </div>
+                    </div>
+                    <div class="app-feature-item">
+                        <div class="card-icon"><svg><use href="#icon-organ"/></svg></div>
+                        <div>
+                            <h4>Conditions Explained, Not Just Flagged</h4>
+                            <p>Fatty liver. Elevated cortisol. Cognitive decline. Your Health Agent explains what each condition means, why it matters, and exactly what to do — personalized to their biology.</p>
+                        </div>
+                    </div>
+                    <div class="app-feature-item">
+                        <div class="card-icon"><svg><use href="#icon-watch"/></svg></div>
+                        <div>
+                            <h4>Wearable Data, Integrated</h4>
+                            <p>Apple Watch, Oura, Fitbit, Garmin — 30+ devices stream real-time data into your Health Agent. Sleep, HRV, activity, and more combined with epigenetic insights.</p>
+                        </div>
+                    </div>
+                    <div class="app-feature-item">
+                        <div class="card-icon"><svg><use href="#icon-chart"/></svg></div>
+                        <div>
+                            <h4>AI Video Health Reports</h4>
+                            <p>Every employee receives a personalized AI-generated video walking through their results, trends, and care plan — like having a doctor explain it, in your language.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Patient Video Showcase -->
+            <div style="margin-top: 80px;">
+                <div class="section-header">
+                    <div class="section-label">See It In Action</div>
+                    <h2 class="section-title">Your Health Journey, Explained</h2>
+                    <p class="section-subtitle">Watch how Durand delivers personalized health intelligence — in English, Hindi, and any language your employees speak.</p>
+                </div>
+                <div class="video-grid fade-in">
+                    <div class="video-card">
+                        <video controls preload="metadata" poster="">
+                            <source src="Your Health Journey.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-card-info">
+                            <h4>Your Health Journey</h4>
+                            <p>AI-generated personalized health report in English</p>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video controls preload="metadata" poster="">
+                            <source src="Health Journey Hindi.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-card-info">
+                            <h4>&#x092A;&#x093E;&#x0935;&#x0947;&#x0928; &#x0915;&#x093E; &#x0938;&#x094D;&#x0935;&#x093E;&#x0938;&#x094D;&#x0925;&#x094D;&#x092F; &#x0938;&#x092B;&#x093C;&#x0930;</h4>
+                            <p>Same health intelligence, delivered in Hindi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON 1: DFH vs Blood-Only Testers -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">vs. Blood-Only Testers</div>
+                <h2 class="section-title">Beyond Blood Panels</h2>
+                <p class="section-subtitle">Function, Nia, and SuperPower charge $499+ for lab-based blood tests mostly available free through insurance. We go far beyond blood.</p>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="comparison-table fade-in">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>Function / Nia / SuperPower</th>
+                            <th class="highlight">Durand Future Health</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Testing Type</td><td>Blood panels (mostly free via insurance)</td><td class="highlight-col">Epigenetic testing — 40+ organ scores</td></tr>
+                        <tr><td>Collection</td><td>In-person lab visits, 20 vials</td><td class="highlight-col">At-home, painless, mail-in</td></tr>
+                        <tr><td>What It Shows</td><td>Where you are today (snapshot)</td><td class="highlight-col">Where you're headed — 5-10 year prediction</td></tr>
+                        <tr><td>Cognitive Testing</td><td><span class="cross">&#10007;</span> None</td><td class="highlight-col"><span class="check">&#10003;</span> Clinically validated</td></tr>
+                        <tr><td>Sleep Analysis</td><td><span class="cross">&#10007;</span> None</td><td class="highlight-col"><span class="check">&#10003;</span> Deep &amp; REM tracking</td></tr>
+                        <tr><td>Wearable Integration</td><td><span class="cross">&#10007;</span> Limited/None</td><td class="highlight-col"><span class="check">&#10003;</span> 30+ devices</td></tr>
+                        <tr><td>AI Health Coaching</td><td><span class="cross">&#10007;</span> None</td><td class="highlight-col"><span class="check">&#10003;</span> In 40+ languages</td></tr>
+                        <tr><td>Continuous Monitoring</td><td><span class="cross">&#10007;</span> Snapshot only</td><td class="highlight-col"><span class="check">&#10003;</span> Ongoing wearable + retest</td></tr>
+                        <tr><td>Data Privacy</td><td>May sell data; samples overseas</td><td class="highlight-col">NEVER sell. Local data centres.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON 2: Traditional EAP vs DFH EHAP -->
+    <section class="section section-dark">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label" style="background: rgba(140,198,63,0.15); color: #8CC63F;">vs. Traditional EAP</div>
+                <h2 class="section-title">Traditional EAP vs. Durand EHAP</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.85);">Same PEPM. 100x the value. Your clients already pay for an EAP nobody uses.</p>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="comparison-table fade-in">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>Traditional EAP</th>
+                            <th class="highlight">Durand EHAP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Mental Health Counseling</td><td><span class="check">&#10003;</span> Limited sessions</td><td class="highlight-col"><span class="check">&#10003;</span> Advanced EAP — 6 sessions</td></tr>
+                        <tr><td>Epigenetic Testing</td><td><span class="cross">&#10007;</span></td><td class="highlight-col"><span class="check">&#10003;</span> 40+ organ health scores</td></tr>
+                        <tr><td>Cognitive Assessment</td><td><span class="cross">&#10007;</span></td><td class="highlight-col"><span class="check">&#10003;</span> Clinically validated</td></tr>
+                        <tr><td>AI Health Coaching</td><td><span class="cross">&#10007;</span></td><td class="highlight-col"><span class="check">&#10003;</span> 40+ languages, physician-supervised</td></tr>
+                        <tr><td>Sleep Analysis</td><td><span class="cross">&#10007;</span></td><td class="highlight-col"><span class="check">&#10003;</span> Wearable-integrated</td></tr>
+                        <tr><td>Cancer &amp; Disease Risk</td><td><span class="cross">&#10007;</span></td><td class="highlight-col"><span class="check">&#10003;</span> 5-10 year predictive outlook</td></tr>
+                        <tr><td>Care Navigation</td><td><span class="cross">&#10007;</span></td><td class="highlight-col"><span class="check">&#10003;</span> GLP-1, Noom, vetted partners</td></tr>
+                        <tr><td>Wearable Integration</td><td><span class="cross">&#10007;</span></td><td class="highlight-col"><span class="check">&#10003;</span> 30+ devices</td></tr>
+                        <tr><td>Home-Based Collection</td><td>N/A</td><td class="highlight-col"><span class="check">&#10003;</span> Painless mail-in collection</td></tr>
+                        <tr><td>Data Privacy</td><td>Varies</td><td class="highlight-col"><span class="check">&#10003;</span> NEVER sell data. Guaranteed.</td></tr>
+                        <tr><td>Average Utilization</td><td>3-5%</td><td class="highlight-col"><strong>Significantly higher</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="stats-row fade-in" style="margin-top: 64px;">
+                <div class="stat-box">
+                    <div class="stat-number">$0</div>
+                    <div class="stat-label">Additional Cost to Your Clients</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Health Risks Identified Early</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Advanced EAP Counseling Sessions</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Wearable &amp; Device Integrations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">How It Works</div>
+                <h2 class="section-title">Get Started in 3 Steps</h2>
+            </div>
+            <div class="steps fade-in">
+                <div class="step">
+                    <h4>Match &amp; Replace</h4>
+                    <p>Tell us your client's current EAP spend. We match it and replace it with the Durand EHAP &mdash; 6 counseling sessions plus full predictive health intelligence, same PEPM cost.</p>
+                </div>
+                <div class="step">
+                    <h4>Deploy to Employees</h4>
+                    <p>Employees opt-in to testing. A painless home collection device is mailed to their door. No labs, no needles. Our clinical team onboards them and their personal Health Agent takes over year-round.</p>
+                </div>
+                <div class="step">
+                    <h4>Deliver Results</h4>
+                    <p>Employers see anonymized workforce insights. Employees get physician-reviewed health intelligence and a personalized care plan. You deepen client relationships. Everyone wins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
 
+<!-- ===== PANEL: FOR EMPLOYERS ===== -->
+<div class="page-panel" id="panel-employers">
 
-Now Available in Canada & USA
-Replace the EAP. Add Prevention. Save Millions.
-Your clients’ EAP has 3% utilization and zero health intelligence. Replace it with an EHAP — same PEPM cost, but now your EAP includes 6 counseling sessions to get the right help plus a predictive health system that can see risks 5-10 years early with Durand’s advanced testing not available in traditional labs. Avoid a fatal or expensive cardiac event, a late-stage cancer diagnosis through early intervention, or a failed GLP-1 outcome with a net weight gain after spending thousands of health care dollars. Just part of where the millions are saved.
-Partner With Us Get Tested — $499
-40+
-HEALTH RISK FACTORS ASSESSED
-30+
-WEARABLE INTEGRATIONS
-5 Yrs
-CLINICAL VALIDATION
+    <section class="section story-section">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">For Employers</div>
+                <h2 class="section-title">Predict. Prevent. Save Millions.</h2>
+                <p class="section-subtitle">Our physicians and scientists have built the most advanced employee health assessment in the world. Your workforce gets it at the cost of an EAP you're already paying for.</p>
+            </div>
+
+            <div class="two-col fade-in">
+                <div class="two-col-text">
+                    <h2>The EHAP: Your EAP, <span style="background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Reimagined</span></h2>
+                    <p>Most Employee Assistance Programs see 3-5% utilization. Your employees don't use them. With the Durand EHAP, you get an Advanced EAP with 6 counseling sessions plus a complete health intelligence platform — without increasing your benefits budget.</p>
+                    <ul class="feature-list">
+                        <li><span class="icon"></span> Epigenetic testing with 40+ organ health scores</li>
+                        <li><span class="icon"></span> Clinically validated cognitive assessment</li>
+                        <li><span class="icon"></span> AI health coaching in any language, supervised by physicians</li>
+                        <li><span class="icon"></span> 30+ wearable integrations (Oura, Apple Watch, Fitbit, etc.)</li>
+                        <li><span class="icon"></span> Predictive risk assessment — 5 to 10 years forward</li>
+                        <li><span class="icon"></span> Care navigation to vetted solutions (GLP-1, Noom, Zumba)</li>
+                        <li><span class="icon"></span> Anonymized workforce health insights for HR</li>
+                    </ul>
+                </div>
+                <div class="experience-visual">
+                    <div class="kit-visual">
+                        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="35" width="80" height="65" rx="10" stroke="white" stroke-width="2.5" fill="none"/>
+                            <path d="M45 35V25a15 15 0 0130 0v10" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                            <path d="M60 55v20M50 65h20" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="60" cy="65" r="18" stroke="white" stroke-width="1" opacity="0.2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Home-Based Testing</h3>
+                    <p>No lab visits. No needles. No scheduling. A painless peel-and-stick collection device arrives at your employee's door. They mail it back. Then their personal Health Agent takes over — year-round wellness management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">The Platform</div>
+                <h2 class="section-title">A Full Health Intelligence Stack</h2>
+                <p class="section-subtitle">Built by physicians, powered by AI, validated over 4,000+ patients.</p>
+            </div>
+            <div class="card-grid">
+                <div class="card fade-in">
+                    <div class="card-icon"><svg><use href="#icon-microscope"/></svg></div>
+                    <h3>Testing &amp; Assessment</h3>
+                    <p>Epigenetic testing across 40+ organ systems. Clinically validated cognitive assessment. Sleep analysis. AI-powered wellness intake. All from home — reviewed by our medical team.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon"><svg><use href="#icon-ai"/></svg></div>
+                    <h3>AI Health Intelligence</h3>
+                    <p>Multiple physician-supervised AI health agents. Custom health scores (the Durand Score). AI-generated video progress reports. Full EHR integration with 40% of US physicians.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon"><svg><use href="#icon-compass"/></svg></div>
+                    <h3>Care Navigation</h3>
+                    <p>Direct navigation to vetted, outcomes-based solutions. GLP-1 outcome management. Ecosystem partners including Noom, Oura, and Zumba. Real results, not just data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label" style="background: rgba(140,198,63,0.15); color: #8CC63F;">Privacy &amp; Data Sovereignty</div>
+                <h2 class="section-title">Your Employees' Data Is Sacred</h2>
+                <p class="section-subtitle">We built the most private health platform in the industry. Full stop.</p>
+            </div>
+            <div class="card-grid">
+                <div class="card card-dark fade-in">
+                    <div class="card-icon"><svg><use href="#icon-lock"/></svg></div>
+                    <h3>Never Sell Data</h3>
+                    <p>We NEVER sell, rent, or monetize biodata. Period. Our business model is health services, not data exploitation.</p>
+                </div>
+                <div class="card card-dark fade-in">
+                    <div class="card-icon"><svg><use href="#icon-globe"/></svg></div>
+                    <h3>Local Data Centres</h3>
+                    <p>Data stays in-country. Local data centres per geography. Samples never leave North America.</p>
+                </div>
+                <div class="card card-dark fade-in">
+                    <div class="card-icon"><svg><use href="#icon-vault"/></svg></div>
+                    <h3>Vault-Level Security</h3>
+                    <p>Decryption keys stored in neutral jurisdiction vault. Data is legally unattainable without explicit employee consent. Audited governance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-gradient">
+        <div class="section-inner" style="text-align: center;">
+            <h2 class="section-title" style="color: white;">Interested in the EHAP for Your Workforce?</h2>
+            <p style="color: rgba(255,255,255,0.88); font-size: 18px; max-width: 640px; margin: 0 auto 16px;">The Durand EHAP is available exclusively through benefits brokers and advisors. Ask your broker about replacing your EAP with an EHAP &mdash; at the same PEPM cost.</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 15px; max-width: 540px; margin: 0 auto 32px;">Don&rsquo;t have a broker? We can connect you with one of our certified benefits partners in your region.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:info@durandfuturehealth.com" class="btn btn-primary" style="font-size: 17px; padding: 16px 36px;">Ask Your Broker About EHAP</a>
+                <a href="mailto:info@durandfuturehealth.com?subject=Connect%20Me%20With%20a%20Broker" class="btn btn-outline" style="font-size: 15px; padding: 14px 28px;">Connect Me With a Broker</a>
+            </div>
+        </div>
+    </section>
+</div>
 
 
-BUILT WITH
-🧬 5,100+ Clinician Network 🔬 Epigenetic Science 🔒 HIPAA & PIPEDA Compliant 🤖 100% AI-Native Platform
-For Benefits Brokers
-For Employers
-Get Tested — $499
-FOR BENEFITS BROKERS
-Built by Scientists & Physicians. Delivered Through You.
-Our team of physicians, lab scientists, and AI researchers have spent 5 years building a clinically validated predictive health system. Now, we're making it available through benefits brokers — at EAP pricing.
-Same Price. 100x the Value.
-Most EAPs see 3-5% utilization. The Durand EHAP includes an Advanced EAP with 6 counseling sessions — plus epigenetic testing, AI health coaching, cognitive assessment, and care navigation. At the same PEPM.
-￼
-No Incremental Cost
-We match your client's current EAP spend. They get an Advanced EAP with 6 counseling sessions plus Durand's full health intelligence platform. Zero budget increase needed.
-￼
-A Differentiated Offering
-Stand out from every other broker. Offer something no one else can: home-based epigenetic testing and AI-powered predictive health, backed by a physician-led clinical team.
-￼
-Millions in Savings
-Help your clients reduce chronic disease costs by catching risks 5-10 years early. Our physicians and AI identify what's coming — so prevention can start before treatment is needed.
-￼
-Brokers Protected
-Your client relationships are sacred. We work exclusively through brokers — never around them. Full transparency, dedicated support, and a partnership built on trust.
-￼
-Home-Based. No Lab Visits.
-No scheduling. No needles. No 20 vials of blood. A painless peel-and-stick collection device is mailed home. Our lab scientists analyze it — then a personal Health Agent takes over, year-round.
-￼
-Enterprise-Grade Privacy
-We NEVER sell or monetize biodata. Local data centres per geography. Samples never leave North America. Legally unattainable without employee consent.
-THE END OF SINGLE-PURPOSE APPS
-Your Employees Don't Need Another App. They Need an Agent.
-The average employee has 12 health apps they never open. Vitality, nutrition trackers, women's health, Hims & Hers — fragmented, disconnected, and abandoned. One intelligent Health Agent replaces them all.
-V
-Vitality App
-3% utilization
-N
-Nutrition App
-Abandoned week 2
-W
-Women's Health App
-Siloed data, no integration
-H
-Hims & Hers
-No predictive insights
-S
-Sleep Tracker
-Just one data point
-M
-Mental Wellness
-No clinical validation
-Vitality. Nutrition trackers. Sleep apps. Women's health. Hims & Hers. Mental wellness. Your employees downloaded them all — and abandoned them all. Because none of them talk to each other, none of them know your biology, and none of them predict what's coming.
-THE REPLACEMENT
-One Health Agent. Every Data Source. Every Language.
-THE HUMAN STORY
-He’s Not a Data Point. He’s Invisibly Falling Through the Cracks.
-Every other system waits for a crisis. DFH builds the complete picture and guides the person forward — so the crisis never arrives.
-REAL SCENARIO
-A 42-year-old male employee. 250 lbs. He’s busy. He’s afraid of needles. He doesn’t have a family doctor. No bloodwork in two years. FIT test for colon screening overdue. Shingles vaccine missing. In every other system — every wellness app, every EAP, every insurance plan — this person is invisible until a cardiac event or late-stage diagnosis costs the plan $50,000+ and the company loses a friend.
-1
-Full Picture Built
-Epigenetics, cognitive, sleep, medical records, wearables — one holistic health intelligence profile
-2
-Guided Forward
-AI translates the picture into plain-language guidance — what to watch, what to do, why it matters
-3
-Missing Signals Found
-No bloodwork. No FIT test. Missing vaccines. The platform sees what’s absent, not just what’s present
-4
-Action Generated
-NP-authorized requisitions delivered in employer-branded Health Agent with nearest lab location
-5
-Doctor Empowered
-He’s encouraged to visit his doctor with his results — a copy is sent with his permission, bridging the gap between insight and clinical care
-6
-Loop Compounds
-Results flow back. Picture gets richer. Guidance gets smarter. Population health improves.
-DFH Legal: This functionality makes best efforts to find gaps in care and will, over time, arrange for missing screenings that are already covered by public or private health care — avoiding paying for things twice.
-The employer would rather reward him to join and get followed than pay for coronary treatment, disability, disruption, and the loss of a valued colleague. The math isn’t close.
-WHY EHAP
-EHAP by Durand® — Enhanced EAP + Proactive Health Management
-North American employers spend $1.2 trillion annually on healthcare — almost entirely on repair. Treating disease after it arrives. Paying for surgeries, drugs, and disability after the damage is done. It’s a crash repair world with no crash avoidance system.
-The Repair Model
-Wait for disease. Treat symptoms. Pay catastrophic claims. Lose productivity. Repeat. This is how $1.2T is spent today.
-The EHAP Model
-Build the complete health picture. Predict what’s coming. Intervene early. Keep employees productive. Bend the cost curve.
-The Employer Impact
-Healthier employees. Fewer catastrophic claims. Lower disability. Higher retention. Measurable ROI on every health dollar spent.
-The EHAP by Durand® empowers employers to help employees stay healthy and productive — shifting health spending from reactive repair to proactive prevention. It’s the same budget line, but now it’s working to avoid the crash instead of paying to fix the wreckage.
-THE GLP-1 TRAP
-She Lost the Weight. Then She Lost Everything Else.
-Well-meaning employers are spending billions on GLP-1 drugs with no long-term outcome management. The results are devastating.
-REAL SCENARIO
-Maria, 38, drives for a courier company. At 200 lbs, a GLP-1 app provider puts her on medication — covered by her employer’s benefits plan at thousands of dollars per year. She loses 50 lbs and feels great. Then she stops the drug. Within 18 months, she puts back 70 lbs — ending up at 220, twenty pounds heavier than when she started. Worse: up to 40% of the weight she originally lost was lean muscle mass, not fat. Her body is weaker, her metabolism is slower, and she’s now clinically depressed. No one offered CBT alongside the drug. No one guided her on muscle-protective nutrition or resistance training. No one managed the outcome. Her employer spent thousands — and she’s worse off than before.
-⅔
-Weight regained within 18 months of stopping
-25-40%
-Of weight lost is lean muscle mass, not fat
-$0
-Spent on CBT, nutrition, or resistance training
-$B+
-In employer losses with no long-term health ROI
-Sources: STEP 1 Extension Trial (2022) showed two-thirds weight regain within one year of stopping semaglutide. Oxford/BMJ meta-analysis (Jan 2026) confirmed GLP-1 rebound is faster than behavioral weight loss. Metabolism review (2025) found 25-40% of GLP-1 weight loss is lean muscle mass.
-✗  The Current Approach
-	•	• Prescribe GLP-1 with no outcome management
-	•	• No CBT or mental health support alongside
-	•	• No muscle-protective nutrition guidance
-	•	• No resistance training program
-	•	• Patient stops drug, regains weight + more
-	•	• Employer pays thousands with zero long-term ROI
-✓  The DFH Approach
-	•	• Navigate to outcome-focused care providers
-	•	• Full treatment beyond pharmaceuticals alone
-	•	• CBT and mental health support integrated
-	•	• Muscle-protective nutrition & exercise guidance
-	•	• Continuous monitoring via wearables & Health Agent
-	•	• Maximize health $ ROI for employer & insurer
-DFH doesn’t just write prescriptions. We find care providers who are long-term outcome focused — offering the full range of treatments beyond pharmaceuticals to get better results and maximize health dollar ROI for the employer and insurer.
-YOUR HEALTH AGENT
-Health Intelligence, In Their Language
-Employees don't just get data — they get understanding. Your Health Agent explains complex conditions like fatty liver, inflammation markers, and cognitive decline in plain language, in any language.
+<!-- ===== PANEL: GET TESTED — $499 ===== -->
+<div class="page-panel" id="panel-longevity">
 
-￼
-Your Health Agent
-English
-Hindi
-French
-Spanish
-+40
+    <section class="section" style="position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(27,45,107,0.03) 0%, transparent 60%);"></div>
+        <div class="section-inner" style="position: relative;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 48px;">
+                <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12);">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=700&h=500&fit=crop&crop=face&facepad=2.5" alt="Beautiful woman radiating health and confidence" style="width: 100%; height: 400px; object-fit: cover; object-position: center; display: block;">
+                </div>
+                <div style="text-align: left;">
+                    <h2 class="section-title" style="margin-bottom: 20px; font-size: clamp(26px, 3.5vw, 40px);">See and change the switches on key genes important for health</h2>
+                    <p style="color: var(--gray-500); font-size: 17px; line-height: 1.8; margin-bottom: 16px;">Understand your health across thousands of data points in real time.</p>
+                    <p style="color: var(--gray-500); font-size: 17px; line-height: 1.8;">Secure chat with AI to learn more.</p>
+                </div>
+            </div>
 
-Liver Health
-Your epigenetic markers indicate early-stage fatty liver risk. Here's what that means and how to reverse it with diet and activity changes...
-Risk Score: Moderate
+            <div class="two-col fade-in">
+                <div>
+                    <div class="pricing-card featured" style="text-align: left;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--teal); margin-bottom: 8px;">Complete Health Intelligence</div>
+                            <div class="pricing-price">$499<span> USD / CDN</span></div>
+                            <p style="color: var(--gray-500); font-size: 14px; margin-top: 8px;">One-time purchase &bull; No subscription required</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Complete epigenetic health assessment (40+ organ health scores)</li>
+                            <li>Clinically validated cognitive assessment</li>
+                            <li>Sleep analysis and screening</li>
+                            <li>Personal Health Agent &mdash; year-round, in any language</li>
+                            <li>Custom Durand Score with 5-10 year predictive risk insights</li>
+                            <li>30+ wearable integrations (Apple Watch, Oura, Fitbit, etc.)</li>
+                            <li>AI-generated video health reports</li>
+                            <li>One-on-one report review with our clinical team</li>
+                            <li>Painless home collection &mdash; no lab visits, no needles</li>
+                            <li>Continuous wellness management, not just a snapshot</li>
+                        </ul>
+                        <div style="text-align: center; margin-top: 8px;">
+                            <a href="#" class="btn btn-gradient" style="width: 100%; justify-content: center; font-size: 17px; padding: 16px 24px;" id="buy-now-btn">Buy Now &mdash; $499</a>
+                            <p style="color: var(--gray-400); font-size: 12px; margin-top: 12px;">Secure checkout powered by Stripe</p>
+                        </div>
+                        <div style="background: rgba(43,165,165,0.06); border: 1px solid rgba(43,165,165,0.12); border-radius: 10px; padding: 14px 18px; margin-top: 16px;">
+                            <p style="font-size: 13px; color: var(--gray-600); line-height: 1.6; margin: 0;"><strong style="color: var(--teal);">&#128312; Care Navigation</strong> &mdash; Coming Soon. We&rsquo;re building a vetted network of outcome-focused care providers across the US and Canada. Care navigation services will be included at no additional cost when available.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 style="font-size: 32px; font-weight: 800; letter-spacing: -1px; margin-bottom: 20px;">Not Just Testing.<br>A <span style="background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Year-Round Health Partner.</span></h2>
+                    <p style="color: var(--gray-500); font-size: 16px; line-height: 1.8; margin-bottom: 24px;">Other consumer testing brands send you to a lab, draw 20 vials of blood, and hand you a spreadsheet of numbers. Then they disappear until next year. Durand gives you advanced epigenetic testing PLUS a personal Health Agent that works with you every day.</p>
+                    <p style="color: var(--gray-500); font-size: 16px; line-height: 1.8; margin-bottom: 24px;">Your Health Agent knows your biology, tracks your wearables, explains what fatty liver and inflammation actually mean &mdash; in your language &mdash; and guides you through a personalized wellness plan all year long.</p>
+                    <p style="color: var(--gray-500); font-size: 16px; line-height: 1.8; margin-bottom: 24px;"><strong>One-on-one report review included.</strong> When your results are ready, our clinical team walks you through every finding personally. No automated emails. A real conversation about your health.</p>
+                    <p style="color: var(--gray-500); font-size: 16px; line-height: 1.8;">This is the future of personal health. And it starts at your kitchen table.</p>
 
-Cognitive Health
-Your cognitive assessment shows strong memory recall. Sleep optimization could improve processing speed by 12-15%...
-Score: 82/100
+                    <div style="margin-top: 32px; padding: 20px; background: var(--gray-100); border-radius: 12px;">
+                        <p style="font-size: 13px; color: var(--gray-500); line-height: 1.7; margin: 0;"><strong>HSA / FSA:</strong> Durand&rsquo;s health assessment may be eligible for reimbursement through your Health Savings Account (HSA) or Flexible Spending Account (FSA). Eligibility varies by plan. We recommend checking with your plan administrator or benefits provider to confirm coverage. Documentation available upon request.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-Inflammation
-Chronic inflammation markers are slightly elevated. Your Health Agent has a personalized plan involving omega-3 intake and stress reduction...
-Trending Down
-Your Employees Learn About Their Bodies — Not Just Numbers
-Most health platforms hand people a spreadsheet. Durand gives them a conversation. Your Health Agent explains what fatty liver actually means, why inflammation matters, and what to do about it — in the language they speak at home.
+    <section class="section section-light">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">How It Works</div>
+                <h2 class="section-title">From Purchase to Health Intelligence</h2>
+            </div>
+            <div class="steps fade-in">
+                <div class="step">
+                    <h4>Purchase Online</h4>
+                    <p>Buy your Durand health assessment for $499 USD or CDN. Secure checkout. Your home collection kit ships within days.</p>
+                </div>
+                <div class="step">
+                    <h4>Painless Home Collection</h4>
+                    <p>A peel-and-stick device arrives at your door &mdash; no needles, no vials, no nurse visits. Collect in minutes. Drop it in the mailbox.</p>
+                </div>
+                <div class="step">
+                    <h4>Our Scientists Analyze</h4>
+                    <p>Our lab scientists and AI platform analyze your epigenetic markers, cognitive patterns, and wearable data to build your complete health intelligence profile.</p>
+                </div>
+                <div class="step">
+                    <h4>Personal Report Review</h4>
+                    <p>Our clinical team walks you through your results one-on-one. Then your personal Health Agent takes over &mdash; year-round wellness management in your language.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-AI Health Agent in 40+ Languages
-Physician-supervised AI explains health results in plain language — Hindi, French, Spanish, Mandarin, and more. Employees understand their health, not just their numbers.
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">Why Durand</div>
+                <h2 class="section-title">We Do What Others Can&rsquo;t</h2>
+                <p class="section-subtitle">Function Health charges $499 for lab-based blood tests you can get free through insurance. We go far beyond blood.</p>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="comparison-table fade-in">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>Function / Nia / SuperPower</th>
+                            <th class="highlight">Durand Future Health</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Testing Type</td><td>Blood panels (mostly free via insurance)</td><td class="highlight-col">Epigenetic testing &mdash; 40+ organ scores</td></tr>
+                        <tr><td>Collection</td><td>In-person lab visits, 20 vials</td><td class="highlight-col">At-home, painless, mail-in</td></tr>
+                        <tr><td>What It Shows</td><td>Where you are today (snapshot)</td><td class="highlight-col">Where you&rsquo;re headed &mdash; 5-10 year prediction</td></tr>
+                        <tr><td>Cognitive Testing</td><td><span class="cross">&#10007;</span> None</td><td class="highlight-col"><span class="check">&#10003;</span> Clinically validated</td></tr>
+                        <tr><td>Wearable Integration</td><td><span class="cross">&#10007;</span> Limited/None</td><td class="highlight-col"><span class="check">&#10003;</span> 30+ devices</td></tr>
+                        <tr><td>AI Health Agents</td><td><span class="cross">&#10007;</span> None</td><td class="highlight-col"><span class="check">&#10003;</span> Physician-supervised, any language</td></tr>
+                        <tr><td>Data Privacy</td><td>May sell data; samples sent overseas</td><td class="highlight-col">NEVER sell. Local data centres. North America only.</td></tr>
+                        <tr><td>Continuous Monitoring</td><td><span class="cross">&#10007;</span> Snapshot only</td><td class="highlight-col"><span class="check">&#10003;</span> Ongoing wearable + retest loop</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
-Conditions Explained, Not Just Flagged
-Fatty liver. Elevated cortisol. Cognitive decline. Your Health Agent explains what each condition means, why it matters, and exactly what to do — personalized to their biology.
+    <section class="section section-gradient">
+        <div class="section-inner" style="text-align: center;">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom: 24px;">
+                <circle cx="40" cy="40" r="35" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+                <circle cx="40" cy="40" r="25" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                <path d="M30 50V35a10 10 0 0120 0v15" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <path d="M40 40v8M36 44h8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <h2 class="section-title" style="color: white;">Your Health Shouldn&rsquo;t Require a Lab Visit</h2>
+            <p style="color: rgba(255,255,255,0.88); font-size: 18px; max-width: 600px; margin: 0 auto 32px;">Advanced epigenetic testing. Year-round wellness management. A personal Health Agent that knows your biology and speaks your language. $499 USD or CDN. Available across the United States and Canada.</p>
+            <a href="#" class="btn btn-primary" style="font-size: 17px; padding: 16px 40px;" id="buy-now-btn-2">Buy Now &mdash; $499</a>
+        </div>
+    </section>
 
-Wearable Data, Integrated
-Apple Watch, Oura, Fitbit, Garmin — 30+ devices stream real-time data into your Health Agent. Sleep, HRV, activity, and more combined with epigenetic insights.
+    <!-- LEGAL & DISCLAIMERS -->
+    <section class="section" style="padding: 40px 0;">
+        <div class="section-inner">
+            <div style="max-width: 800px; margin: 0 auto; font-size: 12px; color: var(--gray-400); line-height: 1.8;">
+                <p style="margin-bottom: 12px;"><strong style="color: var(--gray-500);">Important Disclosures</strong></p>
+                <p style="margin-bottom: 8px;">Durand Future Health is not a medical provider and does not diagnose, treat, or cure any disease. Our health assessment is designed to provide predictive health intelligence and should be used in consultation with your physician or healthcare provider. Results are not a substitute for professional medical advice, diagnosis, or treatment.</p>
+                <p style="margin-bottom: 8px;">HSA/FSA eligibility varies by plan and is not guaranteed. We recommend consulting your plan administrator, HR department, or a qualified tax advisor to confirm that this assessment qualifies under your specific plan. Documentation is available upon request.</p>
+                <p style="margin-bottom: 8px;">Care navigation services are in development and will be offered at no additional cost when available. Features and availability may vary by geography.</p>
+                <p style="margin-bottom: 8px;">Durand Future Health does not provide tax, legal, or financial advice. We are not responsible for changes in regulations that may affect HSA or FSA eligibility.</p>
+                <p style="margin-bottom: 0;">Durand Future Health, Inc. (USA) &bull; Durand Future Health Ltd. (Canada)</p>
+            </div>
+        </div>
+    </section>
+</div>
 
-AI Video Health Reports
-Every employee receives a personalized AI-generated video walking through their results, trends, and care plan — like having a doctor explain it, in your language.
-SEE IT IN ACTION
-Your Health Journey, Explained
-Watch how Durand delivers personalized health intelligence — in English, Hindi, and any language your employees speak.
 
-Your Health Journey
-AI-generated personalized health report in English
+<!-- ===== PANEL: ABOUT ===== -->
+<div class="page-panel" id="panel-about">
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">About Durand</div>
+                <h2 class="section-title">Fortune 500 Leadership.<br>Startup Velocity.</h2>
+                <p class="section-subtitle">5 years of clinical validation. 4,000+ patients assessed. A platform that's built, not vaporware. A team that's shipped at global scale.</p>
+            </div>
 
-पावेन का स्वास्थ्य सफ़र
-Same health intelligence, delivered in Hindi
-VS. BLOOD-ONLY TESTERS
-Beyond Blood Panels
-Function, Nia, and SuperPower charge $499+ for lab-based blood tests mostly available free through insurance. We go far beyond blood.
-Capability
-Function / Nia / SuperPower
-Durand Future Health
-Testing Type
-Blood panels (mostly free via insurance)
-Epigenetic testing — 40+ organ scores
-Collection
-In-person lab visits, 20 vials
-At-home, painless, mail-in
-What It Shows
-Where you are today (snapshot)
-Where you're headed — 5-10 year prediction
-Cognitive Testing
-✗ None
-✓ Clinically validated
-Sleep Analysis
-✗ None
-✓ Deep & REM tracking
-Wearable Integration
-✗ Limited/None
-✓ 30+ devices
-AI Health Coaching
-✗ None
-✓ In 40+ languages
-Continuous Monitoring
-✗ Snapshot only
-✓ Ongoing wearable + retest
-Data Privacy
-May sell data; samples overseas
-NEVER sell. Local data centres.
-VS. TRADITIONAL EAP
-Traditional EAP vs. Durand EHAP
-Same PEPM. 100x the value. Your clients already pay for an EAP nobody uses.
-Capability
-Traditional EAP
-Durand EHAP
-Mental Health Counseling
-✓ Limited sessions
-✓ Advanced EAP — 6 sessions
-Epigenetic Testing
-✗
-✓ 40+ organ health scores
-Cognitive Assessment
-✗
-✓ Clinically validated
-AI Health Coaching
-✗
-✓ 40+ languages, physician-supervised
-Sleep Analysis
-✗
-✓ Wearable-integrated
-Cancer & Disease Risk
-✗
-✓ 5-10 year predictive outlook
-Care Navigation
-✗
-✓ GLP-1, Noom, vetted partners
-Wearable Integration
-✗
-✓ 30+ devices
-Home-Based Collection
-N/A
-✓ Painless mail-in collection
-Data Privacy
-Varies
-✓ NEVER sell data. Guaranteed.
-Average Utilization
-3-5%
-Significantly higher
-$0
-Additional Cost to Your Clients
-40+
-Health Risks Identified Early
-6
-Advanced EAP Counseling Sessions
-30+
-Wearable & Device Integrations
-HOW IT WORKS
-Get Started in 3 Steps
-Match & Replace
-Tell us your client's current EAP spend. We match it and replace it with the Durand EHAP — 6 counseling sessions plus full predictive health intelligence, same PEPM cost.
-Deploy to Employees
-Employees opt-in to testing. A painless home collection device is mailed to their door. No labs, no needles. Our clinical team onboards them and their personal Health Agent takes over year-round.
-Deliver Results
-Employers see anonymized workforce insights. Employees get physician-reviewed health intelligence and a personalized care plan. You deepen client relationships. Everyone wins.
-Ready to Transform Employee Health?
-Whether you're a broker, employer, or individual — our physicians and scientists would love to show you what predictive health intelligence can do.
-Contact Us Learn More
-Available in Canada and the United States
-￼
-Predictive health intelligence built by physicians and scientists. Home-based epigenetic testing. AI-powered insights. Care navigation. Available in Canada and the USA.
-SOLUTIONS
-For Brokers
-For Employers
-Get Tested — $499
-PLATFORM
-Epigenetic Testing
-AI Health Coaching
-Cognitive Assessment
-Care Navigation
-COMPANY
-About Us
-Contact
-Privacy Policy
-Terms of Service
-© 2026 Durand Future Health, Inc. All rights reserved.
-Greater Toronto  •  San Francisco  •  Miami
+            <div class="card-grid">
+                <div class="card fade-in">
+                    <h3>Paven Bratch</h3>
+                    <p style="color: var(--teal); font-size: 13px; font-weight: 600; margin-bottom: 8px;">CEO &amp; Founder</p>
+                    <p>35-year entrepreneur. $5M personally invested. P&amp;G, tech, and healthcare background.</p>
+                </div>
+                <div class="card fade-in">
+                    <h3>Charles Herington</h3>
+                    <p style="color: var(--teal); font-size: 13px; font-weight: 600; margin-bottom: 8px;">Executive Chair</p>
+                    <p>Former Avon CEO ($9B revenue). Molson Coors Board 22 years. Led Zumba globally across 185 countries.</p>
+                </div>
+                <div class="card fade-in">
+                    <h3>Dr. Mark Berman</h3>
+                    <p style="color: var(--teal); font-size: 13px; font-weight: 600; margin-bottom: 8px;">Chief Medical Officer</p>
+                    <p>One Medical physician (Amazon acquired for $3.9B). 100+ physician network. Austin-based.</p>
+                </div>
+                <div class="card fade-in">
+                    <h3>Dr. Warren Shepell</h3>
+                    <p style="color: var(--teal); font-size: 13px; font-weight: 600; margin-bottom: 8px;">EAP Strategist &amp; Advisor</p>
+                    <p>Pioneer of the EAP industry. Provides governance, historical continuity, and category-level oversight to our EAP strategy.</p>
+                </div>
+            </div>
+
+            <div class="stats-row fade-in" style="margin-top: 64px;">
+                <div class="stat-box" style="background: var(--gradient-card); border-color: rgba(0,0,0,0.06);">
+                    <div class="stat-number" style="background: var(--gradient-brand); -webkit-background-clip: text;">5+</div>
+                    <div class="stat-label" style="color: var(--gray-500);">Years of Clinical Validation</div>
+                </div>
+                <div class="stat-box" style="background: var(--gradient-card); border-color: rgba(0,0,0,0.06);">
+                    <div class="stat-number" style="background: var(--gradient-brand); -webkit-background-clip: text;">4,000+</div>
+                    <div class="stat-label" style="color: var(--gray-500);">Patients Assessed</div>
+                </div>
+                <div class="stat-box" style="background: var(--gradient-card); border-color: rgba(0,0,0,0.06);">
+                    <div class="stat-number" style="background: var(--gradient-brand); -webkit-background-clip: text;">100%</div>
+                    <div class="stat-label" style="color: var(--gray-500);">AI-Native Platform</div>
+                </div>
+                <div class="stat-box" style="background: var(--gradient-card); border-color: rgba(0,0,0,0.06);">
+                    <div class="stat-number" style="background: var(--gradient-brand); -webkit-background-clip: text;">30+</div>
+                    <div class="stat-label" style="color: var(--gray-500);">Wearable &amp; Device Integrations</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 48px;">
+                <p style="color: var(--gray-500); font-size: 15px;">Partners &amp; Ecosystem: GreenShield Health &bull; KeyHealth &bull; Noom &bull; Oura &bull; Zumba &bull; CareRx &bull; LiUNA &bull; NHL Alumni</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- CTA (hidden on consumer panel) -->
+<section class="cta-section" id="contact">
+    <h2>Ready to Transform<br>Employee Health?</h2>
+    <p>Whether you're a broker, employer, or individual — our physicians and scientists would love to show you what predictive health intelligence can do.</p>
+    <div class="cta-buttons">
+        <a href="mailto:info@durandfuturehealth.com" class="btn btn-primary" style="font-size: 17px; padding: 16px 40px;">Contact Us</a>
+        <a href="#" class="btn btn-outline" style="font-size: 17px; padding: 16px 40px;" onclick="showPanel('brokers'); window.scrollTo({top: document.getElementById('sectionTabs').offsetTop, behavior: 'smooth'});">Learn More</a>
+    </div>
+    <p style="margin-top: 24px; font-size: 13px; opacity: 0.5;">Available in Canada and the United States</p>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a href="#" class="nav-logo" onclick="showPanel('brokers')" style="color: white;">
+                <img src="logo-horizontal-reverse.png?v=2" alt="Durand Future Health" style="height: 48px; width: auto;">
+            </a>
+            <p>Predictive health intelligence built by physicians and scientists. Home-based epigenetic testing. AI-powered insights. Care navigation. Available in Canada and the USA.</p>
+        </div>
+        <div>
+            <h4>Solutions</h4>
+            <a href="#" onclick="showPanel('brokers')">For Brokers</a>
+            <a href="#" onclick="showPanel('employers')">For Employers</a>
+            <a href="#" onclick="showPanel('longevity')">Get Tested &mdash; $499</a>
+        </div>
+        <div>
+            <h4>Platform</h4>
+            <a href="#">Epigenetic Testing</a>
+            <a href="#">AI Health Coaching</a>
+            <a href="#">Cognitive Assessment</a>
+            <a href="#">Care Navigation</a>
+        </div>
+        <div>
+            <h4>Company</h4>
+            <a href="#" onclick="showPanel('about')">About Us</a>
+            <a href="mailto:info@durandfuturehealth.com">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>&copy; 2026 Durand Future Health, Inc. All rights reserved.</div>
+        <div>Greater Toronto &nbsp;&bull;&nbsp; San Francisco &nbsp;&bull;&nbsp; Miami</div>
+    </div>
+</footer>
+
+
+<script>
+function showPanel(panelId) {
+    document.querySelectorAll('.page-panel').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('panel-' + panelId);
+    if (target) target.classList.add('active');
+    document.querySelectorAll('.section-tab').forEach(t => t.classList.toggle('active', t.dataset.panel === panelId));
+    document.querySelectorAll('.nav-links a[data-panel]').forEach(a => a.classList.toggle('active', a.dataset.panel === panelId));
+    document.getElementById('sectionTabs').style.display = panelId === 'about' ? 'none' : '';
+    document.getElementById('contact').style.display = panelId === 'longevity' ? 'none' : '';
+    // Swap hero content based on active panel
+    document.querySelectorAll('.hero-variant').forEach(v => v.style.display = 'none');
+    const heroVariant = document.getElementById('hero-' + panelId);
+    if (heroVariant) heroVariant.style.display = 'block';
+    // Re-observe fade-in elements in newly shown panel
+    document.querySelectorAll('.page-panel.active .fade-in').forEach(el => observer.observe(el));
+}
+window.addEventListener('scroll', () => { document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20); });
+function toggleMobileNav() { document.getElementById('navLinks').classList.toggle('open'); }
+const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+function createParticles() { const c = document.getElementById('particles'); for (let i = 0; i < 30; i++) { const p = document.createElement('div'); p.className = 'particle'; p.style.left = Math.random()*100+'%'; p.style.animationDuration = (8+Math.random()*12)+'s'; p.style.animationDelay = Math.random()*10+'s'; p.style.width = (2+Math.random()*4)+'px'; p.style.height = p.style.width; c.appendChild(p); } }
+createParticles();
+
+// DNA Helix rotating labels — cycle through all data sources
+(function() {
+    const allData = [
+        ['Epigenetics', '40+ Organ Health Scores'],
+        ['Lab History', 'Upload Historical Blood Work'],
+        ['Cognitive Health', 'Validated Brain Assessment'],
+        ['Medical Imaging', 'CT, MRI & X-Ray Reports'],
+        ['Family History', 'Hereditary Risk Mapping'],
+        ['Wearables', '30+ Devices Integrated'],
+        ['Medications', 'Drug Interaction Analysis'],
+        ['Sleep Analysis', 'Deep & REM Tracking'],
+        ['Doctor Reports', 'Clinical Notes & Referrals'],
+        ['Health Goals', 'Weight, Fitness & Wellness'],
+        ['Cancer Risk', 'Early Marker Detection'],
+        ['Inflammation', 'Chronic Risk Prediction'],
+        ['Historical Wearable', 'Years of Activity Data'],
+        ['Heart Health', 'HRV, Resting HR & ECG'],
+        ['Nutrition', 'Diet & Supplement Tracking'],
+        ['Hormonal Health', 'Cortisol, Thyroid & More'],
+        ['Mental Wellness', 'Stress & Mood Patterns'],
+        ['Organ Function', 'Liver, Kidney & Lung Scores'],
+        ['Gut Health', 'Microbiome Indicators'],
+        ['Genetic Markers', 'Inherited Risk Factors']
+    ];
+    const slots = document.querySelectorAll('.dna-label[data-slot]');
+    if (!slots.length) return;
+    let indices = [0,1,2,3,4,5,6];
+    function getNext() {
+        const used = new Set(indices);
+        let pool = [];
+        for (let i = 0; i < allData.length; i++) { if (!used.has(i)) pool.push(i); }
+        if (!pool.length) pool = Array.from({length: allData.length}, (_, i) => i);
+        return pool[Math.floor(Math.random() * pool.length)];
+    }
+    function rotateSlot(slotIdx) {
+        const el = slots[slotIdx];
+        const textEl = el.querySelector('.dna-label-text');
+        textEl.classList.add('fade-out');
+        setTimeout(() => {
+            const newIdx = getNext();
+            indices[slotIdx] = newIdx;
+            textEl.innerHTML = '<strong>' + allData[newIdx][0] + '</strong>' + allData[newIdx][1];
+            textEl.classList.remove('fade-out');
+        }, 400);
+    }
+    setInterval(() => {
+        const slot = Math.floor(Math.random() * slots.length);
+        rotateSlot(slot);
+    }, 2800);
+})();
+</script>
+
+</body>
+</html>
