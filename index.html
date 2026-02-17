@@ -328,8 +328,16 @@
         @media (max-width: 968px) {
             .hero-inner { grid-template-columns: 1fr; text-align: center; }
             .hero-visual { order: -1; }
-            .dna-visual { width: 280px; height: 320px; }
-            .dna-label { display: none; }
+            .dna-visual { width: 300px; height: 380px; }
+            .dna-label { font-size: 10px; padding: 6px 10px; transform: scale(0.9); }
+            .dna-label strong { font-size: 8px; }
+            .dna-label-1 { left: -10% !important; }
+            .dna-label-2 { right: -12% !important; }
+            .dna-label-3 { left: -8% !important; }
+            .dna-label-4 { right: -10% !important; }
+            .dna-label-5 { left: -6% !important; }
+            .dna-label-6 { right: -8% !important; }
+            .dna-label-7 { left: -10% !important; }
             .hero-buttons { justify-content: center; }
             .hero-stats { justify-content: center; }
             .hero p { margin-left: auto; margin-right: auto; }
@@ -346,6 +354,11 @@
             .section-tab { white-space: nowrap; padding: 16px 20px; font-size: 13px; }
         }
         @media (max-width: 640px) {
+            .dna-visual { width: 260px; height: 340px; }
+            .dna-label { font-size: 9px; padding: 5px 8px; max-width: 130px; white-space: normal; }
+            .dna-label strong { font-size: 7px; }
+            .dna-label-1, .dna-label-3, .dna-label-5, .dna-label-7 { left: -4% !important; }
+            .dna-label-2, .dna-label-4, .dna-label-6 { right: -4% !important; }
             .hero-stats { flex-direction: column; gap: 20px; align-items: center; }
             .footer-inner { grid-template-columns: 1fr; }
             .comparison-table { font-size: 12px; }
