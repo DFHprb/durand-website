@@ -222,11 +222,15 @@
         .cta-section p { color: rgba(255,255,255,0.88); font-size: 18px; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; position: relative; }
         .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
 
-        /* CONTACT FORM */
-        .contact-form-section { background: var(--warm); padding: 80px 24px; }
-        .contact-form-inner { max-width: 680px; margin: 0 auto; }
-        .contact-form-section h2 { font-family: var(--font-serif); font-size: clamp(26px, 4vw, 40px); font-weight: 700; color: var(--dark); letter-spacing: -1px; margin-bottom: 12px; text-align: center; line-height: 1.15; }
-        .contact-form-section .form-subtitle { color: var(--gray-500); text-align: center; margin-bottom: 40px; font-size: 15px; }
+        /* CONTACT FORM MODAL */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(15,20,40,0.65); z-index: 2000; overflow-y: auto; padding: 40px 24px; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+        .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+        .modal-card { background: white; border-radius: var(--radius); padding: 48px; width: 100%; max-width: 620px; position: relative; box-shadow: 0 24px 80px rgba(0,0,0,0.25); margin: auto; }
+        .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 22px; line-height: 1; cursor: pointer; color: var(--gray-500); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s; }
+        .modal-close:hover { background: var(--gray-100); color: var(--dark); }
+        .modal-card h2 { font-family: var(--font-serif); font-size: clamp(22px, 3.5vw, 32px); font-weight: 700; color: var(--dark); letter-spacing: -0.5px; margin-bottom: 8px; text-align: center; line-height: 1.2; }
+        .modal-card .form-subtitle { color: var(--gray-500); text-align: center; margin-bottom: 32px; font-size: 15px; }
+        @media (max-width: 640px) { .modal-card { padding: 40px 24px 32px; } }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .form-group { display: flex; flex-direction: column; margin-bottom: 20px; }
         .form-group label { font-size: 13px; font-weight: 600; color: var(--gray-700); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -1784,9 +1788,10 @@
 </section>
 
 
-<!-- CONTACT FORM -->
-<section class="contact-form-section" id="contact-form">
-    <div class="contact-form-inner fade-in">
+<!-- CONTACT FORM MODAL -->
+<div id="contact-modal-overlay" class="modal-overlay" onclick="if(event.target===this)closeContactModal()">
+    <div class="modal-card">
+        <button class="modal-close" onclick="closeContactModal()" aria-label="Close">&times;</button>
         <h2>Congratulations on Choosing Your Health!</h2>
         <p class="form-subtitle">Fill out the form below and our team will be in touch shortly.</p>
         <form id="contact-form-el">
@@ -1822,7 +1827,7 @@
             <p style="color:var(--gray-500); font-size:15px;">Thank you for reaching out. We&rsquo;ll be in touch soon.</p>
         </div>
     </div>
-</section>
+</div>
 
 
 <!-- FOOTER -->
@@ -1843,7 +1848,7 @@
         <div>
             <h4>Company</h4>
             <a href="#" onclick="showPanel('about')">About Us</a>
-            <a href="#contact-form">Contact</a>
+            <a href="#" onclick="openContactModal(); return false;">Contact</a>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
         </div>
@@ -1928,6 +1933,29 @@ createParticles();
         rotateSlot(slot);
     }, 2800);
 })();
+
+// Contact modal
+function openContactModal() {
+    var el = document.getElementById('contact-form-el');
+    var success = document.getElementById('form-success');
+    var btn = document.getElementById('form-submit-btn');
+    if (el) el.style.display = '';
+    if (success) success.style.display = 'none';
+    if (btn) { btn.textContent = 'Send Message'; btn.disabled = false; }
+    document.getElementById('contact-modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+function closeContactModal() {
+    document.getElementById('contact-modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeContactModal(); });
+document.addEventListener('DOMContentLoaded', function() {
+    ['hero-buy-btn','buy-now-btn','buy-now-btn-2'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener('click', function(e) { e.preventDefault(); openContactModal(); });
+    });
+});
 
 // Load panel from URL parameter e.g. durand.life/?panel=longevity-temp
 (function() {
