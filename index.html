@@ -222,6 +222,23 @@
         .cta-section p { color: rgba(255,255,255,0.88); font-size: 18px; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; position: relative; }
         .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
 
+        /* CONTACT FORM */
+        .contact-form-section { background: var(--warm); padding: 80px 24px; }
+        .contact-form-inner { max-width: 680px; margin: 0 auto; }
+        .contact-form-section h2 { font-family: var(--font-serif); font-size: clamp(26px, 4vw, 40px); font-weight: 700; color: var(--dark); letter-spacing: -1px; margin-bottom: 12px; text-align: center; line-height: 1.15; }
+        .contact-form-section .form-subtitle { color: var(--gray-500); text-align: center; margin-bottom: 40px; font-size: 15px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-group { display: flex; flex-direction: column; margin-bottom: 20px; }
+        .form-group label { font-size: 13px; font-weight: 600; color: var(--gray-700); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group label .required { color: var(--teal); margin-left: 2px; }
+        .form-group input, .form-group textarea { border: 1.5px solid var(--gray-200); border-radius: var(--radius-sm); padding: 12px 16px; font-size: 15px; font-family: 'Inter', -apple-system, sans-serif; color: var(--gray-900); background: white; transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(43,165,165,0.12); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-submit { text-align: center; margin-top: 8px; }
+        .form-submit button { background: linear-gradient(135deg, #44B878, #8CC63F); color: white; border: none; border-radius: var(--radius-full); padding: 14px 48px; font-size: 16px; font-weight: 600; font-family: 'Inter', -apple-system, sans-serif; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(68,184,120,0.3); }
+        .form-submit button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(68,184,120,0.4); }
+        @media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
+
         /* FOOTER */
         .footer { background: var(--dark); color: white; padding: 64px 24px 32px; }
         .footer-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
@@ -1578,6 +1595,42 @@
 </section>
 
 
+<!-- CONTACT FORM -->
+<section class="contact-form-section" id="contact-form">
+    <div class="contact-form-inner fade-in">
+        <h2>Congratulations on Choosing Your Health!</h2>
+        <p class="form-subtitle">Fill out the form below and our team will be in touch shortly.</p>
+        <form action="mailto:support@durand.life" method="post" enctype="text/plain">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name">First Name <span class="required">*</span></label>
+                    <input type="text" id="first-name" name="First Name" required placeholder="Jane">
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name <span class="required">*</span></label>
+                    <input type="text" id="last-name" name="Last Name" required placeholder="Smith">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cf-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="cf-email" name="Email" required placeholder="jane@example.com">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="Phone" placeholder="+1 (416) 555-0100">
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="Comments" placeholder="Tell us how we can help..."></textarea>
+            </div>
+            <div class="form-submit">
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
 <!-- FOOTER -->
 <footer class="footer">
     <div class="footer-inner">
@@ -1596,7 +1649,7 @@
         <div>
             <h4>Company</h4>
             <a href="#" onclick="showPanel('about')">About Us</a>
-            <a href="mailto:support@durand.life">Contact</a>
+            <a href="#contact-form">Contact</a>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
         </div>
