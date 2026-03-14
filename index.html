@@ -5,17 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Durand Future Health&reg; | Predictive Health Intelligence</title>
     <meta name="description" content="Durand Future Health - Advanced EAP with world-class predictive health intelligence. Epigenetic testing, AI health coaching, and care navigation for benefits brokers, employers, and individuals.">
-    <!-- Open Graph / LinkedIn sharing -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.durand.life">
-    <meta property="og:site_name" content="Durand Future Health">
-    <meta property="og:title" content="www.Durand.life">
-    <meta property="og:description" content="Advanced health intelligence for employers, brokers, and individuals. Epigenetic testing, AI health coaching, and care navigation.">
-    <meta property="og:image" content="https://www.durand.life/social-share-v6.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://www.durand.life/social-share-v6.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300&display=swap" rel="stylesheet">
@@ -233,30 +222,9 @@
         .cta-section p { color: rgba(255,255,255,0.88); font-size: 18px; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; position: relative; }
         .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
 
-        /* CONTACT FORM MODAL */
-        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(15,20,40,0.65); z-index: 2000; overflow-y: auto; padding: 40px 24px; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
-        .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
-        .modal-card { background: white; border-radius: var(--radius); padding: 48px; width: 100%; max-width: 620px; position: relative; box-shadow: 0 24px 80px rgba(0,0,0,0.25); margin: auto; }
-        .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 22px; line-height: 1; cursor: pointer; color: var(--gray-500); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s; }
-        .modal-close:hover { background: var(--gray-100); color: var(--dark); }
-        .modal-card h2 { font-family: var(--font-serif); font-size: clamp(22px, 3.5vw, 32px); font-weight: 700; color: var(--dark); letter-spacing: -0.5px; margin-bottom: 8px; text-align: center; line-height: 1.2; }
-        .modal-card .form-subtitle { color: var(--gray-500); text-align: center; margin-bottom: 32px; font-size: 15px; }
-        @media (max-width: 640px) { .modal-card { padding: 40px 24px 32px; } }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-group { display: flex; flex-direction: column; margin-bottom: 20px; }
-        .form-group label { font-size: 13px; font-weight: 600; color: var(--gray-700); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .form-group label .required { color: var(--teal); margin-left: 2px; }
-        .form-group input, .form-group textarea { border: 1.5px solid var(--gray-200); border-radius: var(--radius-sm); padding: 12px 16px; font-size: 15px; font-family: 'Inter', -apple-system, sans-serif; color: var(--gray-900); background: white; transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(43,165,165,0.12); }
-        .form-group textarea { resize: vertical; min-height: 120px; }
-        .form-submit { text-align: center; margin-top: 8px; }
-        .form-submit button { background: linear-gradient(135deg, #44B878, #8CC63F); color: white; border: none; border-radius: var(--radius-full); padding: 14px 48px; font-size: 16px; font-weight: 600; font-family: 'Inter', -apple-system, sans-serif; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(68,184,120,0.3); }
-        .form-submit button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(68,184,120,0.4); }
-        @media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
-
         /* FOOTER */
         .footer { background: var(--dark); color: white; padding: 64px 24px 32px; }
-        .footer-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+        .footer-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
         .footer-brand p { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 16px; line-height: 1.7; }
         .footer h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; color: var(--teal); }
         .footer a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 14px; display: block; margin-bottom: 10px; transition: color 0.2s; }
@@ -327,9 +295,9 @@
 
         /* TRUST BAR */
         .trust-bar { padding: 28px 24px; background: var(--white); border-bottom: 1px solid var(--gray-200); }
-        .trust-bar-inner { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; }
-        .trust-bar-label { font-size: 11px; color: var(--dark); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
-        .trust-bar-items { display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: nowrap; }
+        .trust-bar-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+        .trust-bar-label { font-size: 11px; color: var(--gray-500); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+        .trust-bar-items { display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
         .trust-bar-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--gray-700); }
         .trust-bar-icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; background: rgba(43,165,165,0.08); }
 
@@ -446,11 +414,11 @@
             <img src="logo-horizontal.png?v=2" alt="Durand Future Health">
         </a>
         <div class="nav-links" id="navLinks">
-            <a href="#" data-panel="about" onclick="showPanel('about')">About</a>
             <a href="#" class="active" data-panel="brokers" onclick="showPanel('brokers')">For Brokers</a>
             <a href="#" data-panel="employers" onclick="showPanel('employers')">For Employers</a>
             <a href="#" data-panel="longevity" onclick="showPanel('longevity')">Get Tested &mdash; $499</a>
-            <a href="#" class="nav-cta" onclick="openContactModal(); return false;">Get Started</a>
+            <a href="#" data-panel="about" onclick="showPanel('about')">About</a>
+            <a href="#contact" class="nav-cta">Get Started</a>
         </div>
         <button class="nav-mobile-toggle" onclick="toggleMobileNav()" aria-label="Menu">
             <span></span><span></span><span></span>
@@ -480,7 +448,7 @@
                     An advanced EAP integrated with the world&rsquo;s most advanced employer-grade predictive health testing and signal management. <strong style="color: #fff; font-weight: 600;">Saving millions</strong> in health care spend and below-the-line productivity losses.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary" onclick="openContactModal(); return false;">See How It Works</a>
+                    <a href="#contact" class="btn btn-primary">See How It Works</a>
                     <a href="#contact" class="btn btn-outline">Broker Partnership</a>
                 </div>
                 <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px;">
@@ -528,7 +496,7 @@
                     Employee Assistance Programs (EAPs) &mdash; the short-term counselling benefit most employers offer at $3&ndash;5 per employee per month &mdash; sit at just 3&ndash;5% utilization. Not because the concept is wrong, but because the experience hasn&rsquo;t evolved. Durand E<span style="color:#8CC63F;">H</span>AP starts with a genuinely better model &mdash; a dedicated health professional who assesses employees across 13 clinical conditions, builds personalized action plans, and navigates them to the right care with no artificial session caps &mdash; then adds predictive health intelligence powered by advanced multiomic testing. Same PEPM. Fewer surprise claims. Healthier, more productive employees. Ask your broker.
                 </p>
                 <div class="hero-buttons">
-                    <a href="mailto:support@durand.life" class="btn btn-primary">Ask Your Broker About EHAP</a>
+                    <a href="mailto:support@durand.life" class="btn btn-primary">Ask Your Broker About E<span style="color:#fff; font-weight:800;">H</span>AP</a>
                     <a href="#" class="btn btn-outline" onclick="showPanel('longevity')">Get Tested Personally &mdash; $499</a>
                 </div>
                 <div class="hero-stats">
@@ -566,42 +534,8 @@
                     Advanced epigenetic testing reveals what traditional labs can&rsquo;t &mdash; your risk for heart disease, cognitive decline, cancer, and more, up to 10 years before symptoms appear. A painless home test, a personal Health Agent, and a one-on-one clinical review. All for $499.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary" id="hero-buy-btn">Get Started</a>
+                    <a href="#" class="btn btn-primary" id="hero-buy-btn">Buy Now &mdash; $499</a>
                     <a href="#" class="btn btn-outline" onclick="document.querySelector('#panel-longevity .comparison-table').scrollIntoView({behavior:'smooth'});">See How We Compare</a>
-                </div>
-                <div class="hero-stats">
-                    <div>
-                        <div class="hero-stat-value">$499</div>
-                        <div class="hero-stat-label">USD or CDN &bull; HSA/FSA May Apply</div>
-                    </div>
-                    <div>
-                        <div class="hero-stat-value">40+</div>
-                        <div class="hero-stat-label">Organ Health Scores</div>
-                    </div>
-                    <div>
-                        <div class="hero-stat-value">365</div>
-                        <div class="hero-stat-label">Days of Health Agent Support</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- HERO: Consumer / Get Tested — TEMP COPY (hidden, edit freely) -->
-            <div class="hero-variant" id="hero-longevity-temp" style="display:none;">
-                <div class="hero-badge">
-                    <span class="dot"></span>
-                    Available Across the US &amp; Canada
-                </div>
-                <h1>
-                    Your Body Knows<br>
-                    <span class="gradient-text">What&rsquo;s Coming.</span><br>
-                    Now You Can Too.
-                </h1>
-                <p>
-                    Advanced epigenetic testing reveals what traditional labs can&rsquo;t &mdash; your risk for heart disease, cognitive decline, cancer, and more, up to 10 years before symptoms appear. A painless home test, a personal Health Agent, and a one-on-one clinical review. All for $499.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary" id="hero-buy-btn-temp">Buy Now &mdash; $499</a>
-                    <a href="#" class="btn btn-outline" onclick="document.querySelector('#panel-longevity-temp .comparison-table').scrollIntoView({behavior:'smooth'});">See How We Compare</a>
                 </div>
                 <div class="hero-stats">
                     <div>
@@ -633,7 +567,7 @@
                     Built by physicians and scientists. Led by executives who&rsquo;ve scaled globally. 4,000+ patients assessed. A platform that&rsquo;s built, not vaporware &mdash; and a mission to make predictive health accessible to everyone.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary" onclick="openContactModal(); return false;">Get in Touch</a>
+                    <a href="mailto:support@durand.life" class="btn btn-primary">Get in Touch</a>
                     <a href="#" class="btn btn-outline" onclick="showPanel('brokers')">See Our Solutions</a>
                 </div>
                 <div class="hero-stats">
@@ -718,7 +652,7 @@
         <div class="trust-bar-items">
             <div class="trust-bar-item"><div class="trust-bar-icon">&#128274;</div> Secure AI-Powered Health Intelligence</div>
             <div class="trust-bar-item"><div class="trust-bar-icon" style="background:rgba(68,184,120,0.08);">&#128300;</div> Epigenetic Science</div>
-            <div class="trust-bar-item"><div class="trust-bar-icon">&#127760;</div> Multilingual Health Agent</div>
+            <div class="trust-bar-item"><div class="trust-bar-icon">&#127760;</div> Multilingual Health Agent &mdash; English, French, Spanish, Hindi &amp; More</div>
             <div class="trust-bar-item"><div class="trust-bar-icon" style="background:rgba(68,184,120,0.08);">&#129516;</div> Navigation to Outcome-Focused Care Providers</div>
         </div>
     </div>
@@ -1014,6 +948,17 @@
                 </div>
                 <p class="category-footer" style="margin-top: 24px;"><strong>The E<span style="color:#8CC63F;">H</span>AP by Durand&reg; empowers employers to help employees stay healthy and productive</strong> &mdash; shifting health spending from reactive repair to proactive prevention. It&rsquo;s the same budget line, but now it&rsquo;s working to avoid the crash instead of paying to fix the wreckage.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- DIFFERENTIATION BANNER -->
+    <section style="background: var(--gradient-hero); padding: 80px 24px; text-align: center; position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(43,165,165,0.12) 0%, transparent 70%);"></div>
+        <div style="max-width: 800px; margin: 0 auto; position: relative; z-index: 2;">
+            <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--lime); margin-bottom: 20px;">The Durand&reg; Difference</div>
+            <h2 style="font-family: var(--font-serif); font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: white; line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 24px;">Every other system resets to zero.<br><span style="background: linear-gradient(135deg, #44B878, #8CC63F, #B8D432); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Durand&reg; never forgets.</span></h2>
+            <p style="font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.8); max-width: 680px; margin: 0 auto 28px;">Every clinic visit, every EAP session, every annual checkup ends the same way. The data disappears, the relationship ends, and the next provider starts from scratch. Durand&reg; is the only platform where health intelligence is continuous and compounding. The longer you are on the platform, the smarter it becomes. Your health story is never erased.</p>
+            <div style="font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--lime); letter-spacing: 0.5px; font-style: italic;">With you for Life&reg;</div>
         </div>
     </section>
 
@@ -1409,7 +1354,7 @@
             <p style="color: rgba(255,255,255,0.88); font-size: 18px; max-width: 640px; margin: 0 auto 16px;">The Durand E<span style="color:#fff; font-weight:700;">H</span>AP is available exclusively through benefits brokers and advisors. Ask your broker about replacing your EAP with an E<span style="color:#fff; font-weight:700;">H</span>AP &mdash; at the same PEPM cost.</p>
             <p style="color: rgba(255,255,255,0.7); font-size: 15px; max-width: 540px; margin: 0 auto 32px;">Don&rsquo;t have a broker? We can connect you with one of our certified benefits partners in your region.</p>
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="mailto:support@durand.life" class="btn btn-primary" style="font-size: 17px; padding: 16px 36px;">Ask Your Broker About EHAP</a>
+                <a href="mailto:support@durand.life" class="btn btn-primary" style="font-size: 17px; padding: 16px 36px;">Ask Your Broker About E<span style="color:#fff; font-weight:800;">H</span>AP</a>
                 <a href="mailto:support@durand.life?subject=Connect%20Me%20With%20a%20Broker" class="btn btn-outline" style="font-size: 15px; padding: 14px 28px;">Connect Me With a Broker</a>
             </div>
         </div>
@@ -1459,7 +1404,7 @@
                             <li>Continuous wellness management, not just a snapshot</li>
                         </ul>
                         <div style="text-align: center; margin-top: 8px;">
-                            <a href="#" class="btn btn-gradient" style="width: 100%; justify-content: center; font-size: 17px; padding: 16px 24px;" id="buy-now-btn">Get Started</a>
+                            <a href="#" class="btn btn-gradient" style="width: 100%; justify-content: center; font-size: 17px; padding: 16px 24px;" id="buy-now-btn">Buy Now &mdash; $499</a>
                             <p style="color: var(--gray-400); font-size: 12px; margin-top: 12px;">Secure checkout powered by Stripe</p>
                         </div>
                         <div style="background: rgba(43,165,165,0.06); border: 1px solid rgba(43,165,165,0.12); border-radius: 10px; padding: 14px 18px; margin-top: 16px;">
@@ -1550,162 +1495,7 @@
             </svg>
             <h2 class="section-title" style="color: white;">Your Health Shouldn&rsquo;t Require a Lab Visit</h2>
             <p style="color: rgba(255,255,255,0.88); font-size: 18px; max-width: 600px; margin: 0 auto 32px;">Advanced epigenetic testing. Year-round wellness management. A personal Health Agent that knows your biology and speaks your language. $499 USD or CDN. Available across the United States and Canada.</p>
-            <a href="#" class="btn btn-primary" style="font-size: 17px; padding: 16px 40px;" id="buy-now-btn-2">Get Started</a>
-        </div>
-    </section>
-
-    <!-- LEGAL & DISCLAIMERS -->
-    <section class="section" style="padding: 40px 0;">
-        <div class="section-inner">
-            <div style="max-width: 800px; margin: 0 auto; font-size: 12px; color: var(--gray-400); line-height: 1.8;">
-                <p style="margin-bottom: 12px;"><strong style="color: var(--gray-500);">Important Disclosures</strong></p>
-                <p style="margin-bottom: 8px;">Durand Future Health is not a medical provider and does not diagnose, treat, or cure any disease. Our health assessment is designed to provide predictive health intelligence and should be used in consultation with your physician or healthcare provider. Results are not a substitute for professional medical advice, diagnosis, or treatment.</p>
-                <p style="margin-bottom: 8px;">HSA/FSA eligibility varies by plan and is not guaranteed. We recommend consulting your plan administrator, HR department, or a qualified tax advisor to confirm that this assessment qualifies under your specific plan. Documentation is available upon request.</p>
-                <p style="margin-bottom: 8px;">Care navigation capabilities are actively expanding throughout 2026 at no additional cost. Features and availability may vary by geography.</p>
-                <p style="margin-bottom: 8px;">Durand Future Health does not provide tax, legal, or financial advice. We are not responsible for changes in regulations that may affect HSA or FSA eligibility.</p>
-                <p style="margin-bottom: 12px;">Durand Future Health, Inc. (USA) &bull; Durand Future Health Ltd. (Canada)</p>
-                <p style="margin-bottom: 8px;"><strong style="color: var(--gray-500);">EAP Utilization Sources</strong></p>
-                <p style="margin-bottom: 0;">Traditional Employee Assistance Program utilization is consistently reported at 2&ndash;5% across the industry. Sources include: the Society for Human Resource Management (SHRM); the Employee Assistance Professionals Association (EAPA); the National Business Group on Health; the U.S. Office of Personnel Management (OPM); Spring Health marketplace data (2025); and Uprise Health (2025). Usage-based EAP pricing models have been identified as a structural incentive contributing to low utilization. UK data from EAPA UK shows comparable patterns at approximately 5% access rates.</p>
-            </div>
-        </div>
-    </section>
-</div>
-
-
-<!-- ===== PANEL: GET TESTED — TEMP COPY (hidden, edit freely) ===== -->
-<div class="page-panel" id="panel-longevity-temp">
-
-    <section class="section" style="position: relative; overflow: hidden;">
-        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(27,45,107,0.03) 0%, transparent 60%);"></div>
-        <div class="section-inner" style="position: relative;">
-            <div class="section-header" style="margin-bottom: 40px;">
-                <div class="section-label">For Individuals</div>
-                <p style="font-size: 15px; color: var(--gray-500); margin-top: 8px; margin-bottom: 0;">Your body knows what&rsquo;s coming. Advanced epigenetic health intelligence, starting at your kitchen table.</p>
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 48px;">
-                <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.12);">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=700&h=500&fit=crop&crop=face&facepad=2.5" alt="Beautiful woman radiating health and confidence" style="width: 100%; height: 400px; object-fit: cover; object-position: center; display: block;">
-                </div>
-                <div style="text-align: left;">
-                    <h2 class="section-title" style="margin-bottom: 20px; font-size: clamp(26px, 3.5vw, 40px);">See and change the switches on key genes important for health</h2>
-                    <p style="color: var(--gray-500); font-size: 17px; line-height: 1.8; margin-bottom: 16px;">Understand your health across thousands of data points in real time.</p>
-                    <p style="color: var(--gray-500); font-size: 17px; line-height: 1.8;">Secure chat with AI to learn more.</p>
-                </div>
-            </div>
-
-            <div class="two-col fade-in">
-                <div>
-                    <div class="pricing-card featured" style="text-align: left;">
-                        <div style="text-align: center;">
-                            <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--teal); margin-bottom: 8px;">Complete Health Intelligence</div>
-                            <div class="pricing-price">$499<span> USD / CDN</span></div>
-                            <p style="color: var(--gray-500); font-size: 14px; margin-top: 8px;">One-time purchase &bull; No subscription required</p>
-                        </div>
-                        <ul class="pricing-features">
-                            <li>Complete epigenetic health assessment (40+ organ health scores)</li>
-                            <li>Clinically validated cognitive assessment</li>
-                            <li>Sleep analysis and screening</li>
-                            <li>Personal Health Agent &mdash; year-round, in any language</li>
-                            <li>Custom Durand Score with 5-10 year predictive risk insights</li>
-                            <li>30+ wearable integrations (Apple Watch, Oura, Fitbit, etc.)</li>
-                            <li>AI-generated video health reports</li>
-                            <li>One-on-one report review with our clinical team</li>
-                            <li>Painless home collection &mdash; no lab visits, no needles</li>
-                            <li>Continuous wellness management, not just a snapshot</li>
-                        </ul>
-                        <div style="text-align: center; margin-top: 8px;">
-                            <a href="#" class="btn btn-gradient" style="width: 100%; justify-content: center; font-size: 17px; padding: 16px 24px;" id="buy-now-btn-temp">Buy Now &mdash; $499</a>
-                            <p style="color: var(--gray-400); font-size: 12px; margin-top: 12px;">Secure checkout powered by Stripe</p>
-                        </div>
-                        <div style="background: rgba(43,165,165,0.06); border: 1px solid rgba(43,165,165,0.12); border-radius: 10px; padding: 14px 18px; margin-top: 16px;">
-                            <p style="font-size: 13px; color: var(--gray-600); line-height: 1.6; margin: 0;"><strong style="color: var(--teal);">&#128312; Care Navigation</strong> &mdash; We are actively building a vetted network of outcome-focused care providers across the US and Canada. Care navigation capabilities will expand throughout 2026 at no additional cost.</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h2 style="font-size: 32px; font-weight: 800; letter-spacing: -1px; margin-bottom: 20px;">Not Just Testing.<br>A <span style="background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Year-Round Health Partner.</span></h2>
-                    <p style="color: var(--gray-500); font-size: 16px; line-height: 1.8; margin-bottom: 24px;">Other consumer testing brands send you to a lab, draw 20 vials of blood, and hand you a spreadsheet of numbers. Then they disappear until next year. Durand gives you advanced epigenetic testing PLUS a personal Health Agent that works with you every day.</p>
-                    <p style="color: var(--gray-500); font-size: 16px; line-height: 1.8; margin-bottom: 24px;">Your Health Agent knows your biology, tracks your wearables, explains what fatty liver and inflammation actually mean &mdash; in your language &mdash; and guides you through a personalized wellness plan all year long.</p>
-                    <p style="color: var(--gray-500); font-size: 16px; line-height: 1.8; margin-bottom: 24px;"><strong>One-on-one report review included.</strong> When your results are ready, our clinical team walks you through every finding personally. No automated emails. A real conversation about your health.</p>
-                    <p style="color: var(--gray-500); font-size: 16px; line-height: 1.8;">This is the future of personal health. And it starts at your kitchen table.</p>
-
-                    <div style="margin-top: 32px; padding: 20px; background: var(--gray-100); border-radius: 12px;">
-                        <p style="font-size: 13px; color: var(--gray-500); line-height: 1.7; margin: 0;"><strong>HSA / FSA:</strong> Durand&rsquo;s health assessment may be eligible for reimbursement through your Health Savings Account (HSA) or Flexible Spending Account (FSA). Eligibility varies by plan. We recommend checking with your plan administrator or benefits provider to confirm coverage. Documentation available upon request.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-light">
-        <div class="section-inner">
-            <div class="section-header">
-                <div class="section-label">How It Works</div>
-                <h2 class="section-title">From Purchase to Health Intelligence</h2>
-            </div>
-            <div class="steps fade-in">
-                <div class="step">
-                    <h4>Purchase Online</h4>
-                    <p>Buy your Durand health assessment for $499 USD or CDN. Secure checkout. Your home collection kit ships within days.</p>
-                </div>
-                <div class="step">
-                    <h4>Painless Home Collection</h4>
-                    <p>A peel-and-stick device arrives at your door &mdash; no needles, no vials, no nurse visits. Collect in minutes. Drop it in the mailbox.</p>
-                </div>
-                <div class="step">
-                    <h4>Our Scientists Analyze</h4>
-                    <p>Our lab scientists and AI platform analyze your epigenetic markers, cognitive patterns, and wearable data to build your complete health intelligence profile.</p>
-                </div>
-                <div class="step">
-                    <h4>Personal Report Review</h4>
-                    <p>Our clinical team walks you through your results one-on-one. Then your personal Health Agent takes over &mdash; year-round wellness management in your language.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="section-inner">
-            <div class="section-header">
-                <div class="section-label">Why Durand</div>
-                <h2 class="section-title">We Do What Others Can&rsquo;t</h2>
-                <p class="section-subtitle">Function Health charges $499 for lab-based blood tests in many cases largely covered by existing insurance. We go far beyond blood.</p>
-            </div>
-            <div style="overflow-x: auto;">
-                <table class="comparison-table fade-in">
-                    <thead>
-                        <tr>
-                            <th>Capability</th>
-                            <th>Function / Nia / SuperPower</th>
-                            <th class="highlight">Durand Future Health</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Testing Type</td><td>Blood panels (in many cases largely covered by insurance)</td><td class="highlight-col">Epigenetic testing &mdash; 40+ organ scores</td></tr>
-                        <tr><td>Collection</td><td>In-person lab visits, 20 vials</td><td class="highlight-col">At-home, painless, mail-in</td></tr>
-                        <tr><td>What It Shows</td><td>Where you are today (snapshot)</td><td class="highlight-col">Where you&rsquo;re headed &mdash; 5-10 year prediction</td></tr>
-                        <tr><td>Cognitive Testing</td><td><span class="cross">&#10007;</span> None</td><td class="highlight-col"><span class="check">&#10003;</span> Clinically validated</td></tr>
-                        <tr><td>Wearable Integration</td><td><span class="cross">&#10007;</span> Limited/None</td><td class="highlight-col"><span class="check">&#10003;</span> 30+ devices</td></tr>
-                        <tr><td>AI Health Agents</td><td><span class="cross">&#10007;</span> None</td><td class="highlight-col"><span class="check">&#10003;</span> Physician-supervised, any language</td></tr>
-                        <tr><td>Data Privacy</td><td>May sell data; samples sent overseas</td><td class="highlight-col">NEVER sell. Local data centres. North America only.</td></tr>
-                        <tr><td>Continuous Monitoring</td><td><span class="cross">&#10007;</span> Snapshot only</td><td class="highlight-col"><span class="check">&#10003;</span> Ongoing wearable + retest loop</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-gradient">
-        <div class="section-inner" style="text-align: center;">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom: 24px;">
-                <circle cx="40" cy="40" r="35" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
-                <circle cx="40" cy="40" r="25" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
-                <path d="M30 50V35a10 10 0 0120 0v15" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                <path d="M40 40v8M36 44h8" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            <h2 class="section-title" style="color: white;">Your Health Shouldn&rsquo;t Require a Lab Visit</h2>
-            <p style="color: rgba(255,255,255,0.88); font-size: 18px; max-width: 600px; margin: 0 auto 32px;">Advanced epigenetic testing. Year-round wellness management. A personal Health Agent that knows your biology and speaks your language. $499 USD or CDN. Available across the United States and Canada.</p>
-            <a href="#" class="btn btn-primary" style="font-size: 17px; padding: 16px 40px;" id="buy-now-btn-2-temp">Buy Now &mdash; $499</a>
+            <a href="#" class="btn btn-primary" style="font-size: 17px; padding: 16px 40px;" id="buy-now-btn-2">Buy Now &mdash; $499</a>
         </div>
     </section>
 
@@ -1791,54 +1581,13 @@
 <section class="cta-section" id="contact">
     <h2>Same Spend. Smarter Spend.<br>Less Spend Over Time.</h2>
     <p>Give your clients something they&rsquo;ve never had at renewal: a reason to believe next year will cost less. Not because benefits were cut &mdash; because disease was prevented.</p>
+    <p style="font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 600; color: var(--lime); margin-top: 16px; font-style: italic; letter-spacing: 0.5px;">With you for Life&reg;</p>
     <div class="cta-buttons">
-        <a href="#" class="btn btn-primary" style="font-size: 17px; padding: 16px 40px;" onclick="openContactModal(); return false;">Contact Us</a>
-        <a href="#" class="btn btn-outline" style="font-size: 17px; padding: 16px 40px;" onclick="openContactModal(); return false;">Learn More</a>
+        <a href="mailto:support@durand.life" class="btn btn-primary" style="font-size: 17px; padding: 16px 40px;">Contact Us</a>
+        <a href="#" class="btn btn-outline" style="font-size: 17px; padding: 16px 40px;" onclick="showPanel('brokers'); window.scrollTo({top: document.getElementById('sectionTabs').offsetTop, behavior: 'smooth'});">Learn More</a>
     </div>
     <p style="margin-top: 24px; font-size: 13px; opacity: 0.5;">Available in Canada and the United States</p>
 </section>
-
-
-<!-- CONTACT FORM MODAL -->
-<div id="contact-modal-overlay" class="modal-overlay" onclick="if(event.target===this)closeContactModal()">
-    <div class="modal-card">
-        <button class="modal-close" onclick="closeContactModal()" aria-label="Close">&times;</button>
-        <h2>Congratulations on Choosing Your Health!</h2>
-        <p class="form-subtitle">Fill out the form below and our team will be in touch shortly.</p>
-        <form id="contact-form-el">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="first-name">First Name <span class="required">*</span></label>
-                    <input type="text" id="first-name" name="First Name" required placeholder="Jane">
-                </div>
-                <div class="form-group">
-                    <label for="last-name">Last Name <span class="required">*</span></label>
-                    <input type="text" id="last-name" name="Last Name" required placeholder="Smith">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="cf-email">Email Address <span class="required">*</span></label>
-                <input type="email" id="cf-email" name="Email" required placeholder="jane@example.com">
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="Phone" placeholder="+1 (416) 555-0100">
-            </div>
-            <div class="form-group">
-                <label for="comments">Comments</label>
-                <textarea id="comments" name="Comments" placeholder="Tell us how we can help..."></textarea>
-            </div>
-            <div class="form-submit">
-                <button type="submit" id="form-submit-btn">Send Message</button>
-            </div>
-        </form>
-        <div id="form-success" style="display:none; text-align:center; padding: 40px 24px; background: rgba(68,184,120,0.08); border-radius: var(--radius); border: 1px solid rgba(68,184,120,0.25);">
-            <div style="width:56px; height:56px; background:linear-gradient(135deg,#44B878,#8CC63F); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:24px; color:white;">&#10003;</div>
-            <h3 style="font-family:var(--font-serif); font-size:24px; color:var(--dark); margin-bottom:8px;">Message Received!</h3>
-            <p style="color:var(--gray-500); font-size:15px;">Thank you for reaching out. We&rsquo;ll be in touch soon.</p>
-        </div>
-    </div>
-</div>
 
 
 <!-- FOOTER -->
@@ -1849,6 +1598,7 @@
                 <img src="logo-horizontal-reverse.png?v=2" alt="Durand Future Health" style="height: 48px; width: auto;">
             </a>
             <p>Predictive health intelligence built by physicians and scientists. Home-based epigenetic testing. AI-powered insights. Care navigation. Available in Canada and the USA.</p>
+            <p style="font-family: 'Fraunces', Georgia, serif; font-size: 15px; font-weight: 600; color: var(--lime); margin-top: 12px; font-style: italic; letter-spacing: 0.3px;">With you for Life&reg;</p>
         </div>
         <div>
             <h4>Solutions</h4>
@@ -1857,9 +1607,16 @@
             <a href="#" onclick="showPanel('longevity')">Get Tested &mdash; $499</a>
         </div>
         <div>
+            <h4>Platform</h4>
+            <a href="#">Epigenetic Testing</a>
+            <a href="#">AI Health Coaching</a>
+            <a href="#">Cognitive Assessment</a>
+            <a href="#">Care Navigation</a>
+        </div>
+        <div>
             <h4>Company</h4>
             <a href="#" onclick="showPanel('about')">About Us</a>
-            <a href="#" onclick="openContactModal(); return false;">Contact</a>
+            <a href="mailto:support@durand.life">Contact</a>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
         </div>
@@ -1879,7 +1636,7 @@ function showPanel(panelId) {
     document.querySelectorAll('.section-tab').forEach(t => t.classList.toggle('active', t.dataset.panel === panelId));
     document.querySelectorAll('.nav-links a[data-panel]').forEach(a => a.classList.toggle('active', a.dataset.panel === panelId));
     document.getElementById('sectionTabs').style.display = panelId === 'about' ? 'none' : '';
-    document.getElementById('contact').style.display = (panelId === 'longevity' || panelId === 'longevity-temp') ? 'none' : '';
+    document.getElementById('contact').style.display = panelId === 'longevity' ? 'none' : '';
     // Swap hero content based on active panel
     document.querySelectorAll('.hero-variant').forEach(v => v.style.display = 'none');
     const heroVariant = document.getElementById('hero-' + panelId);
@@ -1943,65 +1700,6 @@ createParticles();
         const slot = Math.floor(Math.random() * slots.length);
         rotateSlot(slot);
     }, 2800);
-})();
-
-// Contact modal
-function openContactModal() {
-    var el = document.getElementById('contact-form-el');
-    var success = document.getElementById('form-success');
-    var btn = document.getElementById('form-submit-btn');
-    if (el) el.style.display = '';
-    if (success) success.style.display = 'none';
-    if (btn) { btn.textContent = 'Send Message'; btn.disabled = false; }
-    document.getElementById('contact-modal-overlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-}
-function closeContactModal() {
-    document.getElementById('contact-modal-overlay').classList.remove('open');
-    document.body.style.overflow = '';
-}
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeContactModal(); });
-document.addEventListener('DOMContentLoaded', function() {
-    ['hero-buy-btn','buy-now-btn','buy-now-btn-2'].forEach(function(id) {
-        var el = document.getElementById(id);
-        if (el) el.addEventListener('click', function(e) { e.preventDefault(); openContactModal(); });
-    });
-});
-
-// Load panel from URL parameter e.g. durand.life/?panel=longevity-temp
-(function() {
-    var param = new URLSearchParams(window.location.search).get('panel');
-    if (param) showPanel(param);
-})();
-
-// Contact form submission
-(function() {
-    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyBjJ4N1yKUbzsQ7eBmu7qAX5olm_FdQ9aiPJjidieMoETOWlO6e9IN7Nrf-FeHmRvD/exec';
-    var form = document.getElementById('contact-form-el');
-    if (!form) return;
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var btn = document.getElementById('form-submit-btn');
-        btn.textContent = 'Sending\u2026';
-        btn.disabled = true;
-        var data = new URLSearchParams({
-            'First Name': document.getElementById('first-name').value,
-            'Last Name':  document.getElementById('last-name').value,
-            'Email':      document.getElementById('cf-email').value,
-            'Phone':      document.getElementById('phone').value,
-            'Comments':   document.getElementById('comments').value
-        });
-        fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: data })
-            .then(function() {
-                form.style.display = 'none';
-                document.getElementById('form-success').style.display = 'block';
-            })
-            .catch(function() {
-                btn.textContent = 'Send Message';
-                btn.disabled = false;
-                alert('Something went wrong \u2014 please try again.');
-            });
-    });
 })();
 </script>
 
