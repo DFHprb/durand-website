@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Durand Future Health</title>
+    <meta name="description" content="Durand Future Health Privacy Policy — HIPAA, PIPEDA, PHIPA, and Quebec Law 25 compliant. How we collect, use, and protect your health information.">
+    <link rel="canonical" href="https://www.durand.life/privacy-policy.html">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --blue-deep: #1B2D6B;
+            --blue: #2E5EA8;
+            --teal: #2BA5A5;
+            --green: #44B878;
+            --lime: #8CC63F;
+            --dark: #1a1f36;
+            --warm: #F8F6F3;
+            --font-serif: 'Fraunces', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--dark);
+            background: #fff;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* NAV */
+        .nav {
+            background: var(--dark);
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .nav-logo img { height: 40px; width: auto; display: block; }
+        .nav-back {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            transition: color 0.2s;
+        }
+        .nav-back:hover { color: var(--teal); }
+
+        /* HERO */
+        .policy-hero {
+            background: linear-gradient(135deg, #0a1628 0%, #1B2D6B 50%, #1a4040 100%);
+            padding: 72px 32px 56px;
+            text-align: center;
+            color: white;
+        }
+        .policy-hero .site-name {
+            font-size: 13px;
+            color: var(--teal);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .policy-hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .effective-date {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 32px;
+        }
+        .compliance-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .badge {
+            background: rgba(43,165,165,0.15);
+            border: 1px solid rgba(43,165,165,0.4);
+            color: var(--teal);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        /* CONTENT */
+        .policy-body {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 64px 32px 80px;
+        }
+
+        .policy-section { margin-bottom: 56px; }
+
+        .section-number {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 8px;
+        }
+        .policy-section h2 {
+            font-family: var(--font-serif);
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--blue-deep);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .policy-section h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 28px 0 10px;
+        }
+        .policy-section p {
+            color: #3a3f55;
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .policy-section ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        .policy-section ul li {
+            color: #3a3f55;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        /* TABLES */
+        .policy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0 28px;
+            font-size: 14px;
+        }
+        .policy-table th {
+            background: var(--blue-deep);
+            color: white;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .policy-table th:first-child { border-radius: 4px 0 0 0; }
+        .policy-table th:last-child { border-radius: 0 4px 0 0; }
+        .policy-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e8eaf0;
+            color: #3a3f55;
+            vertical-align: top;
+            line-height: 1.65;
+        }
+        .policy-table tr:last-child td { border-bottom: none; }
+        .policy-table tr:nth-child(even) td { background: #f7f8fc; }
+        .policy-table td:first-child { font-weight: 600; color: var(--dark); }
+
+        /* CALLOUTS */
+        .callout-employee {
+            background: linear-gradient(135deg, rgba(27,45,107,0.05) 0%, rgba(43,165,165,0.08) 100%);
+            border-left: 4px solid var(--teal);
+            border-radius: 0 8px 8px 0;
+            padding: 28px 28px 20px;
+            margin: 24px 0 32px;
+        }
+        .callout-employee h3 {
+            color: var(--blue-deep);
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 14px;
+        }
+        .callout-warning {
+            background: #fffbf0;
+            border: 1px solid #e8d87a;
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin: 20px 0 28px;
+        }
+        .callout-warning .warning-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #a07c00;
+            margin-bottom: 10px;
+        }
+        .callout-highlight {
+            background: rgba(43,165,165,0.06);
+            border: 1px solid rgba(43,165,165,0.25);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 16px 0 20px;
+        }
+        .callout-highlight h4 {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--teal);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* RIGHTS LIST */
+        .rights-list { list-style: none; padding: 0; }
+        .rights-list li {
+            padding: 14px 0;
+            border-bottom: 1px solid #e8eaf0;
+            font-size: 15px;
+            color: #3a3f55;
+            line-height: 1.7;
+        }
+        .rights-list li:last-child { border-bottom: none; }
+        .rights-list li strong {
+            color: var(--dark);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* CONTACT BOX */
+        .contact-box {
+            background: linear-gradient(135deg, var(--blue-deep), #1a5050);
+            border-radius: 12px;
+            padding: 40px 36px;
+            color: white;
+            text-align: center;
+            margin-top: 24px;
+        }
+        .contact-box h3 {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .contact-box p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 8px;
+        }
+        .contact-box a {
+            color: var(--lime);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .contact-box a:hover { text-decoration: underline; }
+        .contact-box .website {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 12px;
+            margin-bottom: 0;
+        }
+        .contact-box .website a { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 400; }
+
+        .policy-tagline {
+            text-align: center;
+            font-family: var(--font-serif);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--lime);
+            font-style: italic;
+            letter-spacing: 0.3px;
+            margin-top: 32px;
+        }
+
+        /* FOOTER */
+        .footer { background: var(--dark); color: white; padding: 64px 24px 32px; }
+        .footer-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+        .footer-brand p { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 16px; line-height: 1.7; }
+        .footer h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; color: var(--teal); font-family: var(--font-sans); }
+        .footer a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 14px; display: block; margin-bottom: 10px; transition: color 0.2s; }
+        .footer a:hover { color: white; }
+        .footer-bottom { max-width: 1280px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15); display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(255,255,255,0.6); }
+
+        @media (max-width: 768px) {
+            .nav { padding: 14px 20px; }
+            .policy-hero { padding: 48px 20px 40px; }
+            .policy-body { padding: 40px 20px 60px; }
+            .policy-section h2 { font-size: 22px; }
+            .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+        }
+        @media (max-width: 480px) {
+            .footer-inner { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+            .compliance-badges { gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="index.html" class="nav-logo">
+        <img src="logo-horizontal-reverse.png?v=2" alt="Durand Future Health">
+    </a>
+    <a href="index.html" class="nav-back">← Back to Durand.life</a>
+</nav>
+
+<div class="policy-hero">
+    <div class="site-name">Durand.life</div>
+    <h1>Privacy Policy</h1>
+    <div class="effective-date">Effective Date: March 24, 2026 &nbsp;&bull;&nbsp; Version 2.0</div>
+    <div class="compliance-badges">
+        <span class="badge">HIPAA Compliant</span>
+        <span class="badge">PIPEDA Compliant</span>
+        <span class="badge">PHIPA Compliant</span>
+        <span class="badge">Quebec Law 25 Compliant</span>
+    </div>
+</div>
+
+<main class="policy-body">
+
+    <div class="policy-section">
+        <div class="section-number">Section 1</div>
+        <h2>Who We Are and Our Privacy Principles</h2>
+        <p>Durand Corporate HealthCare Inc. ("Durand," "we," "us," or "our") operates Durand.life, a longitudinal workforce health intelligence platform. We detect health issues early, support continuous employee well-being, and enable employers, insurers, and benefits providers to make evidence-based decisions about the programs they offer.</p>
+        <p>Unlike many digital health platforms that operate outside established health privacy frameworks, Durand is designed from the ground up as a HIPAA-compliant entity and an Ontario PHIPA-regulated health information custodian. Many consumer wellness and preventive health platforms are not required to meet these standards. We are. That distinction is the foundation of the trust we build with every Member.</p>
+        <p>Four principles guide every decision we make about data:</p>
+        <table class="policy-table">
+            <thead><tr><th>Principle</th><th>What It Means for You</th></tr></thead>
+            <tbody>
+                <tr><td>Longitudinal Stewardship</td><td>Your health data is not a snapshot. It belongs to a continuous record that compounds over time. We protect that record as a long-term custodian, not a transactional processor.</td></tr>
+                <tr><td>Compliance-First Architecture</td><td>We build to the highest applicable standard across every jurisdiction we operate in, rather than to the minimum required.</td></tr>
+                <tr><td>Walled Garden Data Governance</td><td>Your data does not leave our secure environment. Partners work inside our infrastructure under our governance. Data is never exported, sold, or transferred as a standalone asset.</td></tr>
+                <tr><td>Absolute Employer Firewall</td><td>No individual health data, in any form, will ever reach your employer, unless you expressly choose to share it for your own benefit.</td></tr>
+            </tbody>
+        </table>
+
+        <div class="callout-employee">
+            <h3>A Message to Every Employee Member</h3>
+            <p>Before you read anything else, please know this.</p>
+            <p>Your employer paid for your access to this platform. That is where their involvement ends.</p>
+            <p>Your employer will never see your health data. Not your scores. Not your test results. Not your risk profile. Not your care history. Not what you searched, asked, or shared on this platform. None of it. Ever.</p>
+            <p>Your employer's HR team, benefits administrators, and any third-party agents or consultants acting on their behalf have zero access to any individual health information on this platform. The only information your employer receives is anonymous, aggregated data about the overall health of their workforce as a group — the kind of summary that helps them choose better benefit programs for everyone, with no ability to identify any individual.</p>
+            <p>This protection does not change if you are promoted, change roles, take a leave of absence, or have a difficult relationship with your employer.</p>
+            <p>And if you leave your employer — whether you resign, retire, or are let go — your health record belongs to you, not them. You have the right to take your Durand® health record with you and to continue your membership independently or through a future employer. Your longitudinal health history does not get handed back to your employer or deleted when your employment ends. It is yours.</p>
+            <p style="margin-bottom:0;">You may also choose to participate in rewards, incentive, or recognition programs offered by your employer, insurer, or a third-party partner. If you opt in, Durand acts as your independent advocate and neutral adjudicator — verifying your achievements and authorizing rewards on your behalf, without ever revealing the underlying health data that earned them. Your employer or insurer will know you qualified. They will not know why, or how, or what your results were.</p>
+        </div>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 2</div>
+        <h2>Key Definitions</h2>
+        <table class="policy-table">
+            <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+            <tbody>
+                <tr><td>Platform</td><td>The Durand.life digital health intelligence ecosystem, including all connected applications, portals, wearable integrations, AI health agents, and testing panel services.</td></tr>
+                <tr><td>Personal Health Information (PHI)</td><td>Any information about an identifiable individual relating to their physical or mental health, health history, or health services received or anticipated.</td></tr>
+                <tr><td>Personal Information (PI)</td><td>Any information about an identifiable individual beyond their health record, including contact, demographic, and employment data.</td></tr>
+                <tr><td>Advanced Biomarker Data</td><td>Data derived from multi-omic, proteomic, metabolomic, or other advanced analytical testing. This data is processed and interpreted within our platform and is subject to the same protections as PHI.</td></tr>
+                <tr><td>De-identified Data</td><td>Health or personal information from which all individual identifiers have been removed such that re-identification is not reasonably possible using accepted techniques, including differential privacy standards where applicable.</td></tr>
+                <tr><td>Aggregated Data</td><td>Statistical summaries or population-level insights derived from groups of individuals where no individual can be identified.</td></tr>
+                <tr><td>Approved Wellness Partner</td><td>A vetted third-party wellness, lifestyle, or health-adjacent service provider approved by Durand to offer opt-in programs to Members.</td></tr>
+                <tr><td>Employer / Plan Sponsor</td><td>The organization that has contracted with Durand to provide the Platform as a workplace health benefit.</td></tr>
+                <tr><td>Member / User</td><td>An individual registered to use the Platform, including employees covered by an employer-sponsored plan.</td></tr>
+                <tr><td>Research Partner</td><td>An accredited academic, clinical, or scientific institution collaborating with Durand under a formal Data Governance Agreement.</td></tr>
+                <tr><td>Authorized Third Party</td><td>A family member, caregiver, or health practitioner whom a Member has explicitly authorized to access their health record or data.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 3</div>
+        <h2>Information We Collect</h2>
+        <p>We collect only what is necessary to deliver your health program and to compound your health intelligence over time.</p>
+        <h3>3.1 Information You Provide Directly</h3>
+        <ul>
+            <li>Name, date of birth, contact information, and employment details</li>
+            <li>Health history, lifestyle inputs, and symptom information you enter into the Platform</li>
+            <li>Goals, preferences, and care navigation choices</li>
+            <li>Communications with our care team or support staff</li>
+            <li>Data you choose to upload directly to your profile, including records, lab results, or documents from sources outside the Platform ("Member-Uploaded Data"). You are responsible for the accuracy and appropriateness of any data you upload. Durand stores and processes Member-Uploaded Data in the same manner as other PHI and applies the same protections.</li>
+        </ul>
+        <h3>3.2 Information Collected Through Connected Devices and Services</h3>
+        <ul>
+            <li>Biometric and activity data from connected wearable devices, including but not limited to heart rate, heart rate variability, sleep metrics, activity levels, blood oxygen, and skin temperature</li>
+            <li>Data from laboratory and testing panel results processed through authorized clinical partners</li>
+            <li>Advanced biomarker data from multi-omic or proteomic analyses conducted through our testing panel</li>
+            <li>EHR (Electronic Health Record) data where you have provided informed consent</li>
+        </ul>
+        <h3>3.3 Information Collected Automatically</h3>
+        <ul>
+            <li>Platform usage and interaction logs for security and service improvement</li>
+            <li>Device and session information for authentication and platform integrity</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 4</div>
+        <h2>How We Use Your Information</h2>
+        <h3>4.1 Delivering Your Health Program</h3>
+        <ul>
+            <li>Creating and maintaining your longitudinal health profile</li>
+            <li>Generating personalized AI health insights, custom scores, and progress reports</li>
+            <li>Supporting care navigation and connecting you to relevant health services</li>
+            <li>Enabling secure communication between you and health professionals</li>
+        </ul>
+        <h3>4.2 Platform and Science Advancement</h3>
+        <ul>
+            <li>Analyzing platform performance to improve our services</li>
+            <li>Developing new features, health intelligence capabilities, and care protocols</li>
+            <li>Supporting the development and refinement of proprietary algorithms, scoring models, and clinical methodologies owned exclusively by Durand</li>
+        </ul>
+        <h3>4.3 Research, Care Model Development, and Intellectual Property</h3>
+        <p>Durand is committed to advancing health science globally. We may use strictly de-identified data, and may engage Research Partners to collaborate on research conducted within our secure platform environment, to develop new and improved care models, population health insights, and clinical protocols.</p>
+        <div class="callout-highlight">
+            <h4>Walled Garden Architecture</h4>
+            <p style="margin-bottom:0; font-size:14px; color:#3a3f55;">Research Partners work inside Durand's secure data environment. De-identified data is never exported, transmitted, or provided to any Research Partner as a standalone data set. All research activity occurs within our governed infrastructure. Partners contribute analysis, models, and insights. They do not receive data to take elsewhere.</p>
+        </div>
+        <p>All research activity is subject to:</p>
+        <ul>
+            <li>Formal Data Governance Agreements governing access, purpose, and conduct</li>
+            <li>Ethics review or Institutional Review Board oversight where required</li>
+            <li>De-identification standards consistent with differential privacy principles. For de-identified data used in testing activities conducted in the United States, de-identification is achieved using either the Expert Determination method or the Safe Harbor method as defined under the HIPAA Privacy Rule (45 CFR §164.514(b)). For testing activities conducted in Canada, de-identification standards comply with the applicable requirements of PIPEDA, PHIPA (Ontario), and Quebec Law 25, including the guidance issued by the Office of the Privacy Commissioner of Canada. Where activities span both jurisdictions, the more stringent applicable standard governs.</li>
+            <li>Prohibitions on re-identification, commercialization of data, or use outside the approved research scope</li>
+        </ul>
+        <p>Algorithms, scoring models, care protocols, and other intellectual property developed in whole or in part using platform data, whether developed solely by Durand or jointly with Research Partners, are and remain the exclusive property of Durand Corporate HealthCare Inc. Durand reserves the right to license, commercialize, or deploy such intellectual property globally without restriction, and without any obligation to share individual-level data in connection with such commercialization.</p>
+        <h3>4.4 No Use for Advertising</h3>
+        <p>Your health and wellness data will never be used to serve you third-party advertising, to build advertising profiles, or to infer health status for marketing purposes. This is an absolute prohibition.</p>
+        <h3>4.5 Approved Wellness Partner Recommendations</h3>
+        <p>Durand may identify wellness, lifestyle, or health-adjacent services that we believe may benefit specific Members based on their health profile. For example, a frailty prevention program, a menopause support service, or an evidence-based movement practice. These recommendations are made as part of our care navigation function, not as advertising.</p>
+        <p>Where a Member wishes to engage with an Approved Wellness Partner, we may, with the Member's express opt-in consent at the time of engagement, share relevant elements of that Member's de-identified or identified health profile with the partner for the purpose of improving the product or service design for that Member. Members may also consent to Durand receiving health outcomes data back from the Approved Wellness Partner, which will be incorporated into the Member's longitudinal record. Durand retains full rights to all data returned by any Approved Wellness Partner.</p>
+        <p>Participation in any Approved Wellness Partner program is always voluntary and requires affirmative, specific, and separate consent. Opting out does not affect any other aspect of your Platform access.</p>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 5</div>
+        <h2>Wellness Platform Status and Limitation of Duty</h2>
+        <div class="callout-warning">
+            <div class="warning-label">Important — Please Read Carefully</div>
+            <p style="margin-bottom:0; font-size:15px; color:#4a3a00;">Durand.life is a wellness and health optimization platform. It is not a medical provider, diagnostic service, or clinical decision support system. Nothing on this Platform constitutes medical advice, diagnosis, or treatment. Members expressly acknowledge this by using the Platform.</p>
+        </div>
+        <h3>5.1 Nature of Platform Insights</h3>
+        <p>The Platform generates health insights, scores, trends, and recommendations using artificial intelligence, data analytics, and population health models. These outputs are intended to support health awareness and wellness optimization. They are not clinical determinations and should not be relied upon as the basis for any medical decision without independent evaluation by a qualified health professional.</p>
+        <h3>5.2 No Obligation to Disclose Analytical Outputs</h3>
+        <p>Durand may, in the course of operating its platform and developing its health intelligence capabilities, generate or have access to analytical outputs, predictive models, risk scores, or algorithmic findings that relate to a Member's health trajectory, disease risk, or other health-related measures. Durand is under no obligation to share any such outputs, scores, or findings directly with any Member. We reserve the right, in our sole discretion, to determine what information is presented to Members, in what form, and with what context, having regard for the Member's readiness, the availability of appropriate clinical support, and the scientific maturity of the underlying model.</p>
+        <p>This reservation of discretion exists because certain insights may require clinical, genetic, or specialist counselling to be appropriately understood and acted upon. Sharing a raw algorithmic output without that context could cause harm. Durand's obligation is to your health outcomes, not to the unfiltered delivery of every data point we hold.</p>
+        <h3>5.3 Algorithm and Testing Panel Confidentiality</h3>
+        <p>The algorithms, scoring methodologies, testing panel composition, analytical frameworks, and proprietary models used by Durand are confidential commercial assets. We are under no obligation to disclose the mechanics, inputs, weighting, or outputs of any algorithm or scoring model to any Member, employer, insurer, regulator, or third party, except to the extent required by applicable law.</p>
+        <h3>5.4 Hold Harmless for Platform Insights</h3>
+        <p>By using the Platform, Members agree that Durand shall not be liable for any harm, loss, or adverse outcome arising from: (a) a Member's reliance on any Platform insight, score, or recommendation without independent clinical evaluation; (b) the non-disclosure by Durand of any analytical output or finding; (c) any delay between data collection and insight generation; or (d) any limitation in the predictive accuracy of any model or algorithm. Members are encouraged to engage with qualified health professionals for all clinical decisions.</p>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 6</div>
+        <h2>Employer, Benefits, and Insurer Reporting</h2>
+        <div class="callout-highlight">
+            <h4>Absolute Individual Protection</h4>
+            <p style="margin-bottom:0; font-size:14px; color:#3a3f55;">Durand will never disclose any individual Member's health data, personal health information, or identifiable records to their employer, benefits provider, or insurer under any circumstances. This commitment is absolute and unconditional.</p>
+        </div>
+        <p>Durand provides the following categories of aggregate reporting to employers, plan sponsors, benefits providers, and insurers, for the purpose of program oversight, return on investment analysis, and benefits design optimization:</p>
+        <table class="policy-table">
+            <thead><tr><th>Report Type</th><th>What It Contains</th></tr></thead>
+            <tbody>
+                <tr><td>Program Utilization Reports</td><td>Engagement rates, feature adoption, and participation levels. Aggregate only.</td></tr>
+                <tr><td>Population Health Trend Reports</td><td>Anonymized health risk trends and longitudinal wellness trajectory data across workforce groups.</td></tr>
+                <tr><td>Health Outcomes Summaries</td><td>Aggregate evidence of program impact on health scores, absenteeism trends, and care navigation utilization.</td></tr>
+                <tr><td>Benefits and Insurance Optimization Insights</td><td>Aggregated, anonymized data insights to help benefits and insurance partners identify opportunities to improve or tailor program offerings to the needs of the covered population.</td></tr>
+                <tr><td>ROI Analysis</td><td>Program-level financial analysis demonstrating the value of Durand services to the employer or plan sponsor.</td></tr>
+            </tbody>
+        </table>
+        <p>All employer and insurer reporting is produced at a group level. Aggregation thresholds are applied to prevent reverse identification. Where a group is too small to safely aggregate, that group's data is withheld from reporting.</p>
+        <h3>6.1 Advanced Biomarker and Emerging Data Categories</h3>
+        <p>Certain data generated through our testing panel and advanced analytical capabilities, including but not limited to proteomic and metabolomic analyses, may not yet be subject to specific regulatory frameworks governing how such data may be used by insurers or benefits providers. Durand applies the most protective standard available in each jurisdiction to all such data, regardless of whether a specific regulatory requirement exists. We do not permit any insurer or benefits provider to use advanced biomarker data for underwriting, coverage determination, or pricing purposes without explicit Member consent and compliance with all applicable law.</p>
+        <h3>6.2 Rewards, Incentives, and Durand as Neutral Adjudicator</h3>
+        <p>Employers, insurers, and benefits providers may offer rewards, incentives, points, premium adjustments, or other recognition programs tied to health improvement goals, behaviour change milestones, compliance with a health program, or measurable clinical outcomes such as improved test results or sustained wellness activity.</p>
+        <p>Participation in any such program is always voluntary and requires the Member's specific, affirmative, and separate opt-in consent. A Member may opt in or out of any rewards program at any time without affecting their access to the Platform or any other aspect of their health program.</p>
+        <div class="callout-highlight">
+            <h4>Durand as Neutral Adjudicator</h4>
+            <p style="margin-bottom:0; font-size:14px; color:#3a3f55;">Where a Member opts into a rewards or incentive program, Durand serves as an independent, neutral adjudicator between the Member and the program sponsor. Durand has access to the Member's full health record and is therefore uniquely positioned to verify whether a reward has been earned based on objective criteria such as a measurable improvement in a health score, completion of a health goal, a clinical result, or a documented behaviour change. Durand communicates only the outcome to the employer, insurer, or program sponsor: whether the reward criteria have been met and the reward authorized. The underlying health data, results, scores, or clinical information that led to that determination are never shared. The program sponsor knows the Member qualified. They do not know why, or what the underlying data showed.</p>
+        </div>
+        <p>All rewards adjudication activity is logged in the Member's record and is available to the Member at any time. Members may request a review of any adjudication decision through our Privacy Officer.</p>
+        <p>A Member may, at their sole discretion, choose to authorize Durand to share elements of their individual health record, historical scores, or data with their insurer or benefits provider for the purpose of seeking improved pricing, personalized benefits, or coverage adjustments. Any such sharing requires the Member's specific, affirmative, and documented consent at the time of the request. This feature may be introduced in a future version of the Platform and will be governed by a supplemental consent process when available.</p>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 7</div>
+        <h2>Member-Authorized Third Party Access</h2>
+        <p>A Member may choose to grant access to their health record or data to a family member, caregiver, or health practitioner ("Authorized Third Party"). Such access may be granted through the Platform's access controls and requires the Member's express, documented authorization.</p>
+        <p>Durand shall not be responsible for any misuse, unauthorized sharing, or harm arising from an Authorized Third Party's access to or use of a Member's data. By granting access to any third party, the Member assumes full responsibility for the consequences of that access. Durand is held harmless for any actions taken by Authorized Third Parties in connection with data accessed under a Member's authorization.</p>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 8</div>
+        <h2>Artificial Intelligence and Third-Party Processing Partners</h2>
+        <p>Durand uses artificial intelligence and machine learning to generate health insights, scores, and recommendations. Where AI processing involves engagement with a third-party technology partner, the following binding standards apply to every such relationship:</p>
+        <ul>
+            <li><strong>Zero-Retention Policy:</strong> No AI processing partner may store, retain, or maintain any Member data beyond the scope and duration of the specific processing task for which it was engaged.</li>
+            <li><strong>Zero-Training Policy:</strong> No AI processing partner may use any Member data, whether identified or de-identified, to train, refine, or improve any model, algorithm, or system beyond the specific task performed for Durand.</li>
+            <li><strong>No Commercialization:</strong> No AI processing partner may use, share, sell, or benefit commercially from any Member data in any form.</li>
+            <li><strong>Contractual Enforcement:</strong> All AI processing relationships are governed by binding data processing agreements that enforce these standards, subject to audit.</li>
+        </ul>
+        <p>Durand owns all data generated within or passing through its platform at all times, including data processed by third-party AI partners. No processing relationship transfers or dilutes Durand's data ownership.</p>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 9</div>
+        <h2>Regulatory Compliance</h2>
+        <p>Durand Corporate HealthCare Inc. operates in compliance with applicable health privacy and data protection law across all jurisdictions in which we operate. Where laws differ, we apply the most protective standard.</p>
+        <h3>9.1 HIPAA</h3>
+        <p>For services and Members subject to U.S. federal health privacy law, Durand operates as a compliant Business Associate and, where applicable, a Covered Entity. We implement all required administrative, physical, and technical safeguards for Protected Health Information under HIPAA's Privacy Rule, Security Rule, and Breach Notification Rule. We monitor HIPAA regulatory developments, including the proposed 2025 Security Rule updates, and will update our practices accordingly upon finalization.</p>
+        <h3>9.2 PIPEDA</h3>
+        <p>For Canadian operations, Durand complies with the Personal Information Protection and Electronic Documents Act. We adhere to the ten Fair Information Principles and maintain a designated Privacy Officer accountable for compliance. We conduct Privacy Impact Assessments for new data processing activities.</p>
+        <h3>9.3 PHIPA (Ontario)</h3>
+        <p>As a health information custodian operating in Ontario, Durand complies with the Personal Health Information Protection Act, respecting the rights of individuals to access and correct their health records and complying with mandatory breach notification requirements.</p>
+        <h3>9.4 Quebec Law 25</h3>
+        <p>For operations subject to Quebec's modernized privacy law, Durand complies with enhanced requirements including Privacy Officer designation, Privacy Impact Assessments prior to communicating personal information outside Quebec, data minimization, the right to data portability, and the right to be forgotten.</p>
+        <h3>9.5 Prohibition on Use for Credit and Underwriting</h3>
+        <p>Durand absolutely prohibits the use of any Member health, wellness, or biomarker data for credit-worthiness assessments, lending decisions, or individual insurance underwriting by any party, including Durand itself, except where a Member has expressly and specifically consented as described in Section 6.1.</p>
+        <h3>9.6 Cross-Border Testing of De-Identified Samples (United States and Canada)</h3>
+        <p>Durand conducts or facilitates testing of de-identified biospecimens and de-identified data in both the United States and Canada. The following framework governs all such cross-border testing activities.</p>
+        <p><strong>De-Identification Prior to Transfer:</strong> All biospecimens and associated data are de-identified before any cross-border transfer, whether from Canada to the United States or from the United States to Canada. De-identification is completed within Durand's secure platform environment prior to transmission and is verified by Durand's Privacy Officer or a designated qualified expert before any transfer is authorized. Physical specimens are assigned pseudonymous coded identifiers as described in Section 11. The re-identification key is never transmitted across borders and remains solely within the originating Durand jurisdiction's infrastructure.</p>
+        <p><strong>Canadian Cross-Border Requirements:</strong> Where de-identified samples or data originating in Canada are tested in the United States, Durand assesses on a case-by-case basis whether the transfer constitutes a communication of personal information outside Canada under PIPEDA or outside Quebec under Quebec Law 25. Where de-identification is confirmed to meet the applicable standard such that the information is no longer "personal information" within the meaning of the applicable law, a full Privacy Impact Assessment may not be required; however, Durand documents that assessment and retains it on file. Where any residual re-identification risk is identified, a Privacy Impact Assessment is completed prior to transfer, consistent with the requirements of Quebec Law 25 and PIPEDA accountability obligations. Contractual safeguards consistent with Schedule 1 of PIPEDA are applied to all cross-border testing partners regardless of whether the transferred material meets the de-identification threshold.</p>
+        <p><strong>U.S. Cross-Border Requirements:</strong> Where de-identified samples or data originating in the United States are tested in Canada, Durand confirms that de-identification satisfies the HIPAA Expert Determination or Safe Harbor standard before transfer. HIPAA's Privacy Rule does not restrict the transfer of information that is properly de-identified, as such information is no longer Protected Health Information; however, Durand contractually binds all Canadian laboratory partners receiving such materials to the same no-retention, no-re-identification, and no-secondary-use obligations that apply to U.S.-based partners.</p>
+        <p><strong>Governing Standard:</strong> In all cases of cross-border testing, Durand applies whichever de-identification standard affords greater protection to the Member. Results and derived data returned from cross-border testing partners are reintegrated into the Member's longitudinal record within Durand's secure platform environment, in compliance with the data return obligations described in Section 11. No testing partner acquires any independent ownership interest in the samples, data, or results.</p>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 10</div>
+        <h2>Data Security</h2>
+        <p>We implement a layered security framework to protect Member information across all channels and systems through which PHI is handled. Our security program includes:</p>
+        <ul>
+            <li>Encryption of data in transit using SSL/TLS technology and encryption of data at rest on our secure platform servers</li>
+            <li>HIPAA-compliant communication channels for all internal team communications involving PHI, including encrypted email and secure messaging tools that meet applicable privacy and security standards. During our current buildout phase, clinical and care team communications may utilize HIPAA-compliant email alongside our core platform infrastructure. We are actively consolidating PHI handling toward our central platform environment as a priority roadmap initiative.</li>
+            <li>Physically and electronically secured data center infrastructure with firewall protection</li>
+            <li>Role-based access controls ensuring that only authorized personnel access health data, strictly limited to the minimum necessary for each role</li>
+            <li>Multi-factor authentication for all staff and administrator access to systems containing PHI</li>
+            <li>Continuous monitoring, intrusion detection, and documented incident response protocols</li>
+            <li>Regular security testing and vulnerability management practices</li>
+            <li>Formal confidentiality and privacy obligations for all personnel handling personal or health information, with training and enforcement</li>
+            <li>Strict data isolation preventing employer or insurer administrator accounts from accessing individual Member health records under any circumstances</li>
+        </ul>
+        <p>We will notify affected Members and applicable regulatory authorities of any data breach that may affect their rights, within the timeframes required by law.</p>
+        <p>Our roadmap includes advancing toward enhanced end-to-end encryption standards as our platform infrastructure matures and as applicable regulatory guidance evolves. Security architecture is reviewed on an ongoing basis and updated in response to emerging threats and regulatory developments.</p>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 11</div>
+        <h2>Data Ownership, Partnerships, and the Walled Garden</h2>
+        <p>Durand owns all data that is collected, generated, processed, or stored within the Durand.life platform, including data contributed by Members, data produced by connected devices, data processed by partners, and data returned by any care delivery or wellness partner.</p>
+        <h3>Tier 1: Walled Garden Partners (Default)</h3>
+        <p>The default model for all Durand partnerships is the Walled Garden. Research Partners, AI processing partners, analytics partners, and technology collaborators operate inside Durand's secure infrastructure under Durand's governance. They access computing capacity and analytical tools within our environment. No copy of Member data is transmitted to, downloaded by, or retained by these partners. Data never moves. Insights, models, and outputs are produced inside the wall and remain inside the wall unless Durand explicitly decides to deploy them. This is not a data management policy. It is an architectural principle that governs how we design every partnership from the first conversation.</p>
+        <h3>Tier 2: Physically-Required External Partners (Narrow Exception)</h3>
+        <p>A small number of service relationships require a governed data copy to be transmitted outside the platform for physical service delivery reasons only. The primary example is a clinical laboratory that must receive a sample requisition and process a physical specimen. In these narrow, physically-necessary cases, the following conditions are absolute:</p>
+        <ul>
+            <li>The data copy is authorized by Durand in writing for that specific purpose only.</li>
+            <li>The copy must be destroyed or returned to Durand upon completion of the authorized purpose.</li>
+            <li>The partner has no independent right to retain, use, analyze, share, or commercialize the data beyond the explicitly authorized purpose.</li>
+            <li>Durand retains full ownership of all data and all outputs, results, or insights derived from it.</li>
+        </ul>
+        <p>This exception exists because physical reality requires it, not because commercial convenience permits it. It is not a general data sharing framework.</p>
+        <p>Where physical biospecimens are transmitted to a clinical laboratory partner for testing, the specimen is accompanied only by a coded pseudonymous identifier; no directly identifying information (such as name, date of birth, or health card number) is included on the sample requisition or container label. The key linking the coded identifier to the Member's identity is held exclusively within Durand's secure platform environment and is never transmitted to the laboratory partner. Laboratory partners are contractually prohibited from attempting re-identification of any sample, from retaining any residual specimen beyond the authorized testing purpose, and from using any sample or derived result for any secondary purpose. These obligations apply equally to testing activities conducted in the United States and in Canada.</p>
+        <p>No partnership, licensing arrangement, or service agreement of any kind grants any external party an independent ownership interest in Member data, in any tier. Where Durand engages care fulfillment partners, EAP providers, or other service delivery partners, Durand contractually retains the right to receive full data back from those partners relating to the Members they serve on Durand's behalf.</p>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 12</div>
+        <h2>When We Share Information</h2>
+        <p>We do not sell, rent, or trade your personal information. We share information only under the following limited and governed circumstances:</p>
+        <ul>
+            <li>With licensed health professionals and clinical partners to deliver your care, subject to your consent</li>
+            <li>With technology and infrastructure partners who process data on our behalf under strict data processing agreements enforcing our Zero-Retention and Zero-Training standards</li>
+            <li>With Research Partners working inside our secure infrastructure under formal Data Governance Agreements, as described in Section 4.3</li>
+            <li>With Approved Wellness Partners, only with your specific opt-in consent and only to the extent described in Section 4.5</li>
+            <li>With employers, benefits providers, and insurers, using only aggregated, non-identifiable reporting as described in Section 6</li>
+            <li>When required by law, court order, or regulatory demand, to the minimum extent necessary. We will notify affected Members of any such disclosure where permitted by law, and we will challenge any government or legal demand for Member data that we believe to be invalid, overly broad, or disproportionate.</li>
+            <li>To protect the safety of an individual where we have reasonable grounds to believe there is a serious and imminent risk of harm</li>
+            <li>In connection with a corporate transaction, as described in Section 14</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 13</div>
+        <h2>Your Rights</h2>
+        <p>You have the following rights with respect to your personal and health information held by Durand:</p>
+        <ul class="rights-list">
+            <li><strong>Right to Access</strong>Request a copy of the personal and health information we hold about you.</li>
+            <li><strong>Right to Correction</strong>Request correction of inaccurate or incomplete information.</li>
+            <li><strong>Right to Withdraw Consent</strong>Withdraw consent for non-essential uses of your data at any time, subject to legal or contractual limitations.</li>
+            <li><strong>Right to Deletion</strong>Subject to legal obligations and the terms of your employer agreement, request deletion of your personal information.</li>
+            <li><strong>Right to Data Portability</strong>Where applicable under law, request your health data in a structured, portable format.</li>
+            <li><strong>Right to an Explanation</strong>Request an explanation of how AI has been used in generating your health program outputs. Note that the specific algorithms and models underlying those outputs are confidential and will not be disclosed.</li>
+        </ul>
+        <p style="margin-top:20px;">To exercise any of these rights, contact our Privacy Officer at <a href="mailto:privacy@durand.life" style="color:var(--teal); font-weight:600;">privacy@durand.life</a>. We will respond within the timelines required under applicable law.</p>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 14</div>
+        <h2>Corporate Transactions, Succession, and Insolvency</h2>
+        <p>In the event of a merger, acquisition, sale of assets, reorganization, financing, or insolvency proceeding involving Durand Corporate HealthCare Inc., Member data constitutes a protected asset subject to the following standing obligations that are binding on any successor, acquirer, trustee in bankruptcy, or other successor-in-interest:</p>
+        <ul>
+            <li>All privacy and confidentiality obligations under this Policy survive any corporate transaction and are binding on any entity that acquires, assumes, or manages Member data as a result of such a transaction.</li>
+            <li>No acquirer or successor may use Member data in a manner inconsistent with this Policy without obtaining fresh informed consent from affected Members.</li>
+            <li>Members will be notified prior to the completion of any transaction that materially affects the handling of their data, and will be given a reasonable opportunity to request deletion of their data if they do not consent to the new terms.</li>
+            <li>In an insolvency proceeding, Member data may not be liquidated, sold, or transferred to a third party without compliance with all applicable privacy law and the consent obligations described above.</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 15</div>
+        <h2>Data Retention</h2>
+        <p>We retain personal and health information for as long as necessary to fulfill the purposes for which it was collected, to comply with our legal and regulatory obligations, and to maintain the longitudinal integrity of the health record that is central to our platform's value. Where applicable law prescribes minimum retention periods for health records, we comply with those requirements. When information is no longer required, it is securely destroyed or irreversibly de-identified.</p>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 16</div>
+        <h2>Cookies and Digital Tracking</h2>
+        <p>We use essential cookies and similar technologies to maintain secure sessions and support platform functionality. We do not use tracking technologies for advertising purposes. Analytics tools used to improve the platform are configured in a privacy-preserving manner. We do not embed third-party advertising trackers or data broker tools in our platform. You may manage cookie preferences through your browser settings.</p>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 17</div>
+        <h2>Policy Changes and Notice</h2>
+        <p>We may update this Policy from time to time to reflect changes in our services, technology partnerships, legal requirements, or data practices. The following notice framework applies:</p>
+        <ul>
+            <li><strong>Material changes:</strong> We will post an updated Policy with a revised effective date and provide at least 30 days prior notice to Members through the Platform or by email before a material change takes effect.</li>
+            <li><strong>Continued use:</strong> If you continue to use the Platform after the effective date of an updated Policy, you will be deemed to have accepted the updated terms with respect to data collected from that date forward.</li>
+            <li><strong>Historical data:</strong> Changes to this Policy do not retroactively alter the basis on which data collected prior to the effective date was processed.</li>
+            <li><strong>Regulatory or legal changes:</strong> Where a policy update is required immediately to comply with a change in applicable law or a regulator's directive, the update will take effect immediately and notice will be provided as promptly as practicable.</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <div class="section-number">Section 18</div>
+        <h2>Contact Our Privacy Officer</h2>
+        <p>For questions, concerns, or requests regarding this Privacy Policy or the handling of your information:</p>
+        <div class="contact-box">
+            <h3>Privacy Officer</h3>
+            <p>Durand Corporate HealthCare Inc.</p>
+            <p><a href="mailto:privacy@durand.life">privacy@durand.life</a></p>
+            <p class="website"><a href="https://www.durand.life">www.durand.life</a></p>
+        </div>
+        <p class="policy-tagline">Durand® With You for Life® &nbsp;|&nbsp; Durand Corporate HealthCare Inc. &nbsp;|&nbsp; durand.life</p>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a href="index.html">
+                <img src="logo-horizontal-reverse.png?v=2" alt="Durand Future Health" style="height: 48px; width: auto;">
+            </a>
+            <p>Predictive health intelligence built by physicians and scientists. Home-based epigenetic testing. AI-powered insights. Care navigation. Available in Canada and the USA.</p>
+            <p style="font-family: 'Fraunces', Georgia, serif; font-size: 15px; font-weight: 600; color: var(--lime); margin-top: 12px; font-style: italic; letter-spacing: 0.3px;">With you for Life&reg;</p>
+        </div>
+        <div>
+            <h4>Solutions</h4>
+            <a href="index.html">For Brokers</a>
+            <a href="index.html">For Employers</a>
+            <a href="index.html">Get Tested &mdash; $499</a>
+        </div>
+        <div>
+            <h4>Platform</h4>
+            <a href="#">Epigenetic Testing</a>
+            <a href="#">AI Health Coaching</a>
+            <a href="#">Cognitive Assessment</a>
+            <a href="#">Care Navigation</a>
+        </div>
+        <div>
+            <h4>Company</h4>
+            <a href="mailto:support@durand.life">Contact</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>&copy; 2026 Durand Future Health, Inc. All rights reserved.</div>
+        <div>Greater Toronto &nbsp;&bull;&nbsp; San Francisco &nbsp;&bull;&nbsp; Miami</div>
+    </div>
+</footer>
+
+</body>
+</html>
