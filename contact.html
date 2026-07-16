@@ -61,6 +61,24 @@
         }
         .nav-back:hover { color: var(--teal); }
 
+        .lang-switcher-row { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+        .lang-switcher {
+            background: #fff;
+            border: 1px solid #d8d4ca;
+            color: var(--dark);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: var(--font-sans);
+        }
+        .lang-switcher:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(43,165,165,0.15);
+        }
+
         /* HERO */
         .contact-hero {
             background: linear-gradient(135deg, #0a1628 0%, #1B2D6B 50%, #1a4040 100%);
@@ -234,49 +252,57 @@
     <a href="index.html" class="nav-logo">
         <img src="logo-horizontal-reverse.png?v=2" alt="Durand Future Health">
     </a>
-    <a href="index.html" class="nav-back">← Back to Durand.life</a>
+    <a href="index.html" class="nav-back" data-i18n="navBack">← Back to Durand.life</a>
 </nav>
 
 <div class="contact-hero">
     <div class="site-name">Durand.life</div>
-    <h1>Get In Touch</h1>
-    <p>Tell us a bit about yourself and what you're interested in, and our team will follow up shortly.</p>
+    <h1 data-i18n="heroTitle">Get In Touch</h1>
+    <p data-i18n="heroSubtitle">Tell us a bit about yourself and what you're interested in, and our team will follow up shortly.</p>
 </div>
 
 <main class="contact-body">
     <div class="form-card">
+        <div class="lang-switcher-row">
+            <select id="langSwitcher" class="lang-switcher" aria-label="Language / Langue / Idioma / 语言">
+                <option value="en">EN</option>
+                <option value="fr">FR</option>
+                <option value="es">ES</option>
+                <option value="zh">中文</option>
+            </select>
+        </div>
         <form id="contactForm">
             <div class="form-grid">
 
                 <div class="field">
-                    <label for="name">Name</label>
+                    <label for="name"><span data-i18n="labelName">Name</span></label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="field">
-                    <label for="email">Email</label>
+                    <label for="email"><span data-i18n="labelEmail">Email</span></label>
                     <input type="email" id="email" name="email" required>
                 </div>
 
                 <div class="field">
-                    <label for="phone">Phone <span class="optional-tag">(optional)</span></label>
+                    <label for="phone"><span data-i18n="labelPhone">Phone</span> <span class="optional-tag" data-i18n="optionalTag">(optional)</span></label>
                     <input type="tel" id="phone" name="phone">
                 </div>
                 <div class="field">
-                    <label for="company">Company <span class="optional-tag">(optional)</span></label>
+                    <label for="company"><span data-i18n="labelCompany">Company</span> <span class="optional-tag" data-i18n="optionalTag">(optional)</span></label>
                     <input type="text" id="company" name="company">
                 </div>
 
                 <div class="field">
-                    <label for="lives">Approximate No. Employees <span class="optional-tag">(optional)</span></label>
-                    <input type="number" id="lives" name="approximate_employees" min="1" placeholder="e.g. 250">
+                    <label for="lives"><span data-i18n="labelEmployees">Approximate No. Employees</span> <span class="optional-tag" data-i18n="optionalTag">(optional)</span></label>
+                    <input type="number" id="lives" name="approximate_employees" min="1" placeholder="e.g. 250" data-i18n-placeholder="placeholderLives">
                 </div>
                 <div class="field">
-                    <label for="industry">Industry <span class="optional-tag">(optional)</span></label>
-                    <input type="text" id="industry" name="industry" placeholder="e.g. Manufacturing">
+                    <label for="industry"><span data-i18n="labelIndustry">Industry</span> <span class="optional-tag" data-i18n="optionalTag">(optional)</span></label>
+                    <input type="text" id="industry" name="industry" placeholder="e.g. Manufacturing" data-i18n-placeholder="placeholderIndustry">
                 </div>
 
-                <div class="field">
-                    <label for="country">Location of Employee Base <span class="optional-tag">(optional)</span></label>
+                <div class="field field-full">
+                    <label for="country"><span data-i18n="labelLocation">Location of Employee Base</span> <span class="optional-tag" data-i18n="optionalTag">(optional)</span></label>
                     <select id="country" name="location_of_employee_base">
                         <option value="">Select one...</option>
                         <option value="United States">United States</option>
@@ -478,43 +504,39 @@
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
                 </div>
-                <div class="field">
-                    <label for="language">Language <span class="optional-tag">(optional)</span></label>
-                    <input type="text" id="language" name="language" placeholder="e.g. English">
-                </div>
 
                 <div class="field field-full">
-                    <label for="interest">What are you interested in?</label>
+                    <label for="interest"><span data-i18n="labelInterest">What are you interested in?</span></label>
                     <select id="interest" name="interest" required>
-                        <option value="">Select one...</option>
-                        <option value="Durand EHAP">Durand EHAP (Employer Benefits)</option>
-                        <option value="DFH Testing">Durand Future Health Year Round</option>
-                        <option value="Want to Learn More">Want to Learn More</option>
+                        <option value="" data-i18n="optSelect">Select one...</option>
+                        <option value="Durand EHAP" data-i18n="optInterestEHAP">Durand EHAP (Employer Benefits)</option>
+                        <option value="DFH Testing" data-i18n="optInterestYearRound">Durand Future Health Year Round</option>
+                        <option value="Want to Learn More" data-i18n="optInterestLearnMore">Want to Learn More</option>
                     </select>
                 </div>
 
                 <div class="testing-subquestions" id="testingSubquestions">
                     <div class="field field-full">
-                        <label for="testingType">DFH Testing is for:</label>
+                        <label for="testingType"><span data-i18n="labelTestingType">DFH Testing is for:</span></label>
                         <select id="testingType" name="testing_offering_or_purchase">
-                            <option value="">Select one...</option>
-                            <option value="Offering">Offering it to my employees</option>
-                            <option value="Purchasing">Purchasing it for myself</option>
+                            <option value="" data-i18n="optSelect">Select one...</option>
+                            <option value="Offering" data-i18n="optTestingOffering">Offering it to my employees</option>
+                            <option value="Purchasing" data-i18n="optTestingPurchasing">Purchasing it for myself</option>
                         </select>
                     </div>
                     <div class="field field-full">
-                        <label for="paymentMethod">How would you like to pay?</label>
+                        <label for="paymentMethod"><span data-i18n="labelPaymentMethod">How would you like to pay?</span></label>
                         <select id="paymentMethod" name="testing_payment_method">
-                            <option value="">Select one...</option>
-                            <option value="HSA">Through an HSA</option>
-                            <option value="Direct Purchase">Direct purchase</option>
+                            <option value="" data-i18n="optSelect">Select one...</option>
+                            <option value="HSA" data-i18n="optPaymentHSA">Through an HSA</option>
+                            <option value="Direct Purchase" data-i18n="optPaymentDirect">Direct purchase</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="field field-full">
-                    <label for="message">Message <span class="optional-tag">(optional)</span></label>
-                    <textarea id="message" name="message" placeholder="Anything else you'd like us to know?"></textarea>
+                    <label for="message"><span data-i18n="labelMessage">Message</span> <span class="optional-tag" data-i18n="optionalTag">(optional)</span></label>
+                    <textarea id="message" name="message" placeholder="Anything else you'd like us to know?" data-i18n-placeholder="placeholderMessage"></textarea>
                 </div>
 
                 <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off">
@@ -523,7 +545,7 @@
                 <input type="hidden" name="from_name" value="Durand.life Contact Form">
 
                 <div class="submit-row">
-                    <button type="submit" class="btn-submit" id="submitBtn">Send Message</button>
+                    <button type="submit" class="btn-submit" id="submitBtn" data-i18n="submitDefault">Send Message</button>
                 </div>
 
                 <div class="form-status" id="formStatus"></div>
@@ -568,6 +590,123 @@
 
 <script>
 (function() {
+    var translations = {
+        en: {
+            navBack: '← Back to Durand.life',
+            heroTitle: 'Get In Touch',
+            heroSubtitle: "Tell us a bit about yourself and what you're interested in, and our team will follow up shortly.",
+            labelName: 'Name', labelEmail: 'Email', labelPhone: 'Phone', labelCompany: 'Company',
+            labelEmployees: 'Approximate No. Employees', labelIndustry: 'Industry',
+            labelLocation: 'Location of Employee Base', labelInterest: 'What are you interested in?',
+            optSelect: 'Select one...',
+            optInterestEHAP: 'Durand EHAP (Employer Benefits)',
+            optInterestYearRound: 'Durand Future Health Year Round',
+            optInterestLearnMore: 'Want to Learn More',
+            labelTestingType: 'DFH Testing is for:',
+            optTestingOffering: 'Offering it to my employees',
+            optTestingPurchasing: 'Purchasing it for myself',
+            labelPaymentMethod: 'How would you like to pay?',
+            optPaymentHSA: 'Through an HSA', optPaymentDirect: 'Direct purchase',
+            labelMessage: 'Message', placeholderMessage: "Anything else you'd like us to know?",
+            placeholderIndustry: 'e.g. Manufacturing', placeholderLives: 'e.g. 250',
+            optionalTag: '(optional)',
+            submitDefault: 'Send Message', submitSending: 'Sending...',
+            successMsg: "Thanks — we've received your message and will be in touch shortly.",
+            errorMsg: 'Something went wrong sending your message. Please email us directly at support@durand.life.'
+        },
+        fr: {
+            navBack: '← Retour à Durand.life',
+            heroTitle: 'Contactez-nous',
+            heroSubtitle: "Parlez-nous un peu de vous et de ce qui vous intéresse ; notre équipe communiquera avec vous sous peu.",
+            labelName: 'Nom', labelEmail: 'Courriel', labelPhone: 'Téléphone', labelCompany: 'Entreprise',
+            labelEmployees: "Nombre approximatif d'employés", labelIndustry: "Secteur d'activité",
+            labelLocation: 'Emplacement de vos employés', labelInterest: "Qu'est-ce qui vous intéresse?",
+            optSelect: 'Sélectionnez...',
+            optInterestEHAP: 'Durand EHAP (avantages sociaux)',
+            optInterestYearRound: "Durand Future Health toute l'année",
+            optInterestLearnMore: 'En savoir plus',
+            labelTestingType: 'Le dépistage DFH est destiné à :',
+            optTestingOffering: 'À offrir à mes employés',
+            optTestingPurchasing: "À acheter pour moi-même",
+            labelPaymentMethod: 'Comment souhaitez-vous payer?',
+            optPaymentHSA: 'Par un compte de dépenses santé (HSA)', optPaymentDirect: 'Achat direct',
+            labelMessage: 'Message', placeholderMessage: 'Autre chose que vous aimeriez nous dire?',
+            placeholderIndustry: 'p. ex. Fabrication', placeholderLives: 'p. ex. 250',
+            optionalTag: '(facultatif)',
+            submitDefault: 'Envoyer le message', submitSending: 'Envoi en cours...',
+            successMsg: 'Merci — nous avons bien reçu votre message et communiquerons avec vous sous peu.',
+            errorMsg: "Une erreur s'est produite lors de l'envoi de votre message. Veuillez nous écrire directement à support@durand.life."
+        },
+        es: {
+            navBack: '← Volver a Durand.life',
+            heroTitle: 'Ponte en Contacto',
+            heroSubtitle: 'Cuéntanos un poco sobre ti y qué te interesa, y nuestro equipo se pondrá en contacto contigo pronto.',
+            labelName: 'Nombre', labelEmail: 'Correo electrónico', labelPhone: 'Teléfono', labelCompany: 'Empresa',
+            labelEmployees: 'Número aproximado de empleados', labelIndustry: 'Industria',
+            labelLocation: 'Ubicación de la base de empleados', labelInterest: '¿Qué te interesa?',
+            optSelect: 'Selecciona una opción...',
+            optInterestEHAP: 'Durand EHAP (beneficios para empleadores)',
+            optInterestYearRound: 'Durand Future Health todo el año',
+            optInterestLearnMore: 'Quiero saber más',
+            labelTestingType: 'La prueba DFH es para:',
+            optTestingOffering: 'Ofrecerla a mis empleados',
+            optTestingPurchasing: 'Comprarla para mí mismo',
+            labelPaymentMethod: '¿Cómo te gustaría pagar?',
+            optPaymentHSA: 'Mediante una cuenta HSA', optPaymentDirect: 'Compra directa',
+            labelMessage: 'Mensaje', placeholderMessage: '¿Algo más que quieras contarnos?',
+            placeholderIndustry: 'ej. Manufactura', placeholderLives: 'ej. 250',
+            optionalTag: '(opcional)',
+            submitDefault: 'Enviar mensaje', submitSending: 'Enviando...',
+            successMsg: 'Gracias — hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.',
+            errorMsg: 'Ocurrió un error al enviar tu mensaje. Por favor escríbenos directamente a support@durand.life.'
+        },
+        zh: {
+            navBack: '← 返回 Durand.life',
+            heroTitle: '联系我们',
+            heroSubtitle: '请简单介绍一下您自己以及您感兴趣的内容,我们的团队将尽快与您联系。',
+            labelName: '姓名', labelEmail: '电子邮箱', labelPhone: '电话', labelCompany: '公司',
+            labelEmployees: '大约员工人数', labelIndustry: '行业',
+            labelLocation: '员工所在地', labelInterest: '您感兴趣的是什么?',
+            optSelect: '请选择...',
+            optInterestEHAP: 'Durand EHAP(雇主福利)',
+            optInterestYearRound: 'Durand Future Health 全年服务',
+            optInterestLearnMore: '想了解更多',
+            labelTestingType: 'DFH 检测用途:',
+            optTestingOffering: '提供给我的员工',
+            optTestingPurchasing: '为自己购买',
+            labelPaymentMethod: '您希望如何付款?',
+            optPaymentHSA: '通过健康储蓄账户(HSA)', optPaymentDirect: '直接购买',
+            labelMessage: '留言', placeholderMessage: '还有什么想告诉我们的吗?',
+            placeholderIndustry: '例如:制造业', placeholderLives: '例如:250',
+            optionalTag: '(选填)',
+            submitDefault: '发送消息', submitSending: '发送中...',
+            successMsg: '谢谢 — 我们已收到您的留言,将尽快与您联系。',
+            errorMsg: '发送消息时出现问题。请直接发送邮件至 support@durand.life 与我们联系。'
+        }
+    };
+
+    var langSwitcher = document.getElementById('langSwitcher');
+    var currentLang = localStorage.getItem('durandContactLang') || 'en';
+
+    function applyLanguage(lang) {
+        var t = translations[lang] || translations.en;
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        langSwitcher.value = lang;
+        localStorage.setItem('durandContactLang', lang);
+
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            var key = el.getAttribute('data-i18n');
+            if (t[key]) el.textContent = t[key];
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+            var key = el.getAttribute('data-i18n-placeholder');
+            if (t[key]) el.setAttribute('placeholder', t[key]);
+        });
+    }
+    langSwitcher.addEventListener('change', function() { applyLanguage(this.value); });
+    applyLanguage(currentLang);
+
     var interestSelect = document.getElementById('interest');
     var testingSubquestions = document.getElementById('testingSubquestions');
     var testingType = document.getElementById('testingType');
@@ -589,7 +728,7 @@
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
+        submitBtn.textContent = translations[currentLang].submitSending;
         formStatus.className = 'form-status';
         formStatus.style.display = 'none';
 
@@ -606,18 +745,18 @@
                 form.reset();
                 toggleTestingQuestions();
                 formStatus.className = 'form-status success';
-                formStatus.textContent = "Thanks — we've received your message and will be in touch shortly.";
+                formStatus.textContent = translations[currentLang].successMsg;
             } else {
                 throw new Error(result.message || 'Submission failed');
             }
         })
         .catch(function() {
             formStatus.className = 'form-status error';
-            formStatus.textContent = 'Something went wrong sending your message. Please email us directly at support@durand.life.';
+            formStatus.textContent = translations[currentLang].errorMsg;
         })
         .finally(function() {
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
+            submitBtn.textContent = translations[currentLang].submitDefault;
         });
     });
 })();
