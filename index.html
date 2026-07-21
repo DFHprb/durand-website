@@ -157,7 +157,8 @@
         .hero-stats { display: flex; gap: 40px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
         .hero-stat-value { font-size: 28px; font-weight: 800; letter-spacing: -1px; }
         .hero-stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; margin-top: 4px; }
-        .hero-stats-full { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 32px; margin-top: 16px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 2; color: white; }
+        .hero-bullets-full { grid-column: 1 / -1; display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px; position: relative; z-index: 2; }
+        .hero-stats-full { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 32px; margin-top: 8px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 2; color: white; }
         .hero-stats-full .hero-stat-value { font-size: clamp(28px, 3vw, 40px); }
 
         /* HERO VISUAL — DNA helix */
@@ -429,6 +430,7 @@
             .hero-buttons { justify-content: center; }
             .hero-stats { justify-content: center; }
             .hero-stats-full { justify-content: center; flex-wrap: wrap; }
+            .hero-bullets-full { justify-content: center; }
             .hero p { margin-left: auto; margin-right: auto; }
             .two-col { grid-template-columns: 1fr; }
             #panel-longevity .section-inner > div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; text-align: center; }
@@ -537,13 +539,6 @@
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">See How It Works</a>
                     <a href="#contact" class="btn btn-outline">Broker Partnership</a>
-                </div>
-                <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px;">
-                    <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.95);">Similar PEPM to EAP</span>
-                    <span style="font-size: 13px; color: #8CC63F;">&bull;</span>
-                    <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.95);">No New Budget Line</span>
-                    <span style="font-size: 13px; color: #8CC63F;">&bull;</span>
-                    <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.95);">Radically Better Outcomes</span>
                 </div>
             </div>
 
@@ -678,6 +673,13 @@
                     <div class="dna-label-text"><strong>Medications</strong>Drug Interaction Analysis</div>
                 </div>
             </div>
+        </div>
+        <div class="hero-bullets-full" id="hero-bullets-full-brokers">
+            <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.95);">Similar PEPM to EAP</span>
+            <span style="font-size: 13px; color: #8CC63F;">&bull;</span>
+            <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.95);">No New Budget Line</span>
+            <span style="font-size: 13px; color: #8CC63F;">&bull;</span>
+            <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.95);">Radically Better Outcomes</span>
         </div>
         <div class="hero-stats-full" id="hero-stats-full-brokers">
             <div>
@@ -1636,6 +1638,8 @@ function showPanel(panelId) {
     if (heroVariant) heroVariant.style.display = 'block';
     const heroStatsFullBrokers = document.getElementById('hero-stats-full-brokers');
     if (heroStatsFullBrokers) heroStatsFullBrokers.style.display = panelId === 'brokers' ? 'flex' : 'none';
+    const heroBulletsFullBrokers = document.getElementById('hero-bullets-full-brokers');
+    if (heroBulletsFullBrokers) heroBulletsFullBrokers.style.display = panelId === 'brokers' ? 'flex' : 'none';
     // Re-observe fade-in elements in newly shown panel
     document.querySelectorAll('.page-panel.active .fade-in').forEach(el => observer.observe(el));
 }
