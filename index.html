@@ -215,6 +215,7 @@
 
         /* CARD ICONS — SVG-based */
         .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .card-grid-3 { grid-template-columns: repeat(3, 1fr); }
         .card { background: white; border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.04); transition: all 0.3s; position: relative; }
         .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
         .card-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; position: relative; overflow: hidden; }
@@ -414,6 +415,7 @@
         /* RESPONSIVE */
         @media (max-width: 968px) {
             .employee-showcase { grid-template-columns: 1fr !important; text-align: center; }
+            .card-grid-3 { grid-template-columns: repeat(2, 1fr); }
             .employee-showcase img { max-width: 400px; margin: 0 auto; }
             .hero-inner { grid-template-columns: 1fr; gap: 40px 0; text-align: center; }
             .hero-visual { order: -1; }
@@ -445,6 +447,7 @@
             .section-tab { white-space: nowrap; padding: 16px 20px; font-size: 13px; }
         }
         @media (max-width: 640px) {
+            .card-grid-3 { grid-template-columns: 1fr; }
             .dna-visual { width: 260px; height: 340px; }
             .dna-label { font-size: 9px; padding: 5px 8px; max-width: 130px; white-space: normal; }
             .dna-label strong { font-size: 7px; }
@@ -802,7 +805,7 @@
                 </div>
             </div>
 
-            <div class="card-grid" style="margin-top: 48px;">
+            <div class="card-grid card-grid-3" style="margin-top: 48px;">
                 <div class="card card-img fade-in">
                     <img class="card-img-photo" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop&crop=center" alt="Business professional reviewing financial documents">
                     <div class="card-img-body">
