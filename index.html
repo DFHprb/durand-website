@@ -503,13 +503,13 @@
 <!-- NAV -->
 <nav class="nav" id="nav">
     <div class="nav-inner">
-        <a href="#" class="nav-logo" onclick="showPanel('brokers')">
+        <a href="/" class="nav-logo" onclick="showPanel('brokers'); return false;">
             <img src="logo-horizontal.png?v=2" alt="Durand Future Health">
         </a>
         <div class="nav-links" id="navLinks">
-            <a href="#" class="active" data-panel="brokers" onclick="showPanel('brokers')">For Brokers</a>
-            <a href="#" data-panel="employers" onclick="showPanel('employers')">For Employers</a>
-            <a href="#" data-panel="longevity" onclick="showPanel('longevity')">Get Tested &mdash; $699</a>
+            <a href="/" class="active" data-panel="brokers" onclick="showPanel('brokers'); return false;">For Brokers</a>
+            <a href="/employers" data-panel="employers" onclick="showPanel('employers'); return false;">For Employers</a>
+            <a href="/get-tested" data-panel="longevity" onclick="showPanel('longevity'); return false;">Get Tested &mdash; $699</a>
             <a href="#contact" class="nav-cta">Get Started</a>
         </div>
         <button class="nav-mobile-toggle" onclick="toggleMobileNav()" aria-label="Menu">
@@ -564,7 +564,7 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="mailto:support@durand.life" class="btn btn-primary">Ask Your Broker About E<span style="color:#fff; font-weight:800;">H</span>AP</a>
-                    <a href="#" class="btn btn-outline" onclick="showPanel('longevity')">Get Tested Personally &mdash; $699</a>
+                    <a href="/get-tested" class="btn btn-outline" onclick="showPanel('longevity'); return false;">Get Tested Personally &mdash; $699</a>
                 </div>
                 <div class="hero-stats">
                     <div>
@@ -1584,7 +1584,7 @@
     <p style="font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 600; color: var(--lime); margin-top: 16px; font-style: italic; letter-spacing: 0.5px;">With you for Life&reg;</p>
     <div class="cta-buttons">
         <a href="/contact" class="btn btn-primary" style="font-size: 17px; padding: 16px 40px;">Contact Us</a>
-        <a href="#" class="btn btn-outline" style="font-size: 17px; padding: 16px 40px;" onclick="showPanel('brokers'); window.scrollTo({top: document.getElementById('sectionTabs').offsetTop, behavior: 'smooth'});">Learn More</a>
+        <a href="/" class="btn btn-outline" style="font-size: 17px; padding: 16px 40px;" onclick="showPanel('brokers'); window.scrollTo({top: document.getElementById('sectionTabs').offsetTop, behavior: 'smooth'}); return false;">Learn More</a>
     </div>
     <p style="margin-top: 24px; font-size: 13px; opacity: 0.5;">Available in Canada and the United States</p>
 </section>
@@ -1594,7 +1594,7 @@
 <footer class="footer">
     <div class="footer-inner">
         <div class="footer-brand">
-            <a href="#" class="nav-logo" onclick="showPanel('brokers')" style="color: white;">
+            <a href="/" class="nav-logo" onclick="showPanel('brokers'); return false;" style="color: white;">
                 <img src="logo-horizontal-reverse.png?v=2" alt="Durand Future Health" style="height: 48px; width: auto;">
             </a>
             <p>Predictive health intelligence built by physicians and scientists. Home-based epigenetic testing. AI-powered insights. Care navigation. Available in Canada and the USA.</p>
@@ -1602,9 +1602,9 @@
         </div>
         <div>
             <h4>Solutions</h4>
-            <a href="#" onclick="showPanel('brokers')">For Brokers</a>
-            <a href="#" onclick="showPanel('employers')">For Employers</a>
-            <a href="#" onclick="showPanel('longevity')">Get Tested &mdash; $699</a>
+            <a href="/" onclick="showPanel('brokers'); return false;">For Brokers</a>
+            <a href="/employers" onclick="showPanel('employers'); return false;">For Employers</a>
+            <a href="/get-tested" onclick="showPanel('longevity'); return false;">Get Tested &mdash; $699</a>
         </div>
         <div>
             <h4>Platform</h4>
@@ -1627,7 +1627,14 @@
 
 
 <script>
-function showPanel(panelId) {
+const PANEL_PATHS = { brokers: '/', employers: '/employers', longevity: '/get-tested' };
+const PATH_PANELS = { '/': 'brokers', '/employers': 'employers', '/get-tested': 'longevity' };
+const PANEL_TITLES = {
+    brokers: "Durand Future Health® | Predictive Health Intelligence",
+    employers: "Durand Future Health® | EHAP for Employers",
+    longevity: "Durand Future Health® | Get Tested — $699"
+};
+function showPanel(panelId, updateHistory = true) {
     document.querySelectorAll('.page-panel').forEach(p => p.classList.remove('active'));
     const target = document.getElementById('panel-' + panelId);
     if (target) target.classList.add('active');
@@ -1645,6 +1652,11 @@ function showPanel(panelId) {
     if (heroBulletsFullBrokers) heroBulletsFullBrokers.style.display = panelId === 'brokers' ? 'flex' : 'none';
     // Re-observe fade-in elements in newly shown panel
     document.querySelectorAll('.page-panel.active .fade-in').forEach(el => observer.observe(el));
+    document.title = PANEL_TITLES[panelId] || PANEL_TITLES.brokers;
+    if (updateHistory) {
+        const path = PANEL_PATHS[panelId] || '/';
+        if (location.pathname !== path) history.pushState({ panel: panelId }, '', path);
+    }
 }
 window.addEventListener('scroll', () => { document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20); });
 function toggleMobileNav() { document.getElementById('navLinks').classList.toggle('open'); }
@@ -1652,6 +1664,18 @@ const observer = new IntersectionObserver((entries) => { entries.forEach(entry =
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 function createParticles() { const c = document.getElementById('particles'); for (let i = 0; i < 30; i++) { const p = document.createElement('div'); p.className = 'particle'; p.style.left = Math.random()*100+'%'; p.style.animationDuration = (8+Math.random()*12)+'s'; p.style.animationDelay = Math.random()*10+'s'; p.style.width = (2+Math.random()*4)+'px'; p.style.height = p.style.width; c.appendChild(p); } }
 createParticles();
+
+// Route the active tab through a real URL: sync on back/forward and on initial load
+window.addEventListener('popstate', (e) => {
+    const panelId = (e.state && e.state.panel) || PATH_PANELS[location.pathname] || 'brokers';
+    showPanel(panelId, false);
+});
+(function initPanelFromUrl() {
+    const initialPanel = PATH_PANELS[location.pathname] || 'brokers';
+    history.replaceState({ panel: initialPanel }, '', PANEL_PATHS[initialPanel] || '/');
+    if (initialPanel !== 'brokers') showPanel(initialPanel, false);
+    else document.title = PANEL_TITLES.brokers;
+})();
 
 // DNA Helix rotating labels — cycle through all data sources
 (function() {
