@@ -383,14 +383,6 @@
         .video-card-info h4 { color: white; font-size: 16px; font-weight: 700; margin-bottom: 4px; }
         .video-card-info p { color: rgba(255,255,255,0.75); font-size: 13px; }
 
-        /* TRUST BAR */
-        .trust-bar { padding: 28px 24px; background: var(--white); border-bottom: 1px solid var(--gray-200); }
-        .trust-bar-inner { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
-        .trust-bar-label { font-size: 11px; color: var(--gray-500); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
-        .trust-bar-items { display: flex; align-items: center; gap: 2.5rem; flex-wrap: nowrap; }
-        .trust-bar-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--gray-700); }
-        .trust-bar-icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; background: rgba(43,165,165,0.08); }
-
         /* HUMAN STORY */
         .story-card { background: white; border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow-md); margin-top: 40px; }
         .story-card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--teal); margin-bottom: 12px; }
@@ -466,7 +458,6 @@
             .story-step-num { margin: 0; flex-shrink: 0; }
             .story-step::after { display: none; }
             .category-grid { grid-template-columns: 1fr; }
-            .trust-bar-items { flex-wrap: wrap; justify-content: center; }
         }
     </style>
 </head>
@@ -722,19 +713,6 @@
         </div>
     </div>
 </section>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-    <div class="trust-bar-inner">
-        <div class="trust-bar-label">Built with</div>
-        <div class="trust-bar-items">
-            <div class="trust-bar-item"><div class="trust-bar-icon">&#128274;</div> Secure AI-Powered Health Intelligence</div>
-            <div class="trust-bar-item"><div class="trust-bar-icon" style="background:rgba(68,184,120,0.08);">&#128300;</div> Epigenetic Science</div>
-            <div class="trust-bar-item"><div class="trust-bar-icon">&#127760;</div> Multilingual Health Agent</div>
-            <div class="trust-bar-item"><div class="trust-bar-icon" style="background:rgba(68,184,120,0.08);">&#129516;</div> Navigation to Outcome-Focused Care Providers</div>
-        </div>
-    </div>
-</div>
 
 <!-- SECTION TABS -->
 <div class="section-tabs" id="sectionTabs">
