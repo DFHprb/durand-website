@@ -1448,7 +1448,7 @@
                         <div style="text-align: center;">
                             <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--teal); margin-bottom: 8px;">Complete Health Intelligence</div>
                             <div class="pricing-price">$699<span> Local Currency</span></div>
-                            <p style="color: var(--gray-500); font-size: 14px; margin-top: 8px;">One-time purchase &bull; No subscription required</p>
+                            <p style="color: var(--gray-500); font-size: 14px; margin-top: 8px;">One-time purchase with membership access plan<sup><a href="#footnote-membership" onclick="expandFootnote('footnote-membership');" style="color: var(--teal); font-weight: 700; text-decoration: none;">1</a></sup>.</p>
                         </div>
                         <ul class="pricing-features">
                             <li>Complete epigenetic health assessment (11 organ health scores)</li>
@@ -1554,6 +1554,18 @@
             <h2 class="section-title" style="color: white;">Your Health Shouldn&rsquo;t Require a Lab Visit</h2>
             <p style="color: rgba(255,255,255,0.88); font-size: 18px; max-width: 600px; margin: 0 auto 32px;">Advanced epigenetic testing. Year-round wellness management. A personalized Health Agent that knows your biology and speaks your language. $699 in your local currency. Available across the United States and Canada.</p>
             <a href="#" class="btn btn-primary" style="font-size: 17px; padding: 16px 40px;" id="buy-now-btn-2">Buy Now &mdash; $699</a>
+        </div>
+    </section>
+
+    <!-- FOOTNOTES -->
+    <section class="section" id="footnote-membership" style="background: var(--blue-deep); padding: 48px 0; scroll-margin-top: 96px;">
+        <div class="section-inner" style="max-width: 800px;">
+            <button type="button" onclick="toggleFootnote('footnote-membership')" style="display: flex; align-items: center; gap: 16px; width: 100%; background: none; border: none; cursor: pointer; text-align: left; padding: 0;">
+                <span id="footnote-membership-icon" style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--teal); color: var(--teal); display: flex; align-items: center; justify-content: center; font-size: 16px;">&uarr;</span>
+                <span style="font-size: 17px; font-weight: 700; color: white;">1. Durand Future Health Platform Membership</span>
+            </button>
+            <div style="border-top: 1px solid rgba(255,255,255,0.15); margin: 20px 0 20px 52px;"></div>
+            <p id="footnote-membership-body" style="color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.8; margin-left: 52px;">Your first year of Durand Future Health platform membership is included with your initial purchase. Membership automatically renews each year unless cancelled, and an additional cost applies at renewal.</p>
         </div>
     </section>
 
@@ -1664,6 +1676,17 @@ function showPanel(panelId, updateHistory = true) {
 }
 window.addEventListener('scroll', () => { document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20); });
 function toggleMobileNav() { document.getElementById('navLinks').classList.toggle('open'); }
+function toggleFootnote(id) {
+    const body = document.getElementById(id + '-body');
+    const icon = document.getElementById(id + '-icon');
+    const isOpen = body.style.display !== 'none';
+    body.style.display = isOpen ? 'none' : 'block';
+    icon.innerHTML = isOpen ? '&darr;' : '&uarr;';
+}
+function expandFootnote(id) {
+    document.getElementById(id + '-body').style.display = 'block';
+    document.getElementById(id + '-icon').innerHTML = '&uarr;';
+}
 const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 function createParticles() { const c = document.getElementById('particles'); for (let i = 0; i < 30; i++) { const p = document.createElement('div'); p.className = 'particle'; p.style.left = Math.random()*100+'%'; p.style.animationDuration = (8+Math.random()*12)+'s'; p.style.animationDelay = Math.random()*10+'s'; p.style.width = (2+Math.random()*4)+'px'; p.style.height = p.style.width; c.appendChild(p); } }
