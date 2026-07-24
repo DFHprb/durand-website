@@ -615,7 +615,7 @@
                     <circle cx="245" cy="300" r="4" fill="#8CC63F" opacity="0.8"><animate attributeName="opacity" dur="3.5s" repeatCount="indefinite" values="1;0.6;1"/></circle>
                 </svg>
                 <div class="dna-label dna-label-1" data-slot="0">
-                    <div class="dna-label-text"><strong>Epigenetics</strong>11 Organ Health Scores</div>
+                    <div class="dna-label-text"><strong>Multiomics</strong>11 Organ Health Scores</div>
                 </div>
                 <div class="dna-label dna-label-2" data-slot="1">
                     <div class="dna-label-text"><strong>Lab History</strong>Upload Historical Blood Work</div>
@@ -624,16 +624,16 @@
                     <div class="dna-label-text"><strong>Cognitive Health</strong>Validated Brain Assessment</div>
                 </div>
                 <div class="dna-label dna-label-4" data-slot="3">
-                    <div class="dna-label-text"><strong>Upload Imaging</strong>CT, MRI &amp; X-Ray Reports</div>
+                    <div class="dna-label-text"><strong>Imaging History</strong>Upload CT, MRI &amp; X-Ray Reports</div>
                 </div>
                 <div class="dna-label dna-label-5" data-slot="4">
-                    <div class="dna-label-text"><strong>Family History</strong>Hereditary Risk Mapping</div>
+                    <div class="dna-label-text"><strong>Family History</strong>Insights to Hereditary Risk</div>
                 </div>
                 <div class="dna-label dna-label-6" data-slot="5">
                     <div class="dna-label-text"><strong>Wearables</strong>30+ Devices Integrated</div>
                 </div>
                 <div class="dna-label dna-label-7" data-slot="6">
-                    <div class="dna-label-text"><strong>Medications</strong>Drug Interaction Analysis</div>
+                    <div class="dna-label-text"><strong>Medications</strong>Insights to Drug Interaction Analysis</div>
                 </div>
             </div>
         </div>
@@ -1721,13 +1721,13 @@ window.addEventListener('popstate', (e) => {
 // DNA Helix rotating labels — cycle through all data sources
 (function() {
     const allData = [
-        ['Epigenetics', '11 Organ Health Scores'],
+        ['Multiomics', '11 Organ Health Scores'],
         ['Lab History', 'Upload Historical Blood Work'],
         ['Cognitive Health', 'Validated Brain Assessment'],
-        ['Upload Imaging', 'CT, MRI & X-Ray Reports'],
-        ['Family History', 'Hereditary Risk Mapping'],
+        ['Imaging History', 'Upload CT, MRI & X-Ray Reports'],
+        ['Family History', 'Insights to Hereditary Risk'],
         ['Wearables', '30+ Devices Integrated'],
-        ['Medications', 'Drug Interaction Analysis'],
+        ['Medications', 'Insights to Drug Interaction Analysis'],
         ['Sleep Analysis', 'Deep & REM Tracking'],
         ['Doctor Reports', 'Clinical Notes & Referrals'],
         ['Health Goals', 'Weight, Fitness & Wellness'],
@@ -1736,11 +1736,11 @@ window.addEventListener('popstate', (e) => {
         ['Historical Wearable', 'Years of Activity Data'],
         ['Heart Health', 'HRV, Resting HR & ECG'],
         ['Nutrition', 'Diet & Supplement Tracking'],
-        ['Hormonal Health', 'Cortisol, Thyroid & More'],
+        ['Hormonal Health History', 'Upload Cortisol, Thyroid & More'],
         ['Mental Wellness', 'Stress & Mood Patterns'],
         ['Organ Function', 'Liver, Kidney & Lung Scores'],
         ['Gut Health', 'Microbiome Indicators'],
-        ['Genetic Markers', 'Inherited Risk Factors']
+        ['Epigenetic Markers', 'Inherited Risk Factors']
     ];
     const slots = document.querySelectorAll('.dna-label[data-slot]');
     if (!slots.length) return;
