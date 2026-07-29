@@ -105,7 +105,7 @@
         .section-light { background: var(--gray-100); }
 
         /* FEATURES */
-        .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; counter-reset: step; }
+        .steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; counter-reset: step; }
         .step { position: relative; padding: 32px; background: white; border-radius: var(--radius); box-shadow: var(--shadow-sm); counter-increment: step; }
         .step::before { content: counter(step); position: absolute; top: -14px; left: 24px; width: 36px; height: 36px; background: var(--gradient-brand); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; }
         .step h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; margin-top: 8px; color: var(--dark); }
@@ -259,6 +259,10 @@
             <div class="step">
                 <h3>Sync Your Wearable Data</h3>
                 <p>30+ apps &amp; wearables turned into insight, all year.</p>
+            </div>
+            <div class="step">
+                <h3>Optional Cancer Screening</h3>
+                <p>Multi-cancer early detection, available as an add-on to your test.</p>
             </div>
         </div>
     </div>
