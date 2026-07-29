@@ -501,8 +501,8 @@
         <div class="nav-links" id="navLinks">
             <a href="/" class="active" data-panel="brokers" onclick="showPanel('brokers'); return false;">For Brokers</a>
             <a href="/employers" data-panel="employers" onclick="showPanel('employers'); return false;">For Employers</a>
-            <a href="/get-tested" data-panel="longevity" onclick="showPanel('longevity'); return false;">Get Tested &mdash; $699</a>
-            <a href="/contact" class="nav-cta">Get Started</a>
+            <a href="/get-tested" data-panel="longevity" onclick="showPanel('longevity'); return false;">Get Started &mdash; $699</a>
+            <a href="/contact" class="nav-cta">Contact Us</a>
         </div>
         <button class="nav-mobile-toggle" onclick="toggleMobileNav()" aria-label="Menu">
             <span></span><span></span><span></span>
@@ -1627,7 +1627,7 @@
             <h4>Solutions</h4>
             <a href="/" onclick="showPanel('brokers'); return false;">For Brokers</a>
             <a href="/employers" onclick="showPanel('employers'); return false;">For Employers</a>
-            <a href="/get-tested" onclick="showPanel('longevity'); return false;">Get Tested &mdash; $699</a>
+            <a href="/get-tested" onclick="showPanel('longevity'); return false;">Get Started &mdash; $699</a>
         </div>
         <div>
             <h4>Company</h4>
@@ -1648,7 +1648,7 @@ const PATH_PANELS = { '/': 'brokers', '/employers': 'employers', '/get-tested': 
 const PANEL_TITLES = {
     brokers: "Durand Future Health® | Predictive Health Intelligence",
     employers: "Durand Future Health® | EHAP for Employers",
-    longevity: "Durand Future Health® | Get Tested — $699"
+    longevity: "Durand Future Health® | Get Started — $699"
 };
 function showPanel(panelId, updateHistory = true) {
     document.querySelectorAll('.page-panel').forEach(p => p.classList.remove('active'));
