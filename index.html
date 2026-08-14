@@ -134,6 +134,10 @@
         .nav-links a.active { color: var(--teal); background: rgba(43,165,165,0.08); }
         .nav-cta { background: var(--gradient-brand) !important; color: white !important; font-weight: 600 !important; padding: 10px 24px !important; }
         .nav-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+        .nav-login { display: inline-flex !important; align-items: center; gap: 6px; border: 1.5px solid var(--blue) !important; color: var(--blue) !important; font-weight: 600 !important; padding: 8px 20px 8px 16px !important; }
+        .nav-login svg { width: 18px; height: 18px; flex-shrink: 0; }
+        .nav-login:hover { background: var(--blue) !important; color: white !important; }
+        .nav-login:hover svg { stroke: white; }
         .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
         .nav-mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--dark); margin: 5px 0; transition: 0.3s; }
 
@@ -502,6 +506,10 @@
             <a href="/" class="active" data-panel="brokers" onclick="showPanel('brokers'); return false;">For Brokers</a>
             <a href="/employers" data-panel="employers" onclick="showPanel('employers'); return false;">For Employers</a>
             <a href="/get-tested" data-panel="longevity" onclick="showPanel('longevity'); return false;">Get Started</a>
+            <a href="https://portal.durand.life/signin" class="nav-login">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Log In
+            </a>
             <a href="/contact" class="nav-cta">Contact Us</a>
         </div>
         <button class="nav-mobile-toggle" onclick="toggleMobileNav()" aria-label="Menu">
