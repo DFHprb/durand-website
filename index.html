@@ -444,7 +444,7 @@
         .mehsa-section-header .mehsa-kicker { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--teal); margin-bottom: 14px; }
         .mehsa-section-header h2 { font-family: var(--font-serif); font-size: clamp(26px, 3.6vw, 38px); font-weight: 700; letter-spacing: -1px; line-height: 1.2; color: var(--dark); }
 
-        .mehsa-steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; counter-reset: mehsa-step; }
+        .mehsa-steps { display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, auto); grid-auto-flow: column; gap: 24px; counter-reset: mehsa-step; }
         .mehsa-step { position: relative; padding: 32px; background: white; border-radius: var(--radius); box-shadow: var(--shadow-sm); counter-increment: mehsa-step; }
         .mehsa-step::before { content: counter(mehsa-step); position: absolute; top: -14px; left: 24px; width: 36px; height: 36px; background: var(--gradient-brand); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; }
         .mehsa-step h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; margin-top: 8px; color: var(--dark); }
@@ -468,7 +468,7 @@
         .mehsa-cta-section h2 { font-family: var(--font-serif); font-size: clamp(26px, 3.6vw, 36px); font-weight: 700; margin-bottom: 16px; letter-spacing: -1px; }
 
         @media (max-width: 1200px) {
-            .mehsa-steps { grid-template-columns: repeat(3, 1fr); }
+            .mehsa-steps { grid-template-columns: repeat(3, 1fr); grid-template-rows: none; grid-auto-flow: row; }
         }
 
         /* RESPONSIVE */
@@ -492,7 +492,7 @@
             .mehsa-hero-inner { grid-template-columns: 1fr; text-align: center; }
             .mehsa-hero p { margin-left: auto; margin-right: auto; }
             .mehsa-hero-buttons { justify-content: center; }
-            .mehsa-steps { grid-template-columns: repeat(2, 1fr); }
+            .mehsa-steps { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; grid-auto-flow: row; }
             .hero-stats { justify-content: center; }
             .hero-stats-full { justify-content: center; flex-wrap: wrap; }
             .hero-bullets-full { justify-content: center; }
@@ -526,7 +526,7 @@
             .story-step::after { display: none; }
             .category-grid { grid-template-columns: 1fr; }
             .trust-bar-items { flex-wrap: wrap; justify-content: center; }
-            .mehsa-steps { grid-template-columns: 1fr; }
+            .mehsa-steps { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-flow: row; }
         }
     </style>
 </head>
