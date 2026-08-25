@@ -468,13 +468,14 @@
         .mehsa-cta-section h2 { font-family: var(--font-serif); font-size: clamp(26px, 3.6vw, 36px); font-weight: 700; margin-bottom: 16px; letter-spacing: -1px; }
 
         /* LH INSURANCE — standalone visual system for the L&H Insurance panel */
-        .lh-hero { background: var(--gradient-hero); padding: 64px 24px 72px; padding-top: calc(64px + 72px); position: relative; overflow: hidden; text-align: center; }
-        .lh-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(43,165,165,0.2) 0%, transparent 55%); }
-        .lh-hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 2; }
+        .lh-hero { background: var(--gradient-hero); padding: 64px 24px 72px; padding-top: calc(64px + 72px); position: relative; overflow: hidden; }
+        .lh-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 15% 20%, rgba(43,165,165,0.18) 0%, transparent 55%); }
+        .lh-hero-inner { max-width: 1220px; margin: 0 auto; position: relative; z-index: 2; display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+        .lh-hero-visual { display: flex; justify-content: center; align-items: center; }
         .lh-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 18px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-full); font-size: 12.5px; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 22px; color: white; backdrop-filter: blur(10px); }
         .lh-badge .dot { width: 7px; height: 7px; background: var(--lime); border-radius: 50%; }
         .lh-hero h1 { font-family: var(--font-serif); font-size: clamp(30px, 4vw, 46px); font-weight: 700; line-height: 1.2; letter-spacing: -1px; color: white; margin-bottom: 24px; }
-        .lh-hero-lead { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.8); max-width: 680px; margin: 0 auto 20px; }
+        .lh-hero-lead { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.8); max-width: 520px; margin: 0; }
         .lh-hero-note { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.55); max-width: 620px; margin: 0 auto; }
 
         .lh-flow { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 8px 0; }
@@ -545,6 +546,9 @@
             .mehsa-hero p { margin-left: auto; margin-right: auto; }
             .mehsa-hero-buttons { justify-content: center; }
             .mehsa-steps { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; grid-auto-flow: row; }
+            .lh-hero-inner { grid-template-columns: 1fr; gap: 40px 0; text-align: center; }
+            .lh-hero-visual { order: -1; }
+            .lh-hero-lead { margin: 0 auto; }
             .lh-laser { grid-template-columns: 1fr; }
             .lh-laser-plus { justify-self: center; }
             .lh-rings { max-width: 340px; }
@@ -1845,21 +1849,67 @@
     <!-- LH HERO -->
     <section class="lh-hero">
         <div class="lh-hero-inner">
-            <div class="lh-badge"><span class="dot"></span> For Life, Stop-Loss &amp; Group Insurers &mdash; Durand. With You for Life&trade;</div>
-            <h1>Move Insurance From a Snapshot of Risk to an Ongoing Understanding of Health.</h1>
-            <p class="lh-hero-lead">Insurance has traditionally been exceptionally good at assessing risk at a moment in time. Durand Future Health extends that capability after coverage begins.</p>
-            <p class="lh-hero-lead">The Durand Adaptive Health Intelligence Platform combines continuously evolving precision testing with longitudinal health data, secure AI-supported interpretation, population intelligence, personalized engagement and care navigation &mdash; helping insurers and the people they insure understand how health is changing over time.</p>
-            <p class="lh-hero-lead">It creates a different relationship between insurer and insured: not simply pricing risk and eventually paying a claim, but helping people better understand and improve the health trajectory that ultimately drives that risk.</p>
-            <div class="lh-flow fade-in" style="margin-top: 36px;">
-                <div class="lh-flow-step">Underwriting / Enrollment</div>
-                <div class="lh-flow-arrow">&rarr;</div>
-                <div class="lh-flow-step accent">Durand Adaptive Health Intelligence</div>
-                <div class="lh-flow-arrow">&rarr;</div>
-                <div class="lh-flow-step">Precision Testing + Continuous Signals + Personalization + Navigation</div>
-                <div class="lh-flow-arrow">&rarr;</div>
-                <div class="lh-flow-step accent">Biology &amp; Function Change Over Time</div>
+            <div>
+                <div class="lh-badge"><span class="dot"></span> For Life, Stop-Loss &amp; Group Insurers &mdash; Durand. With You for Life&trade;</div>
+                <h1>Move Insurance From a Snapshot of Risk to an Ongoing Understanding of Health.</h1>
+                <p class="lh-hero-lead">Insurance has traditionally been exceptionally good at assessing risk at a moment in time. Durand Future Health extends that capability after coverage begins.</p>
             </div>
-            <div class="lh-hero-note" style="margin-top: 28px;">Durand&rsquo;s Health Intelligence Platform is the core engine integrating health information, measuring change and producing insight &mdash; with activation and navigation built around that intelligence.</div>
+            <div class="lh-hero-visual">
+                <div class="dna-visual">
+                    <div class="dna-glow"></div>
+                    <svg class="dna-helix" viewBox="0 0 400 440" fill="none">
+                        <defs>
+                            <linearGradient id="dna-g1-lh" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8CC63F"/><stop offset="50%" stop-color="#2BA5A5"/><stop offset="100%" stop-color="#1B2D6B"/></linearGradient>
+                            <linearGradient id="dna-g2-lh" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1B2D6B"/><stop offset="50%" stop-color="#2BA5A5"/><stop offset="100%" stop-color="#8CC63F"/></linearGradient>
+                        </defs>
+                        <!-- Strand 1 -->
+                        <path d="M120,40 C180,80 280,120 260,180 C240,240 140,260 160,320 C180,380 280,400 260,440" stroke="url(#dna-g1-lh)" stroke-width="3" fill="none" opacity="0.8">
+                            <animate attributeName="d" dur="8s" repeatCount="indefinite" values="M120,40 C180,80 280,120 260,180 C240,240 140,260 160,320 C180,380 280,400 260,440;M140,40 C200,80 300,120 280,180 C260,240 160,260 180,320 C200,380 300,400 280,440;M120,40 C180,80 280,120 260,180 C240,240 140,260 160,320 C180,380 280,400 260,440"/>
+                        </path>
+                        <!-- Strand 2 -->
+                        <path d="M280,40 C220,80 120,120 140,180 C160,240 260,260 240,320 C220,380 120,400 140,440" stroke="url(#dna-g2-lh)" stroke-width="3" fill="none" opacity="0.8">
+                            <animate attributeName="d" dur="8s" repeatCount="indefinite" values="M280,40 C220,80 120,120 140,180 C160,240 260,260 240,320 C220,380 120,400 140,440;M260,40 C200,80 100,120 120,180 C140,240 240,260 220,320 C200,380 100,400 120,440;M280,40 C220,80 120,120 140,180 C160,240 260,260 240,320 C220,380 120,400 140,440"/>
+                        </path>
+                        <!-- Connecting rungs -->
+                        <line x1="145" y1="100" x2="255" y2="100" stroke="rgba(43,165,165,0.3)" stroke-width="1.5"/>
+                        <line x1="175" y1="140" x2="225" y2="140" stroke="rgba(43,165,165,0.2)" stroke-width="1.5"/>
+                        <line x1="200" y1="180" x2="200" y2="180" stroke="rgba(43,165,165,0.15)" stroke-width="1.5"/>
+                        <line x1="165" y1="220" x2="235" y2="220" stroke="rgba(43,165,165,0.3)" stroke-width="1.5"/>
+                        <line x1="175" y1="260" x2="225" y2="260" stroke="rgba(43,165,165,0.2)" stroke-width="1.5"/>
+                        <line x1="155" y1="300" x2="245" y2="300" stroke="rgba(43,165,165,0.3)" stroke-width="1.5"/>
+                        <line x1="185" y1="340" x2="215" y2="340" stroke="rgba(43,165,165,0.2)" stroke-width="1.5"/>
+                        <line x1="170" y1="380" x2="230" y2="380" stroke="rgba(43,165,165,0.25)" stroke-width="1.5"/>
+                        <!-- Data points -->
+                        <circle cx="145" cy="100" r="4" fill="#8CC63F" opacity="0.8"><animate attributeName="opacity" dur="3s" repeatCount="indefinite" values="0.4;1;0.4"/></circle>
+                        <circle cx="255" cy="100" r="4" fill="#2BA5A5" opacity="0.8"><animate attributeName="opacity" dur="3s" repeatCount="indefinite" values="1;0.4;1"/></circle>
+                        <circle cx="165" cy="220" r="4" fill="#44B878" opacity="0.8"><animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0.6;1;0.6"/></circle>
+                        <circle cx="235" cy="220" r="4" fill="#1B2D6B" opacity="0.8"><animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="1;0.5;1"/></circle>
+                        <circle cx="155" cy="300" r="4" fill="#2BA5A5" opacity="0.8"><animate attributeName="opacity" dur="3.5s" repeatCount="indefinite" values="0.5;1;0.5"/></circle>
+                        <circle cx="245" cy="300" r="4" fill="#8CC63F" opacity="0.8"><animate attributeName="opacity" dur="3.5s" repeatCount="indefinite" values="1;0.6;1"/></circle>
+                    </svg>
+                    <div class="dna-label dna-label-1" data-slot="0">
+                        <div class="dna-label-text"><strong>Multiomics</strong>11 Organ Health Scores</div>
+                    </div>
+                    <div class="dna-label dna-label-2" data-slot="1">
+                        <div class="dna-label-text"><strong>Lab History</strong>Upload Historical Blood Work</div>
+                    </div>
+                    <div class="dna-label dna-label-3" data-slot="2">
+                        <div class="dna-label-text"><strong>Cognitive Health</strong>Validated Brain Assessment</div>
+                    </div>
+                    <div class="dna-label dna-label-4" data-slot="3">
+                        <div class="dna-label-text"><strong>Imaging History</strong>Upload CT, MRI &amp; X-Ray Reports</div>
+                    </div>
+                    <div class="dna-label dna-label-5" data-slot="4">
+                        <div class="dna-label-text"><strong>Family History</strong>Insights to Hereditary Risk</div>
+                    </div>
+                    <div class="dna-label dna-label-6" data-slot="5">
+                        <div class="dna-label-text"><strong>Wearables</strong>30+ Devices Integrated</div>
+                    </div>
+                    <div class="dna-label dna-label-7" data-slot="6">
+                        <div class="dna-label-text"><strong>Medications</strong>Insights to Drug Interaction Analysis</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -2245,31 +2295,34 @@ window.addEventListener('pageshow', (e) => { if (e.persisted) location.reload();
         ['Organ Function', 'Liver, Kidney & Lung Scores'],
         ['Epigenetic Markers', 'Inherited Risk Factors']
     ];
-    const slots = document.querySelectorAll('.dna-label[data-slot]');
-    if (!slots.length) return;
-    let indices = [0,1,2,3,4,5,6];
-    function getNext() {
-        const used = new Set(indices);
-        let pool = [];
-        for (let i = 0; i < allData.length; i++) { if (!used.has(i)) pool.push(i); }
-        if (!pool.length) pool = Array.from({length: allData.length}, (_, i) => i);
-        return pool[Math.floor(Math.random() * pool.length)];
+    function initVisual(container) {
+        const slots = container.querySelectorAll('.dna-label[data-slot]');
+        if (!slots.length) return;
+        let indices = [0,1,2,3,4,5,6];
+        function getNext() {
+            const used = new Set(indices);
+            let pool = [];
+            for (let i = 0; i < allData.length; i++) { if (!used.has(i)) pool.push(i); }
+            if (!pool.length) pool = Array.from({length: allData.length}, (_, i) => i);
+            return pool[Math.floor(Math.random() * pool.length)];
+        }
+        function rotateSlot(slotIdx) {
+            const el = slots[slotIdx];
+            const textEl = el.querySelector('.dna-label-text');
+            textEl.classList.add('fade-out');
+            setTimeout(() => {
+                const newIdx = getNext();
+                indices[slotIdx] = newIdx;
+                textEl.innerHTML = '<strong>' + allData[newIdx][0] + '</strong>' + allData[newIdx][1];
+                textEl.classList.remove('fade-out');
+            }, 400);
+        }
+        setInterval(() => {
+            const slot = Math.floor(Math.random() * slots.length);
+            rotateSlot(slot);
+        }, 2800);
     }
-    function rotateSlot(slotIdx) {
-        const el = slots[slotIdx];
-        const textEl = el.querySelector('.dna-label-text');
-        textEl.classList.add('fade-out');
-        setTimeout(() => {
-            const newIdx = getNext();
-            indices[slotIdx] = newIdx;
-            textEl.innerHTML = '<strong>' + allData[newIdx][0] + '</strong>' + allData[newIdx][1];
-            textEl.classList.remove('fade-out');
-        }, 400);
-    }
-    setInterval(() => {
-        const slot = Math.floor(Math.random() * slots.length);
-        rotateSlot(slot);
-    }, 2800);
+    document.querySelectorAll('.dna-visual').forEach(initVisual);
 })();
 </script>
 
