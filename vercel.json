@@ -2,6 +2,8 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/employers", "destination": "/" },
-    { "source": "/get-tested", "destination": "/" }
+    { "source": "/get-tested", "destination": "/" },
+    { "source": "/me-hsa", "destination": "/" },
+    { "source": "/MeHSA", "destination": "/" }
   ]
 }
