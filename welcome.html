@@ -54,6 +54,10 @@
         .nav-links { display: flex; align-items: center; gap: 8px; }
         .nav-links a { text-decoration: none; color: var(--gray-700); font-size: 14px; font-weight: 500; padding: 8px 16px; border-radius: var(--radius-full); transition: all 0.2s; }
         .nav-links a:hover { color: var(--dark); background: var(--gray-100); }
+        .nav-login { display: inline-flex !important; align-items: center; gap: 6px; border: 1.5px solid var(--blue) !important; color: var(--blue) !important; font-weight: 600 !important; padding: 8px 20px 8px 16px !important; }
+        .nav-login svg { width: 18px; height: 18px; flex-shrink: 0; }
+        .nav-login:hover { background: var(--blue) !important; color: white !important; }
+        .nav-login:hover svg { stroke: white; }
         .nav-cta { background: var(--gradient-brand) !important; color: white !important; font-weight: 600 !important; padding: 10px 24px !important; }
         .nav-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
         .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
@@ -131,18 +135,16 @@
         /* CTA */
         .cta-section { background: var(--dark); padding: 80px 24px; text-align: center; color: white; }
         .cta-section h2 { font-family: var(--font-serif); font-size: clamp(26px, 3.6vw, 36px); font-weight: 700; margin-bottom: 16px; letter-spacing: -1px; }
-        .cta-section .tagline { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--lime); font-style: italic; letter-spacing: 0.5px; margin-bottom: 26px; }
 
         /* FOOTER */
-        .footer { background: var(--dark); color: white; padding: 56px 24px 28px; }
-        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
+        .footer { background: var(--dark); color: white; padding: 64px 24px 32px; }
+        .footer-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
         .footer-brand img { height: 40px; width: auto; }
-        .footer-brand p { color: rgba(255,255,255,0.65); font-size: 13.5px; margin-top: 14px; line-height: 1.7; max-width: 340px; }
-        .footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
-        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13.5px; display: block; margin-bottom: 8px; }
-        .footer-links a:hover { color: white; }
-        .footer-links h4 { font-size: 11.5px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; color: var(--teal); }
-        .footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 12.5px; color: rgba(255,255,255,0.5); }
+        .footer-brand p { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 16px; line-height: 1.7; }
+        .footer h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; color: var(--teal); }
+        .footer a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 14px; display: block; margin-bottom: 10px; transition: color 0.2s; }
+        .footer a:hover { color: white; }
+        .footer-bottom { max-width: 1280px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15); display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(255,255,255,0.6); }
 
         .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -155,12 +157,13 @@
             .hero p { margin-left: auto; margin-right: auto; }
             .hero-buttons { justify-content: center; }
             .steps { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 640px) {
             .nav-links { display: none; }
             .nav-links.open { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; position: absolute; top: 72px; left: 0; right: 0; background: white; padding: 20px 24px; box-shadow: var(--shadow-lg); }
             .nav-mobile-toggle { display: block; }
-            .footer-inner { flex-direction: column; }
+            .footer-inner { grid-template-columns: 1fr; }
             .steps { grid-template-columns: 1fr; }
         }
     </style>
@@ -183,6 +186,10 @@
             <a href="/">For Brokers</a>
             <a href="/employers">For Employers</a>
             <a href="/get-tested">Get Started</a>
+            <a href="https://portal.durand.life/signin" class="nav-login">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Log In
+            </a>
             <a href="/contact" class="nav-cta">Contact Us</a>
         </div>
         <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
@@ -287,7 +294,7 @@
 <!-- CTA -->
 <section class="cta-section">
     <h2>Ready When You Are</h2>
-    <div class="tagline">With you for Life&reg;</div>
+    <p style="font-family: 'Inter', -apple-system, sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 26px; letter-spacing: -0.3px; color: #fff;">Durand. <span style="background: linear-gradient(90deg, #44B878, #2BA5A5, #5B9BD5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">With You for Life</span><sup style="font-size: 0.55em; font-weight: 700; color: #fff;">&trade;</sup></p>
     <a href="/contact" class="btn btn-primary" style="font-size: 16px; padding: 16px 40px;">Connect With Us</a>
 </section>
 
@@ -296,23 +303,24 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <img src="logo-horizontal-reverse.png?v=2" alt="Durand Future Health">
-            <p>Predictive health intelligence built by physicians and scientists. Available in Canada and the United States.</p>
+            <p>Predictive health intelligence built by physicians and scientists. Home-based epigenetic testing. AI-powered insights. Care navigation. Available in Canada and the United States.</p>
+            <p style="font-family: 'Inter', -apple-system, sans-serif; font-size: 16px; font-weight: 800; margin-top: 12px; letter-spacing: -0.2px; color: #fff;">Durand. <span style="background: linear-gradient(90deg, #44B878, #2BA5A5, #5B9BD5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">With You for Life</span><sup style="font-size: 0.55em; font-weight: 700; color: #fff;">&trade;</sup></p>
         </div>
-        <div class="footer-links">
-            <div>
-                <h4>Company</h4>
-                <a href="/contact">Contact</a>
-                <a href="/privacy-policy">Privacy Policy</a>
-            </div>
-            <div>
-                <h4>Also On Durand</h4>
-                <a href="/">For Brokers</a>
-                <a href="/employers">For Employers</a>
-            </div>
+        <div>
+            <h4>Solutions</h4>
+            <a href="/">For Brokers</a>
+            <a href="/employers">For Employers</a>
+            <a href="/get-tested">Get Started</a>
+        </div>
+        <div>
+            <h4>Company</h4>
+            <a href="/contact">Contact</a>
+            <a href="/privacy-policy">Privacy Policy</a>
         </div>
     </div>
     <div class="footer-bottom">
-        &copy; 2026 Durand Future Health, Inc. All rights reserved.
+        <div>&copy; 2026 Durand Future Health, Inc. All rights reserved.</div>
+        <div>Greater Toronto &nbsp;&bull;&nbsp; San Francisco &nbsp;&bull;&nbsp; Miami</div>
     </div>
 </footer>
 
