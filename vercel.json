@@ -4,7 +4,8 @@
     { "source": "/employers", "destination": "/" },
     { "source": "/get-tested", "destination": "/" },
     { "source": "/me-hsa", "destination": "/" },
-    { "source": "/MeHSA", "destination": "/" }
+    { "source": "/MeHSA", "destination": "/" },
+    { "source": "/lh-insurance", "destination": "/" }
   ],
   "headers": [
     {
@@ -33,6 +34,12 @@
     },
     {
       "source": "/MeHSA",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    },
+    {
+      "source": "/lh-insurance",
       "headers": [
         { "key": "Cache-Control", "value": "no-store" }
       ]
