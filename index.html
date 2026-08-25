@@ -467,6 +467,58 @@
         .mehsa-cta-section { background: var(--dark); padding: 80px 24px; text-align: center; color: white; }
         .mehsa-cta-section h2 { font-family: var(--font-serif); font-size: clamp(26px, 3.6vw, 36px); font-weight: 700; margin-bottom: 16px; letter-spacing: -1px; }
 
+        /* LH INSURANCE — standalone visual system for the L&H Insurance panel */
+        .lh-hero { background: var(--gradient-hero); padding: 64px 24px 72px; padding-top: calc(64px + 72px); position: relative; overflow: hidden; text-align: center; }
+        .lh-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(43,165,165,0.2) 0%, transparent 55%); }
+        .lh-hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 2; }
+        .lh-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 18px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-full); font-size: 12.5px; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 22px; color: white; backdrop-filter: blur(10px); }
+        .lh-badge .dot { width: 7px; height: 7px; background: var(--lime); border-radius: 50%; }
+        .lh-hero h1 { font-family: var(--font-serif); font-size: clamp(30px, 4vw, 46px); font-weight: 700; line-height: 1.2; letter-spacing: -1px; color: white; margin-bottom: 24px; }
+        .lh-hero-lead { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.8); max-width: 680px; margin: 0 auto 20px; }
+        .lh-hero-note { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.55); max-width: 620px; margin: 0 auto; }
+
+        .lh-flow { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 8px 0; }
+        .lh-flow-step { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; padding: 12px 18px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: white; text-align: center; backdrop-filter: blur(8px); }
+        .lh-flow-step.accent { background: rgba(140,198,63,0.16); border-color: rgba(140,198,63,0.4); color: var(--lime); }
+        .lh-flow-arrow { color: rgba(255,255,255,0.4); font-size: 16px; }
+        .lh-flow-light .lh-flow-step { background: white; border-color: var(--gray-200); color: var(--dark); box-shadow: var(--shadow-sm); }
+        .lh-flow-light .lh-flow-arrow { color: var(--gray-500); }
+
+        .lh-quote { border-left: 3px solid var(--teal); padding: 4px 0 4px 24px; margin: 28px 0; font-family: var(--font-serif); font-size: 19px; font-style: italic; line-height: 1.6; color: var(--dark); }
+        .lh-quote cite { display: block; margin-top: 10px; font-family: 'Inter', -apple-system, sans-serif; font-style: normal; font-size: 13px; font-weight: 600; color: var(--gray-500); }
+
+        .lh-timeline { margin: 40px 0 0; }
+        .lh-timeline-track { position: relative; height: 10px; border-radius: 999px; background: var(--gray-200); overflow: hidden; }
+        .lh-timeline-fill { position: absolute; top: 0; left: 14%; right: 14%; height: 100%; background: var(--gradient-brand); border-radius: 999px; }
+        .lh-timeline-ends { display: flex; justify-content: space-between; margin-top: 12px; font-size: 13px; font-weight: 700; color: var(--gray-700); text-transform: uppercase; letter-spacing: 0.5px; }
+        .lh-timeline-steps { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 28px; }
+        .lh-timeline-step { font-size: 12.5px; font-weight: 700; color: var(--teal); background: rgba(43,165,165,0.08); padding: 8px 14px; border-radius: var(--radius-full); }
+        .lh-timeline-chevron { color: var(--gray-500); font-size: 13px; }
+
+        .lh-laser { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; max-width: 820px; margin: 40px auto 28px; }
+        .lh-laser-box { background: white; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200); padding: 28px; text-align: center; }
+        .lh-laser-box .count { font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-500); }
+        .lh-laser-box .ded { font-size: 30px; font-weight: 900; color: var(--teal); letter-spacing: -1px; margin-top: 8px; }
+        .lh-laser-box.lasered .ded { color: #dc3545; }
+        .lh-laser-box .desc { font-size: 13px; color: var(--gray-500); margin-top: 10px; line-height: 1.5; }
+        .lh-laser-plus { font-size: 26px; font-weight: 800; color: var(--gray-500); }
+        .lh-laser-callout { text-align: center; margin-top: 8px; }
+        .lh-laser-callout .amount { font-size: 30px; font-weight: 900; color: #dc3545; letter-spacing: -1px; }
+        .lh-laser-callout .label { font-size: 13px; color: var(--gray-500); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+
+        .lh-rings { position: relative; width: 100%; max-width: 460px; aspect-ratio: 1 / 1; margin: 40px auto 0; }
+        .lh-rings::before { content: ''; position: absolute; inset: 15%; border: 1px dashed var(--gray-200); border-radius: 50%; }
+        .lh-rings::after { content: ''; position: absolute; inset: 0; border: 1px dashed var(--gray-200); border-radius: 50%; }
+        .lh-rings-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 112px; height: 112px; border-radius: 50%; background: var(--gradient-brand); color: white; display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--font-serif); font-weight: 700; font-size: 14px; box-shadow: var(--shadow-lg); z-index: 3; padding: 10px; }
+        .lh-ring-item { position: absolute; background: white; border: 1px solid var(--gray-200); box-shadow: var(--shadow-sm); border-radius: var(--radius-full); padding: 8px 16px; font-size: 12px; font-weight: 700; color: var(--dark); white-space: nowrap; transform: translate(-50%, -50%); z-index: 2; }
+
+        .lh-population { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; max-width: 640px; margin: 32px auto 32px; }
+        .lh-population span { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); opacity: 0.3; display: block; }
+        .lh-population span:nth-child(3n) { background: var(--blue); opacity: 0.55; }
+        .lh-population span:nth-child(7n) { background: var(--lime); opacity: 0.7; }
+        .lh-population-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .lh-population-tags .tag { font-size: 12.5px; font-weight: 700; color: var(--teal); background: rgba(43,165,165,0.08); padding: 8px 14px; border-radius: var(--radius-full); }
+
         @media (max-width: 1200px) {
             .mehsa-steps { grid-template-columns: repeat(3, 1fr); grid-template-rows: none; grid-auto-flow: row; }
         }
@@ -493,6 +545,10 @@
             .mehsa-hero p { margin-left: auto; margin-right: auto; }
             .mehsa-hero-buttons { justify-content: center; }
             .mehsa-steps { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; grid-auto-flow: row; }
+            .lh-laser { grid-template-columns: 1fr; }
+            .lh-laser-plus { justify-self: center; }
+            .lh-rings { max-width: 340px; }
+            .lh-ring-item { font-size: 10px; padding: 6px 9px; white-space: normal; max-width: 118px; text-align: center; line-height: 1.25; }
             .hero-stats { justify-content: center; }
             .hero-stats-full { justify-content: center; flex-wrap: wrap; }
             .hero-bullets-full { justify-content: center; }
@@ -527,6 +583,9 @@
             .category-grid { grid-template-columns: 1fr; }
             .trust-bar-items { flex-wrap: wrap; justify-content: center; }
             .mehsa-steps { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-flow: row; }
+            .lh-rings { max-width: 280px; }
+            .lh-ring-item { font-size: 9px; padding: 5px 8px; max-width: 100px; }
+            .lh-rings-center { width: 92px; height: 92px; font-size: 12px; }
         }
     </style>
 </head>
@@ -572,6 +631,7 @@
             <a href="/me-hsa" data-panel="mehsa" onclick="showPanel('mehsa'); return false;">For Me/HSA</a>
             <a href="/" class="active" data-panel="brokers" onclick="showPanel('brokers'); return false;">For Brokers</a>
             <a href="/employers" data-panel="employers" onclick="showPanel('employers'); return false;">For Employers</a>
+            <a href="/lh-insurance" data-panel="linsurance" onclick="showPanel('linsurance'); return false;">L &amp; H Insurance</a>
             <a href="/get-tested" data-panel="longevity" onclick="showPanel('longevity'); return false;">Get Started</a>
             <a href="https://portal.durand.life/signin" class="nav-login">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -1780,6 +1840,266 @@
 </div>
 
 
+<div class="page-panel" id="panel-linsurance">
+
+    <!-- LH HERO -->
+    <section class="lh-hero">
+        <div class="lh-hero-inner">
+            <div class="lh-badge"><span class="dot"></span> For Life, Stop-Loss &amp; Group Insurers &mdash; Durand. With You for Life&trade;</div>
+            <h1>Move Insurance From a Snapshot of Risk to an Ongoing Understanding of Health.</h1>
+            <p class="lh-hero-lead">Insurance has traditionally been exceptionally good at assessing risk at a moment in time. Durand Future Health extends that capability after coverage begins.</p>
+            <p class="lh-hero-lead">The Durand Adaptive Health Intelligence Platform combines continuously evolving precision testing with longitudinal health data, secure AI-supported interpretation, population intelligence, personalized engagement and care navigation &mdash; helping insurers and the people they insure understand how health is changing over time.</p>
+            <p class="lh-hero-lead">It creates a different relationship between insurer and insured: not simply pricing risk and eventually paying a claim, but helping people better understand and improve the health trajectory that ultimately drives that risk.</p>
+            <div class="lh-flow fade-in" style="margin-top: 36px;">
+                <div class="lh-flow-step">Underwriting / Enrollment</div>
+                <div class="lh-flow-arrow">&rarr;</div>
+                <div class="lh-flow-step accent">Durand Adaptive Health Intelligence</div>
+                <div class="lh-flow-arrow">&rarr;</div>
+                <div class="lh-flow-step">Precision Testing + Continuous Signals + Personalization + Navigation</div>
+                <div class="lh-flow-arrow">&rarr;</div>
+                <div class="lh-flow-step accent">Biology &amp; Function Change Over Time</div>
+            </div>
+            <div class="lh-hero-note" style="margin-top: 28px;">Durand&rsquo;s Health Intelligence Platform is the core engine integrating health information, measuring change and producing insight &mdash; with activation and navigation built around that intelligence.</div>
+        </div>
+    </section>
+
+    <!-- LIFE INSURANCE -->
+    <section class="section">
+        <div class="section-inner" style="max-width: 780px;">
+            <div class="section-header fade-in">
+                <div class="section-label">Life Insurance</div>
+                <h2 class="section-title" style="font-size: clamp(28px, 3.6vw, 38px);">From Underwriting Life Expectancy to Helping Improve It.</h2>
+            </div>
+            <div class="fade-in" style="font-size: 16px; line-height: 1.8; color: var(--gray-700);">
+                <p style="margin-bottom: 20px;">Life insurers possess extraordinary actuarial expertise. But much of the health information used to underwrite a policy is gathered before the policy is issued.</p>
+                <p style="margin-bottom: 0;">Swiss Re describes the industry reality directly:</p>
+            </div>
+            <blockquote class="lh-quote fade-in">&ldquo;Risk factors are usually assessed only once, prior to policy inception.&rdquo;<cite>Swiss Re</cite></blockquote>
+            <blockquote class="lh-quote fade-in">&ldquo;Many risk factors and behavior may change over time.&rdquo;<cite>Swiss Re</cite></blockquote>
+            <div class="fade-in" style="font-size: 16px; line-height: 1.8; color: var(--gray-700);">
+                <p style="margin-bottom: 20px;">That creates an enormous opportunity. Durand gives life insurers an advanced health-intelligence relationship with insureds after they are bound.</p>
+                <p>Instead of limiting advanced preventive assessment to executives able to access expensive executive-health programs, Durand can bring scientifically governed annual precision testing and longitudinal intelligence to much larger insured populations. Durand&rsquo;s current platform already combines advanced biological testing with cognitive, sleep, cancer-risk, family-history, wearable and medical-record signals, designed to compound year after year rather than reset annually.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIFE — MISSING YEARS TIMELINE -->
+    <section class="section section-light">
+        <div class="section-inner" style="max-width: 860px;">
+            <div class="section-header fade-in" style="margin-bottom: 8px;">
+                <div class="section-label">The Missing Years</div>
+                <h2 class="section-title" style="font-size: clamp(24px, 3vw, 32px);">Durand Illuminates the Years Between Binding and Claim.</h2>
+            </div>
+            <div class="lh-timeline fade-in">
+                <div class="lh-timeline-track"><div class="lh-timeline-fill"></div></div>
+                <div class="lh-timeline-ends"><span>Policy Bound</span><span>Claim / Maturity</span></div>
+                <div class="lh-timeline-steps">
+                    <span class="lh-timeline-step">Test</span><span class="lh-timeline-chevron">&rarr;</span>
+                    <span class="lh-timeline-step">Understand</span><span class="lh-timeline-chevron">&rarr;</span>
+                    <span class="lh-timeline-step">Engage</span><span class="lh-timeline-chevron">&rarr;</span>
+                    <span class="lh-timeline-step">Reward</span><span class="lh-timeline-chevron">&rarr;</span>
+                    <span class="lh-timeline-step">Navigate</span><span class="lh-timeline-chevron">&rarr;</span>
+                    <span class="lh-timeline-step">Measure</span><span class="lh-timeline-chevron">&rarr;</span>
+                    <span class="lh-timeline-step">Adapt</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW DURAND HELPS LIFE INSURERS -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header fade-in">
+                <div class="section-label">How Durand Helps Life Insurers</div>
+                <h2 class="section-title">Six Ways Durand Extends Underwriting Into Ongoing Intelligence.</h2>
+            </div>
+            <div class="card-grid card-grid-3 fade-in">
+                <div class="card"><h3>Adaptive Precision Testing</h3><p>Testing evolves as the individual&rsquo;s age, history, biology, risks and available science change. The objective isn&rsquo;t to run the same giant panel every year &mdash; it&rsquo;s to deploy the right validated testing, for the right individual, at the right time.</p></div>
+                <div class="card"><h3>Advanced Personalization</h3><p>Durand continuously connects each person&rsquo;s existing health information with emerging validated science and testing &mdash; building an increasingly individualized understanding of their health trajectory over time.</p></div>
+                <div class="card"><h3>Policyholder Engagement</h3><p>Turn an insurance relationship traditionally dominated by premiums and claims into something the insured can receive value from every year.</p></div>
+                <div class="card"><h3>Personalized Rewards</h3><p>Insurers can create governed incentives around meaningful participation and healthy behaviors rather than generic wellness activity &mdash; helping align policyholder health and insurer economics.</p></div>
+                <div class="card"><h3>Population Intelligence</h3><p>Insurers receive permissioned, appropriately aggregated population views that help identify changing risk patterns and understand engagement and health trajectories &mdash; without exposing individual employee or insured health information.</p></div>
+                <div class="card"><h3>Care Navigation + Outcomes Monitoring</h3><p>Where appropriate, members can be directed toward qualified care resources. Durand then helps determine whether the resulting intervention is actually improving health over time, rather than simply recording that care occurred.</p></div>
+            </div>
+            <blockquote class="lh-quote fade-in" style="max-width: 760px; margin: 48px auto 0;">Swiss Re identifies health engagement as a way for insurers to move their value proposition &ldquo;from only paying claims to prevention,&rdquo; while improving policyholder health, engagement and potentially mortality and persistency experience.<cite>Swiss Re</cite></blockquote>
+        </div>
+    </section>
+
+    <!-- THE OPPORTUNITY -->
+    <section class="section section-light">
+        <div class="section-inner" style="max-width: 820px;">
+            <div class="value-banner fade-in">
+                <h3>Underwrite Once. Understand Health for Years.</h3>
+                <p>Durand does not replace actuarial science. It gives actuarial and insurance teams something they have historically struggled to obtain at scale: a continuously evolving view of the factors underlying long-term risk &mdash; combined with a platform designed to help insureds improve those factors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STOP-LOSS -->
+    <section class="section section-dark">
+        <div class="section-inner" style="max-width: 860px;">
+            <div class="section-header fade-in">
+                <div class="section-label">Stop-Loss Insurance</div>
+                <h2 class="section-title">Help Prevent Tomorrow&rsquo;s Catastrophic Claim From Becoming Today&rsquo;s Unavoidable Surprise.</h2>
+                <p class="section-subtitle">For self-funded employers, a single serious illness can become a major balance-sheet event. And the market is getting harder.</p>
+            </div>
+            <div class="stats-row fade-in">
+                <div class="stat-box"><div class="stat-number">67%</div><div class="stat-label">of covered U.S. workers were enrolled in self-funded health plans in 2025 &mdash; 80% at firms with 200+ employees (KFF)</div></div>
+                <div class="stat-box"><div class="stat-number">75%</div><div class="stat-label">of self-funded workers at firms of 200+ were in plans with stop-loss protection (KFF)</div></div>
+                <div class="stat-box"><div class="stat-number">23%</div><div class="stat-label">average medical stop-loss renewal increase for Mercer&rsquo;s January 2026 cycle (Mercer)</div></div>
+                <div class="stat-box"><div class="stat-number">36%</div><div class="stat-label">of stop-loss reimbursements were driven by cancer alone, per 2026 claims data (QBE)</div></div>
+            </div>
+            <div class="fade-in" style="font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.85); max-width: 720px; margin: 0 auto; text-align: center;">
+                <p>The frequency of members exceeding $200,000 in annual claims increased nearly 20% year over year across conditions (QBE). This creates pressure on both sides of the transaction.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LASER EXPLAINER -->
+    <section class="section">
+        <div class="section-inner" style="max-width: 760px;">
+            <div class="section-header fade-in">
+                <div class="section-label">What Is a &ldquo;Laser&rdquo;?</div>
+                <h2 class="section-title" style="font-size: clamp(24px, 3vw, 32px);">One High-Risk Claimant Can Reset an Employer&rsquo;s Exposure.</h2>
+                <p class="section-subtitle">When a stop-loss carrier identifies an individual expected to generate unusually high claims, it may apply a laser &mdash; a higher specific deductible for that individual than for the rest of the covered population.</p>
+            </div>
+            <div class="lh-laser fade-in">
+                <div class="lh-laser-box">
+                    <div class="count">Standard Deductible</div>
+                    <div class="ded">$250,000</div>
+                    <div class="desc">Specific deductible for the covered population</div>
+                </div>
+                <div class="lh-laser-plus">+</div>
+                <div class="lh-laser-box lasered">
+                    <div class="count">Lasered Claimant</div>
+                    <div class="ded">$750,000</div>
+                    <div class="desc">Specific deductible for the identified high-risk individual</div>
+                </div>
+            </div>
+            <div class="lh-laser-callout fade-in">
+                <div class="amount">$500,000</div>
+                <div class="label">Additional Employer Exposure, Before Stop-Loss Protection Begins</div>
+            </div>
+            <p class="fade-in" style="font-size: 15px; line-height: 1.8; color: var(--gray-500); margin-top: 32px; text-align: center;">As claims rise, carriers are tightening underwriting, imposing higher lasers and stricter terms, and becoming less aggressive in quoting higher-risk groups (BBrown Insights).</p>
+        </div>
+    </section>
+
+    <!-- DURAND UPSTREAM -->
+    <section class="section section-light">
+        <div class="section-inner" style="max-width: 900px;">
+            <div class="section-header fade-in">
+                <div class="section-label">Durand Changes the Equation Upstream</div>
+                <h2 class="section-title" style="font-size: clamp(24px, 3vw, 32px);">Earlier Understanding. Better Action. Better Odds.</h2>
+            </div>
+            <div class="fade-in" style="font-size: 16px; line-height: 1.8; color: var(--gray-700); max-width: 760px; margin: 0 auto 32px; text-align: center;">
+                <p>Traditional stop-loss intelligence is largely built around claims, utilization and known diagnoses. Durand introduces an additional layer: longitudinal biological and functional intelligence before some risks become catastrophic claims.</p>
+            </div>
+            <div class="lh-curve-wrap fade-in" style="max-width: 700px; margin: 0 auto;">
+                <svg viewBox="0 0 760 260" style="width: 100%; height: auto; display: block;">
+                    <line x1="60" y1="220" x2="740" y2="220" stroke="#e9ecef" stroke-width="1"/>
+                    <line x1="60" y1="160" x2="740" y2="160" stroke="#e9ecef" stroke-width="1"/>
+                    <line x1="60" y1="100" x2="740" y2="100" stroke="#e9ecef" stroke-width="1"/>
+                    <line x1="60" y1="40" x2="740" y2="40" stroke="#e9ecef" stroke-width="1"/>
+                    <text x="14" y="224" font-size="12" fill="#6c757d" font-family="Inter, sans-serif">$250K</text>
+                    <text x="14" y="164" font-size="12" fill="#6c757d" font-family="Inter, sans-serif">$500K</text>
+                    <text x="24" y="104" font-size="12" fill="#6c757d" font-family="Inter, sans-serif">$1M</text>
+                    <text x="14" y="44" font-size="12" fill="#6c757d" font-family="Inter, sans-serif">$2M+</text>
+                    <rect x="60" y="20" width="230" height="220" fill="#2BA5A5" opacity="0.08"/>
+                    <line x1="290" y1="20" x2="290" y2="240" stroke="#2BA5A5" stroke-width="1.5" stroke-dasharray="4 4"/>
+                    <path d="M60,238 C220,224 360,180 480,120 C560,80 660,55 740,35" fill="none" stroke="#1B2D6B" stroke-width="3"/>
+                    <circle cx="230" cy="205" r="7" fill="#2BA5A5"/>
+                    <text x="65" y="14" font-size="11.5" font-weight="700" fill="#2BA5A5" font-family="Inter, sans-serif" letter-spacing="0.5">DURAND ACTS UPSTREAM</text>
+                    <text x="70" y="255" font-size="12" fill="#6c757d" font-family="Inter, sans-serif">Time Since Enrollment</text>
+                    <text x="736" y="255" font-size="12" fill="#6c757d" font-family="Inter, sans-serif" text-anchor="end">Catastrophic Claim Zone</text>
+                </svg>
+                <p style="text-align: center; font-size: 13px; color: var(--gray-500); margin-top: 8px;">Illustrative claims trajectory &mdash; Durand engages upstream, before risk reaches the catastrophic-claim zone.</p>
+            </div>
+            <div class="lh-flow lh-flow-light fade-in" style="margin-top: 28px;">
+                <div class="lh-flow-step">Emerging Risk</div><div class="lh-flow-arrow">&rarr;</div>
+                <div class="lh-flow-step">Earlier Detection</div><div class="lh-flow-arrow">&rarr;</div>
+                <div class="lh-flow-step">Engagement</div><div class="lh-flow-arrow">&rarr;</div>
+                <div class="lh-flow-step">Navigation</div><div class="lh-flow-arrow">&rarr;</div>
+                <div class="lh-flow-step">Outcome Monitoring</div>
+            </div>
+            <div class="fade-in" style="font-size: 16px; line-height: 1.8; color: var(--gray-700); max-width: 760px; margin: 32px auto 0;">
+                <p style="margin-bottom: 20px;">Durand cannot promise to prevent a catastrophic claim &mdash; and no credible platform should. But detecting emerging risk sooner, engaging the member, navigating them toward appropriate care and monitoring whether that care is actually producing a better outcome can materially improve the opportunity to alter some health trajectories before they become far more serious and expensive.</p>
+                <p>With individual catastrophic claims increasingly reaching seven figures, avoiding, delaying or reducing the severity of even one major claim could potentially offset the cost of providing Durand across a substantial employee population.</p>
+            </div>
+            <div class="value-banner fade-in" style="margin-top: 40px;">
+                <h3>The Economic Asymmetry</h3>
+                <p>Small investment across the population. Potentially enormous impact at the tail of the risk curve.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ONE ADAPTIVE INTELLIGENCE PLATFORM -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header fade-in">
+                <div class="section-label">One Adaptive Intelligence Platform</div>
+                <h2 class="section-title">Precision That Changes as People Change.</h2>
+                <p class="section-subtitle">Durand is not an annual screening program. The Durand Adaptive Health Intelligence Platform learns longitudinally.</p>
+            </div>
+            <div class="lh-rings fade-in">
+                <div class="lh-rings-center">The&nbsp;Individual</div>
+                <div class="lh-ring-item" style="top: 8%; left: 50%;">Precision Testing</div>
+                <div class="lh-ring-item" style="top: 29%; left: 87%;">Biology &amp; Multi-Omics</div>
+                <div class="lh-ring-item" style="top: 71%; left: 87%;">Sleep, Cognition &amp; Function</div>
+                <div class="lh-ring-item" style="top: 92%; left: 50%;">Wearables &amp; Real-World Data</div>
+                <div class="lh-ring-item" style="top: 71%; left: 13%;">History &amp; Health Records</div>
+                <div class="lh-ring-item" style="top: 29%; left: 13%;">Care &amp; Intervention Outcomes</div>
+            </div>
+            <div class="lh-flow lh-flow-light fade-in" style="margin-top: 12px;">
+                <div class="lh-flow-step">Year 1</div><div class="lh-flow-arrow">&rarr;</div>
+                <div class="lh-flow-step">Year 2</div><div class="lh-flow-arrow">&rarr;</div>
+                <div class="lh-flow-step">Year 3</div><div class="lh-flow-arrow">&rarr;</div>
+                <div class="lh-flow-step">Year 4</div><div class="lh-flow-arrow">&rarr;</div>
+                <div class="lh-flow-step">Life</div>
+            </div>
+            <p class="fade-in" style="text-align: center; font-family: var(--font-serif); font-size: 21px; font-weight: 700; color: var(--dark); margin-top: 28px; letter-spacing: -0.3px;">The testing changes because you change.</p>
+            <div class="card-grid card-grid-3 fade-in" style="margin-top: 56px;">
+                <div class="card"><h3>Precision Testing</h3><p>Advanced testing adapts over time as age, health, risk, science and prior findings change.</p></div>
+                <div class="card"><h3>Longitudinal Intelligence</h3><p>Every assessment adds to the individual&rsquo;s historical health record rather than starting again from zero.</p></div>
+                <div class="card"><h3>Population Views</h3><p>Permissioned, aggregated intelligence gives insurers and appropriate enterprise stakeholders visibility into trends across populations without turning individual health data into an employer surveillance tool.</p></div>
+                <div class="card"><h3>Personalized Rewards</h3><p>Engagement and incentive structures can be tailored around meaningful participation and behavior rather than generic activity metrics.</p></div>
+                <div class="card"><h3>Care Navigation</h3><p>When risk or need is identified, members can be connected with qualified resources rather than being left alone with another dashboard or test result.</p></div>
+                <div class="card"><h3>Outcomes Monitoring</h3><p>Durand follows what happens next &mdash; helping determine whether navigation and interventions are actually improving biology, function and health trajectory over time.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPULATION INTELLIGENCE -->
+    <section class="section section-light">
+        <div class="section-inner" style="max-width: 820px; text-align: center;">
+            <div class="section-header fade-in">
+                <div class="section-label">Population Intelligence</div>
+                <h2 class="section-title" style="font-size: clamp(24px, 3vw, 32px);">Aggregated Insight, Not Individual Surveillance.</h2>
+                <p class="section-subtitle">Permissioned, appropriately aggregated population views help insurers and appropriate enterprise stakeholders identify changing risk patterns &mdash; without turning individual health data into a surveillance tool.</p>
+            </div>
+            <div class="lh-population fade-in"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="lh-population-tags fade-in">
+                <span class="tag">Population Trajectory</span><span class="tag">Emerging Risk Patterns</span><span class="tag">Engagement</span><span class="tag">Navigation</span><span class="tag">Outcome Movement</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="section section-gradient" style="text-align: center;">
+        <div class="section-inner" style="max-width: 760px;">
+            <h2 class="section-title fade-in">Better Understanding for the Individual.<br>Better Risk Intelligence for the Insurer.</h2>
+        </div>
+    </section>
+
+    <!-- LH CTA -->
+    <section class="mehsa-cta-section">
+        <h2>Bring Adaptive Health Intelligence to Your Block</h2>
+        <p style="font-family: 'Inter', -apple-system, sans-serif; font-size: 16px; color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto 26px; line-height: 1.7;">Let&rsquo;s discuss how the Durand Adaptive Health Intelligence Platform fits your underwriting, engagement or stop-loss strategy.</p>
+        <a href="/contact" class="btn btn-primary" style="font-size: 16px; padding: 16px 40px;">Connect With Us</a>
+    </section>
+
+</div>
+
+
 <!-- CTA (hidden on consumer panel) -->
 <section class="cta-section" id="contact">
     <h2>Same Spend. Smarter Spend.<br>Less Spend Over Time.</h2>
@@ -1807,6 +2127,7 @@
             <a href="/me-hsa" onclick="showPanel('mehsa'); return false;">For Me/HSA</a>
             <a href="/" onclick="showPanel('brokers'); return false;">For Brokers</a>
             <a href="/employers" onclick="showPanel('employers'); return false;">For Employers</a>
+            <a href="/lh-insurance" onclick="showPanel('linsurance'); return false;">L &amp; H Insurance</a>
             <a href="/get-tested" onclick="showPanel('longevity'); return false;">Get Started</a>
         </div>
         <div>
@@ -1823,13 +2144,14 @@
 
 
 <script>
-const PANEL_PATHS = { brokers: '/', employers: '/employers', longevity: '/get-tested', mehsa: '/me-hsa' };
-const PATH_PANELS = { '/': 'brokers', '/employers': 'employers', '/get-tested': 'longevity', '/me-hsa': 'mehsa', '/MeHSA': 'mehsa' };
+const PANEL_PATHS = { brokers: '/', employers: '/employers', longevity: '/get-tested', mehsa: '/me-hsa', linsurance: '/lh-insurance' };
+const PATH_PANELS = { '/': 'brokers', '/employers': 'employers', '/get-tested': 'longevity', '/me-hsa': 'mehsa', '/MeHSA': 'mehsa', '/lh-insurance': 'linsurance' };
 const PANEL_TITLES = {
     brokers: "Durand Future Health | Predictive Health Intelligence",
     employers: "Durand Future Health | EHAP for Employers",
     longevity: "Durand Future Health | Get Started",
-    mehsa: "Durand Future Health | See What's Coming"
+    mehsa: "Durand Future Health | See What's Coming",
+    linsurance: "Durand Future Health | L & H Insurance"
 };
 function showPanel(panelId, updateHistory = true) {
     document.querySelectorAll('.page-panel').forEach(p => p.classList.remove('active'));
@@ -1837,10 +2159,10 @@ function showPanel(panelId, updateHistory = true) {
     if (target) target.classList.add('active');
     document.querySelectorAll('.nav-links a[data-panel]').forEach(a => a.classList.toggle('active', a.dataset.panel === panelId));
     document.getElementById('navLinks').classList.remove('open');
-    document.getElementById('contact').style.display = (panelId === 'longevity' || panelId === 'mehsa') ? 'none' : '';
-    // The Me/HSA panel has its own self-contained hero — hide the shared DNA hero and trust bar while it's active
-    document.getElementById('hero').style.display = panelId === 'mehsa' ? 'none' : '';
-    document.querySelector('.trust-bar').style.display = panelId === 'mehsa' ? 'none' : '';
+    document.getElementById('contact').style.display = (panelId === 'longevity' || panelId === 'mehsa' || panelId === 'linsurance') ? 'none' : '';
+    // The Me/HSA and L&H Insurance panels have their own self-contained hero — hide the shared DNA hero and trust bar while active
+    document.getElementById('hero').style.display = (panelId === 'mehsa' || panelId === 'linsurance') ? 'none' : '';
+    document.querySelector('.trust-bar').style.display = (panelId === 'mehsa' || panelId === 'linsurance') ? 'none' : '';
     // Swap hero content based on active panel
     document.querySelectorAll('.hero-variant').forEach(v => v.style.display = 'none');
     const heroVariant = document.getElementById('hero-' + panelId);
