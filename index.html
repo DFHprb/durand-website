@@ -1836,6 +1836,7 @@ function showPanel(panelId, updateHistory = true) {
     const target = document.getElementById('panel-' + panelId);
     if (target) target.classList.add('active');
     document.querySelectorAll('.nav-links a[data-panel]').forEach(a => a.classList.toggle('active', a.dataset.panel === panelId));
+    document.getElementById('navLinks').classList.remove('open');
     document.getElementById('contact').style.display = (panelId === 'longevity' || panelId === 'mehsa') ? 'none' : '';
     // The Me/HSA panel has its own self-contained hero — hide the shared DNA hero and trust bar while it's active
     document.getElementById('hero').style.display = panelId === 'mehsa' ? 'none' : '';
