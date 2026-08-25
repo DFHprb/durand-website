@@ -1888,6 +1888,10 @@ window.addEventListener('popstate', (e) => {
     const panelId = (e.state && e.state.panel) || PATH_PANELS[location.pathname] || 'brokers';
     showPanel(panelId, false);
 });
+// If the browser restores this page from back/forward cache (e.g. after leaving to the
+// checkout portal and hitting back), reload so the nav always reflects the latest deploy
+// instead of a frozen snapshot from before the tab was navigated away.
+window.addEventListener('pageshow', (e) => { if (e.persisted) location.reload(); });
 (function initPanelFromUrl() {
     const initialPanel = PATH_PANELS[location.pathname] || 'brokers';
     history.replaceState({ panel: initialPanel }, '', PANEL_PATHS[initialPanel] || '/');
