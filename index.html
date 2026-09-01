@@ -158,8 +158,6 @@
         .hero-variant { animation: fadeIn 0.4s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
-        #hero-employers .hero-buttons { gap: 10px; }
-        #hero-employers .hero-buttons .btn { padding: 14px 24px; font-size: 14px; }
         .hero-stats { display: flex; gap: 40px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
         .hero-stat-value { font-size: 28px; font-weight: 800; letter-spacing: -1px; }
         .hero-stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; margin-top: 4px; }
@@ -633,8 +631,7 @@
         </a>
         <div class="nav-links" id="navLinks">
             <a href="/me-hsa" data-panel="mehsa" onclick="showPanel('mehsa'); return false;">For Me/HSA</a>
-            <a href="/" class="active" data-panel="brokers" onclick="showPanel('brokers'); return false;">For Brokers</a>
-            <a href="/employers" data-panel="employers" onclick="showPanel('employers'); return false;">For Employers</a>
+            <a href="/" class="active" data-panel="brokers" onclick="showPanel('brokers'); return false;">For Brokers/Employers</a>
             <a href="/lh-insurance" data-panel="linsurance" onclick="showPanel('linsurance'); return false;">L&amp;H Insurance</a>
             <a href="/get-tested" data-panel="longevity" onclick="showPanel('longevity'); return false;">Get Started</a>
             <a href="https://portal.durand.life/signin" class="nav-login">
@@ -673,29 +670,6 @@
                 <div class="hero-buttons">
                     <a href="#vs-traditional-eap" class="btn btn-primary" onclick="document.getElementById('vs-traditional-eap').scrollIntoView({behavior:'smooth'}); return false;">See How It Works</a>
                     <a href="#why-ehap" class="btn btn-outline" onclick="document.getElementById('why-ehap').scrollIntoView({behavior:'smooth'}); return false;">Broker Partnership</a>
-                </div>
-            </div>
-
-            <!-- HERO: Employers -->
-            <div class="hero-variant" id="hero-employers" style="display:none;">
-                <div class="hero-badge">
-                    <span class="dot"></span>
-                    Now Available in Canada and the United States
-                </div>
-                <h1>
-                    A Better EAP &mdash;<br>
-                    <span class="gradient-text">And So Much More.</span><br>
-                    For No More Money.
-                </h1>
-                <div style="font-size: clamp(16px, 2.2vw, 22px); font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 20px; color: rgba(255,255,255,0.7);">
-                    <span style="font-weight: 700; color: rgba(255,255,255,0.7);">Durand</span> <span style="font-weight: 500; color: #fff;">E</span><span style="font-weight: 700; color: #8CC63F;">H</span><span style="font-weight: 500; color: #fff;">AP</span>
-                </div>
-                <p>
-                    Employee Assistance Programs (EAPs) &mdash; the short-term counselling benefit most employers offer at $3&ndash;5 per employee per month &mdash; sit at just 1&ndash;3% utilization. Not because the concept is wrong, but because the experience hasn&rsquo;t evolved. Durand E<span style="color:#8CC63F;">H</span>AP starts with a genuinely better model and adds predictive health intelligence powered by advanced multiomic testing. Similar PEPM. Fewer surprise claims. Healthier, more productive employees. Ask your broker.
-                </p>
-                <div class="hero-buttons">
-                    <a href="/contact" class="btn btn-primary">Connect Me With A Broker</a>
-                    <a href="/get-tested" class="btn btn-outline" onclick="showPanel('longevity'); return false;">Get Tested Personally</a>
                 </div>
             </div>
 
@@ -801,32 +775,6 @@
             </div>
         </div>
 
-        <div class="hero-bullets-full" id="hero-bullets-full-employers" style="display:none;">
-            <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.95);">Similar PEPM to EAP</span>
-            <span style="font-size: 13px; color: #8CC63F;">&bull;</span>
-            <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.95);">No New Budget Line</span>
-            <span style="font-size: 13px; color: #8CC63F;">&bull;</span>
-            <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.95);">Radically Better Outcomes</span>
-        </div>
-        <div class="hero-stats-full" id="hero-stats-full-employers" style="display:none;">
-            <div>
-                <div class="hero-stat-value">1&ndash;3%</div>
-                <div class="hero-stat-label">Typical EAP Utilization</div>
-            </div>
-            <div>
-                <div class="hero-stat-value">11</div>
-                <div class="hero-stat-label">Organ Systems Scored</div>
-            </div>
-            <div>
-                <div class="hero-stat-value">5&ndash;10yr</div>
-                <div class="hero-stat-label">Earlier Risk Detection</div>
-            </div>
-            <div>
-                <div class="hero-stat-value">100x</div>
-                <div class="hero-stat-label">More Value, Not More Cost</div>
-            </div>
-        </div>
-
         <div class="hero-bullets-full" id="hero-bullets-full-longevity" style="display:none;">
             <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.95);">No Nurse Visit Required</span>
             <span style="font-size: 13px; color: #8CC63F;">&bull;</span>
@@ -886,6 +834,7 @@
 
             <div class="value-banner fade-in">
                 <h3 style="text-shadow: 0 1px 4px rgba(0,0,0,0.35);">More Value. Not More Cost.</h3>
+                <p style="margin-top: 8px; font-size: 15px; opacity: 0.95; text-shadow: 0 1px 3px rgba(0,0,0,0.35);">Better outcomes, not a bigger budget. Your EAP budget, finally working.</p>
                 <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; max-width: 720px; margin: 24px auto 0; text-align: left;">
                     <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.6; text-shadow: 0 1px 3px rgba(0,0,0,0.35);"><span style="color: white; font-weight: 700; flex-shrink: 0;">&#10003;</span> Care navigation to matched providers</li>
                     <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.6; text-shadow: 0 1px 3px rgba(0,0,0,0.35);"><span style="color: white; font-weight: 700; flex-shrink: 0;">&#10003;</span> A personalized action plan</li>
@@ -1460,78 +1409,8 @@
             </div>
         </div>
     </section>
-</div>
 
-
-<!-- ===== PANEL: FOR EMPLOYERS ===== -->
-<div class="page-panel" id="panel-employers">
-
-    <section class="section story-section">
-        <div class="section-inner">
-            <div class="section-header">
-                <div class="section-label">For Employers</div>
-                <p style="font-size: 15px; color: var(--gray-500); margin-top: 8px; margin-bottom: 4px;">Better outcomes, not a bigger budget. Your EAP budget, finally working.</p>
-                <h2 class="section-title">Predict. Prevent. Save Millions.</h2>
-                <p class="section-subtitle">Our physicians and scientists have built the most advanced employee health assessment in the world. Your workforce gets it at the cost of an EAP you're already paying for.</p>
-            </div>
-
-            <div class="two-col fade-in">
-                <div class="two-col-text">
-                    <h2>The E<span style="color:#8CC63F;">H</span>AP: Your EAP, <span style="background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Reimagined</span></h2>
-                    <p>Most Employee Assistance Programs see 1&ndash;3% utilization. Your employees don&rsquo;t use them. With the Durand E<span style="color:#8CC63F;">H</span>AP, you get a dedicated health professional who assesses your employees across 13 clinical conditions, builds personalized action plans, and navigates them to matched care providers &mdash; plus a complete health intelligence platform &mdash; without increasing your benefits budget.</p>
-                    <ul class="feature-list">
-                        <li><span class="icon"></span> Epigenetic testing with 11 organ health scores</li>
-                        <li><span class="icon"></span> Clinically validated cognitive assessment</li>
-                        <li><span class="icon"></span> AI health coaching in any language, supervised by physicians</li>
-                        <li><span class="icon"></span> 30+ wearable integrations (Oura, Apple Watch, Fitbit, etc.)</li>
-                        <li><span class="icon"></span> Predictive risk assessment — 5 to 10 years forward</li>
-                        <li><span class="icon"></span> Care navigation to vetted solutions (GLP-1)</li>
-                        <li><span class="icon"></span> Anonymized workforce health insights for HR</li>
-                    </ul>
-                </div>
-                <div class="experience-visual">
-                    <div class="kit-visual">
-                        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="20" y="35" width="80" height="65" rx="10" stroke="white" stroke-width="2.5" fill="none"/>
-                            <path d="M45 35V25a15 15 0 0130 0v10" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                            <path d="M60 55v20M50 65h20" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                            <circle cx="60" cy="65" r="18" stroke="white" stroke-width="1" opacity="0.2" fill="none"/>
-                        </svg>
-                    </div>
-                    <h3>Home-Based Testing</h3>
-                    <p>No lab visits. No needles. No scheduling. A painless peel-and-stick collection device arrives at your employee's door. They mail it back. Then their personalized Health Agent takes over — year-round wellness management.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-light">
-        <div class="section-inner">
-            <div class="section-header">
-                <div class="section-label">The Platform</div>
-                <h2 class="section-title">A Full Health Intelligence Stack</h2>
-                <p class="section-subtitle">Built by physicians, powered by AI, validated over 4,000+ patients.</p>
-            </div>
-            <div class="card-grid">
-                <div class="card fade-in">
-                    <div class="card-icon"><svg><use href="#icon-microscope"/></svg></div>
-                    <h3>Testing &amp; Assessment</h3>
-                    <p>Epigenetic testing across 11 organ systems. Clinically validated cognitive assessment. Sleep analysis. AI-powered wellness intake. All from home — reviewed by our medical team.</p>
-                </div>
-                <div class="card fade-in">
-                    <div class="card-icon"><svg><use href="#icon-ai"/></svg></div>
-                    <h3>AI Health Intelligence</h3>
-                    <p>Multiple physician-supervised AI health agents. Custom health scores (the Durand Score). AI-generated video progress reports. Full EHR integration with 40% of US physicians.</p>
-                </div>
-                <div class="card fade-in">
-                    <div class="card-icon"><svg><use href="#icon-compass"/></svg></div>
-                    <h3>Care Navigation</h3>
-                    <p>Direct navigation to vetted, outcomes-based solutions. GLP-1 outcome management. Real results, not just data.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- PRIVACY & DATA SOVEREIGNTY -->
     <section class="section section-dark">
         <div class="section-inner">
             <div class="section-header">
@@ -1555,17 +1434,6 @@
                     <h3>Vault-Level Security</h3>
                     <p>Decryption keys stored in neutral jurisdiction vault. Data is legally unattainable without explicit employee consent. Audited governance.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-gradient">
-        <div class="section-inner" style="text-align: center;">
-            <h2 class="section-title" style="color: white;">Interested in the E<span style="color:#fff; font-weight:800;">H</span>AP for Your Workforce?</h2>
-            <p style="color: rgba(255,255,255,0.88); font-size: 18px; max-width: 640px; margin: 0 auto 16px;">The Durand E<span style="color:#fff; font-weight:700;">H</span>AP is available exclusively through benefits brokers and advisors. Ask your broker about replacing your EAP with an E<span style="color:#fff; font-weight:700;">H</span>AP &mdash; at a similar PEPM cost.</p>
-            <p style="color: rgba(255,255,255,0.7); font-size: 15px; max-width: 540px; margin: 0 auto 32px;">Don&rsquo;t have a broker? We can connect you with one of our certified benefits partners in your region.</p>
-            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="/contact" class="btn btn-primary" style="font-size: 17px; padding: 16px 36px;">Connect Me With a Broker</a>
             </div>
         </div>
     </section>
@@ -2175,8 +2043,7 @@
         <div>
             <h4>Solutions</h4>
             <a href="/me-hsa" onclick="showPanel('mehsa'); return false;">For Me/HSA</a>
-            <a href="/" onclick="showPanel('brokers'); return false;">For Brokers</a>
-            <a href="/employers" onclick="showPanel('employers'); return false;">For Employers</a>
+            <a href="/" onclick="showPanel('brokers'); return false;">For Brokers/Employers</a>
             <a href="/lh-insurance" onclick="showPanel('linsurance'); return false;">L&amp;H Insurance</a>
             <a href="/get-tested" onclick="showPanel('longevity'); return false;">Get Started</a>
         </div>
@@ -2194,11 +2061,10 @@
 
 
 <script>
-const PANEL_PATHS = { brokers: '/', employers: '/employers', longevity: '/get-tested', mehsa: '/me-hsa', linsurance: '/lh-insurance' };
-const PATH_PANELS = { '/': 'brokers', '/employers': 'employers', '/get-tested': 'longevity', '/me-hsa': 'mehsa', '/MeHSA': 'mehsa', '/lh-insurance': 'linsurance' };
+const PANEL_PATHS = { brokers: '/', longevity: '/get-tested', mehsa: '/me-hsa', linsurance: '/lh-insurance' };
+const PATH_PANELS = { '/': 'brokers', '/employers': 'brokers', '/get-tested': 'longevity', '/me-hsa': 'mehsa', '/MeHSA': 'mehsa', '/lh-insurance': 'linsurance' };
 const PANEL_TITLES = {
-    brokers: "Durand Future Health | Predictive Health Intelligence",
-    employers: "Durand Future Health | EHAP for Employers",
+    brokers: "Durand Future Health | EHAP for Brokers & Employers",
     longevity: "Durand Future Health | Get Started",
     mehsa: "Durand Future Health | See What's Coming",
     linsurance: "Durand Future Health | L&H Insurance"
@@ -2217,7 +2083,7 @@ function showPanel(panelId, updateHistory = true) {
     document.querySelectorAll('.hero-variant').forEach(v => v.style.display = 'none');
     const heroVariant = document.getElementById('hero-' + panelId);
     if (heroVariant) heroVariant.style.display = 'block';
-    ['brokers', 'employers', 'longevity'].forEach(id => {
+    ['brokers', 'longevity'].forEach(id => {
         const bullets = document.getElementById('hero-bullets-full-' + id);
         if (bullets) bullets.style.display = panelId === id ? 'flex' : 'none';
         const stats = document.getElementById('hero-stats-full-' + id);
