@@ -519,19 +519,24 @@
         .lh-population-tags .tag { font-size: 12.5px; font-weight: 700; color: var(--teal); background: rgba(43,165,165,0.08); padding: 8px 14px; border-radius: var(--radius-full); }
 
         /* HOME — minimal hub page guiding visitors to the right audience path */
-        .home-hero { background: var(--gradient-hero); min-height: calc(100vh - 72px); padding: 64px 24px; padding-top: calc(64px + 72px); position: relative; overflow: hidden; display: flex; align-items: center; }
+        .home-hero { background: var(--gradient-hero); padding: 64px 24px 72px; padding-top: calc(64px + 72px); position: relative; overflow: hidden; text-align: center; }
         .home-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(43,165,165,0.2) 0%, transparent 55%); }
-        .home-hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 2; text-align: center; }
+        .home-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
         .home-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 18px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-full); font-size: 12.5px; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 24px; color: white; backdrop-filter: blur(10px); }
         .home-badge .dot { width: 7px; height: 7px; background: var(--lime); border-radius: 50%; }
         .home-hero h1 { font-family: var(--font-serif); font-size: clamp(32px, 4.6vw, 52px); font-weight: 700; letter-spacing: -1.2px; color: white; margin-bottom: 16px; }
-        .home-tagline { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.75); max-width: 540px; margin: 0 auto 48px; }
-        .home-paths { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-        .home-path-card { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 28px 22px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius); text-align: left; text-decoration: none; backdrop-filter: blur(10px); transition: all 0.25s; }
-        .home-path-card:hover { background: rgba(255,255,255,0.12); border-color: rgba(140,198,63,0.5); transform: translateY(-3px); }
-        .home-path-label { font-family: var(--font-serif); font-size: 17px; font-weight: 700; color: white; }
-        .home-path-desc { font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,0.65); }
-        .home-path-arrow { margin-top: auto; padding-top: 8px; font-size: 13.5px; font-weight: 700; letter-spacing: 0.3px; color: var(--lime); }
+        .home-tagline { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.75); max-width: 540px; margin: 0 auto; }
+
+        /* HOME PATHS — photo-backed cards below the hero */
+        .home-paths-section { background: var(--dark); padding: 72px 24px; }
+        .home-paths { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .home-path-card { position: relative; display: flex; align-items: flex-end; min-height: 340px; border-radius: var(--radius); overflow: hidden; background-size: cover; background-position: center; text-decoration: none; box-shadow: var(--shadow-md); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .home-path-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .home-path-content { position: relative; z-index: 2; padding: 26px 22px; width: 100%; }
+        .home-path-label { font-family: var(--font-serif); font-size: 19px; font-weight: 700; color: white; margin-bottom: 8px; }
+        .home-path-desc { font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,0.82); margin-bottom: 18px; }
+        .home-path-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius-full); font-size: 12.5px; font-weight: 700; letter-spacing: 0.2px; color: white; backdrop-filter: blur(6px); transition: all 0.25s ease; }
+        .home-path-card:hover .home-path-btn { background: var(--gradient-brand); border-color: transparent; }
 
         @media (max-width: 1200px) {
             .mehsa-steps { grid-template-columns: repeat(3, 1fr); grid-template-rows: none; grid-auto-flow: row; }
@@ -563,6 +568,7 @@
             .lh-hero-visual { order: -1; }
             .lh-hero-lead { margin: 0 auto; }
             .home-paths { grid-template-columns: repeat(2, 1fr); }
+            .home-path-card { min-height: 280px; }
             .lh-laser { grid-template-columns: 1fr; }
             .lh-laser-plus { justify-self: center; }
             .lh-rings { max-width: 340px; }
@@ -584,6 +590,7 @@
         @media (max-width: 640px) {
             .card-grid-3 { grid-template-columns: 1fr; }
             .home-paths { grid-template-columns: 1fr; }
+            .home-path-card { min-height: 240px; }
             .dna-visual { width: 260px; height: 340px; }
             .dna-label { font-size: 9px; padding: 5px 8px; max-width: 130px; white-space: normal; }
             .dna-label strong { font-size: 7px; }
@@ -837,28 +844,39 @@
             <div class="home-badge"><span class="dot"></span> Available in Canada and the United States</div>
             <h1>Durand Future Health</h1>
             <p class="home-tagline">Predictive health intelligence, powered by E<span style="color:#8CC63F;">H</span>AP. Tell us who you are, and we&rsquo;ll take you to the right place.</p>
-            <div class="home-paths">
-                <a class="home-path-card" href="/brokers" onclick="showPanel('brokers'); return false;">
+        </div>
+    </section>
+
+    <section class="home-paths-section">
+        <div class="home-paths">
+            <a class="home-path-card" href="/brokers" onclick="showPanel('brokers'); return false;" style="background-image: linear-gradient(180deg, rgba(10,15,30,0.1) 0%, rgba(10,15,30,0.55) 55%, rgba(10,15,30,0.92) 100%), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&h=900&fit=crop&crop=center');">
+                <div class="home-path-content">
                     <div class="home-path-label">Brokers &amp; Employers</div>
                     <div class="home-path-desc">Offer E<span style="color:#8CC63F;">H</span>AP as your next benefit &mdash; no new budget line.</div>
-                    <div class="home-path-arrow">Explore &rarr;</div>
-                </a>
-                <a class="home-path-card" href="/me-hsa" onclick="showPanel('mehsa'); return false;">
+                    <span class="home-path-btn">Explore &rarr;</span>
+                </div>
+            </a>
+            <a class="home-path-card" href="/me-hsa" onclick="showPanel('mehsa'); return false;" style="background-image: linear-gradient(180deg, rgba(10,15,30,0.1) 0%, rgba(10,15,30,0.55) 55%, rgba(10,15,30,0.92) 100%), url('mehsa-hero-dashboard.jpg');">
+                <div class="home-path-content">
                     <div class="home-path-label">Me / HSA</div>
                     <div class="home-path-desc">Year-round personal health intelligence, HSA/FSA eligible.</div>
-                    <div class="home-path-arrow">Explore &rarr;</div>
-                </a>
-                <a class="home-path-card" href="/lh-insurance" onclick="showPanel('linsurance'); return false;">
+                    <span class="home-path-btn">Explore &rarr;</span>
+                </div>
+            </a>
+            <a class="home-path-card" href="/lh-insurance" onclick="showPanel('linsurance'); return false;" style="background-image: linear-gradient(180deg, rgba(10,15,30,0.1) 0%, rgba(10,15,30,0.55) 55%, rgba(10,15,30,0.92) 100%), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=900&fit=crop&crop=center');">
+                <div class="home-path-content">
                     <div class="home-path-label">L&amp;H Insurance</div>
                     <div class="home-path-desc">Predictive risk insight for life &amp; stop-loss carriers.</div>
-                    <div class="home-path-arrow">Explore &rarr;</div>
-                </a>
-                <a class="home-path-card" href="/get-tested" onclick="showPanel('longevity'); return false;">
+                    <span class="home-path-btn">Explore &rarr;</span>
+                </div>
+            </a>
+            <a class="home-path-card" href="/get-tested" onclick="showPanel('longevity'); return false;" style="background-image: linear-gradient(180deg, rgba(10,15,30,0.1) 0%, rgba(10,15,30,0.55) 55%, rgba(10,15,30,0.92) 100%), url('https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=700&h=900&fit=crop&crop=center');">
+                <div class="home-path-content">
                     <div class="home-path-label">Get Tested</div>
                     <div class="home-path-desc">See what&rsquo;s coming &mdash; up to 10 years before symptoms appear.</div>
-                    <div class="home-path-arrow">Explore &rarr;</div>
-                </a>
-            </div>
+                    <span class="home-path-btn">Explore &rarr;</span>
+                </div>
+            </a>
         </div>
     </section>
 </div>
