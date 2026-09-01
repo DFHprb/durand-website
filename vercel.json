@@ -3,6 +3,7 @@
   "rewrites": [
     { "source": "/brokers", "destination": "/" },
     { "source": "/employers", "destination": "/" },
+    { "source": "/get-started", "destination": "/" },
     { "source": "/get-tested", "destination": "/" },
     { "source": "/me-hsa", "destination": "/" },
     { "source": "/MeHSA", "destination": "/" },
@@ -23,6 +24,12 @@
     },
     {
       "source": "/employers",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    },
+    {
+      "source": "/get-started",
       "headers": [
         { "key": "Cache-Control", "value": "no-store" }
       ]

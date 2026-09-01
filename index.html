@@ -655,7 +655,7 @@
             <a href="/me-hsa" data-panel="mehsa" onclick="showPanel('mehsa'); return false;">For Me/HSA</a>
             <a href="/brokers" data-panel="brokers" onclick="showPanel('brokers'); return false;">For Brokers/Employers</a>
             <a href="/lh-insurance" data-panel="linsurance" onclick="showPanel('linsurance'); return false;">L&amp;H Insurance</a>
-            <a href="/get-tested" data-panel="longevity" onclick="showPanel('longevity'); return false;">Get Started</a>
+            <a href="/get-started" data-panel="longevity" onclick="showPanel('longevity'); return false;">Get Started</a>
             <a href="https://portal.durand.life/signin" class="nav-login">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 Log In
@@ -867,7 +867,7 @@
                     <span class="home-path-btn">Explore &rarr;</span>
                 </div>
             </a>
-            <a class="home-path-card" href="/get-tested" onclick="showPanel('longevity'); return false;" style="background-image: linear-gradient(180deg, rgba(10,15,30,0.25) 0%, rgba(10,15,30,0.72) 50%, rgba(10,15,30,0.96) 100%), url('https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=700&h=900&fit=crop&crop=center');">
+            <a class="home-path-card" href="/get-started" onclick="showPanel('longevity'); return false;" style="background-image: linear-gradient(180deg, rgba(10,15,30,0.25) 0%, rgba(10,15,30,0.72) 50%, rgba(10,15,30,0.96) 100%), url('https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=700&h=900&fit=crop&crop=center');">
                 <div class="home-path-content">
                     <div class="home-path-label">Get Started</div>
                     <div class="home-path-desc">See what&rsquo;s coming &mdash; up to 10 years before symptoms appear.</div>
@@ -2110,7 +2110,7 @@
             <a href="/me-hsa" onclick="showPanel('mehsa'); return false;">For Me/HSA</a>
             <a href="/brokers" onclick="showPanel('brokers'); return false;">For Brokers/Employers</a>
             <a href="/lh-insurance" onclick="showPanel('linsurance'); return false;">L&amp;H Insurance</a>
-            <a href="/get-tested" onclick="showPanel('longevity'); return false;">Get Started</a>
+            <a href="/get-started" onclick="showPanel('longevity'); return false;">Get Started</a>
         </div>
         <div>
             <h4>Company</h4>
@@ -2126,8 +2126,8 @@
 
 
 <script>
-const PANEL_PATHS = { home: '/', brokers: '/brokers', longevity: '/get-tested', mehsa: '/me-hsa', linsurance: '/lh-insurance' };
-const PATH_PANELS = { '/': 'home', '/brokers': 'brokers', '/employers': 'brokers', '/get-tested': 'longevity', '/me-hsa': 'mehsa', '/MeHSA': 'mehsa', '/lh-insurance': 'linsurance' };
+const PANEL_PATHS = { home: '/', brokers: '/brokers', longevity: '/get-started', mehsa: '/me-hsa', linsurance: '/lh-insurance' };
+const PATH_PANELS = { '/': 'home', '/brokers': 'brokers', '/employers': 'brokers', '/get-started': 'longevity', '/get-tested': 'longevity', '/me-hsa': 'mehsa', '/MeHSA': 'mehsa', '/lh-insurance': 'linsurance' };
 const PANEL_TITLES = {
     home: "Durand Future Health | Predictive Health Intelligence",
     brokers: "Durand Future Health | EHAP for Brokers & Employers",
