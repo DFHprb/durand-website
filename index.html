@@ -648,11 +648,10 @@
 <!-- NAV -->
 <nav class="nav" id="nav">
     <div class="nav-inner">
-        <a href="/" class="nav-logo" onclick="showPanel('home'); return false;">
+        <a href="/" class="nav-logo" onclick="showPanel('brokers'); return false;">
             <img src="logo-horizontal.png?v=3" alt="Durand Future Health">
         </a>
         <div class="nav-links" id="navLinks">
-            <a href="/" data-panel="home" onclick="showPanel('home'); return false;">Home</a>
             <a href="/me-hsa" data-panel="mehsa" onclick="showPanel('mehsa'); return false;">For Me/HSA</a>
             <a href="/brokers" data-panel="brokers" onclick="showPanel('brokers'); return false;">For Brokers/Employers</a>
             <a href="/lh-insurance" data-panel="linsurance" onclick="showPanel('linsurance'); return false;">L&amp;H Insurance</a>
@@ -670,7 +669,7 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="hero" style="display:none;">
+<section class="hero" id="hero">
     <div class="hero-particles" id="particles"></div>
     <div class="hero-inner">
         <div class="hero-content">
@@ -823,7 +822,7 @@
 </section>
 
 <!-- TRUST BAR -->
-<div class="trust-bar" style="display:none;">
+<div class="trust-bar">
     <div class="trust-bar-inner">
         <div class="trust-bar-label">Built with</div>
         <div class="trust-bar-items">
@@ -837,7 +836,7 @@
 
 
 <!-- ===== PANEL: HOME ===== -->
-<div class="page-panel active" id="panel-home">
+<div class="page-panel" id="panel-home">
     <section class="home-hero">
         <div class="home-hero-inner">
             <h1>Durand Future Health</h1>
@@ -880,7 +879,7 @@
 </div>
 
 <!-- ===== PANEL: FOR BROKERS ===== -->
-<div class="page-panel" id="panel-brokers">
+<div class="page-panel active" id="panel-brokers">
 
     <!-- SCIENCE STORY -->
     <section class="section story-section">
@@ -2085,7 +2084,7 @@
 
 
 <!-- CTA (hidden on consumer panel) -->
-<section class="cta-section" id="contact" style="display:none;">
+<section class="cta-section" id="contact">
     <h2>Same Spend. Smarter Spend.<br>Less Spend Over Time.</h2>
     <p>Give your clients something they&rsquo;ve never had at renewal: a reason to believe next year will cost less. Not because benefits were cut &mdash; because disease was prevented.</p>
     <p style="font-family: 'Inter', -apple-system, sans-serif; font-size: 22px; font-weight: 800; margin-top: 16px; letter-spacing: -0.3px; color: #fff;">Durand. <span style="background: linear-gradient(90deg, #44B878, #2BA5A5, #5B9BD5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">With You for Life</span><sup style="font-size: 0.55em; font-weight: 700; color: #fff;">&trade;</sup></p>
@@ -2100,7 +2099,7 @@
 <footer class="footer">
     <div class="footer-inner">
         <div class="footer-brand">
-            <a href="/" class="nav-logo" onclick="showPanel('home'); return false;" style="color: white;">
+            <a href="/" class="nav-logo" onclick="showPanel('brokers'); return false;" style="color: white;">
                 <img src="logo-horizontal-reverse.png?v=3" alt="Durand Future Health" style="height: 48px; width: auto;">
             </a>
             <p>Predictive health intelligence built by physicians and scientists. Home-based epigenetic testing. AI-powered insights. Care navigation. Available in Canada and the United States.</p>
@@ -2127,8 +2126,8 @@
 
 
 <script>
-const PANEL_PATHS = { home: '/', brokers: '/brokers', longevity: '/get-started', mehsa: '/me-hsa', linsurance: '/lh-insurance' };
-const PATH_PANELS = { '/': 'home', '/brokers': 'brokers', '/employers': 'brokers', '/get-started': 'longevity', '/get-tested': 'longevity', '/me-hsa': 'mehsa', '/MeHSA': 'mehsa', '/lh-insurance': 'linsurance' };
+const PANEL_PATHS = { home: '/home', brokers: '/', longevity: '/get-started', mehsa: '/me-hsa', linsurance: '/lh-insurance' };
+const PATH_PANELS = { '/': 'brokers', '/home': 'home', '/brokers': 'brokers', '/employers': 'brokers', '/get-started': 'longevity', '/get-tested': 'longevity', '/me-hsa': 'mehsa', '/MeHSA': 'mehsa', '/lh-insurance': 'linsurance' };
 const PANEL_TITLES = {
     home: "Durand Future Health | Predictive Health Intelligence",
     brokers: "Durand Future Health | EHAP for Brokers & Employers",
@@ -2191,7 +2190,7 @@ createParticles();
 
 // Route the active tab through a real URL: sync on back/forward and on initial load
 window.addEventListener('popstate', (e) => {
-    const panelId = (e.state && e.state.panel) || PATH_PANELS[location.pathname] || 'home';
+    const panelId = (e.state && e.state.panel) || PATH_PANELS[location.pathname] || 'brokers';
     showPanel(panelId, false);
 });
 // If the browser restores this page from back/forward cache (e.g. after leaving to the
@@ -2199,7 +2198,7 @@ window.addEventListener('popstate', (e) => {
 // instead of a frozen snapshot from before the tab was navigated away.
 window.addEventListener('pageshow', (e) => { if (e.persisted) location.reload(); });
 (function initPanelFromUrl() {
-    const initialPanel = PATH_PANELS[location.pathname] || 'home';
+    const initialPanel = PATH_PANELS[location.pathname] || 'brokers';
     history.replaceState({ panel: initialPanel }, '', PANEL_PATHS[initialPanel] || '/');
     showPanel(initialPanel, false);
 })();
