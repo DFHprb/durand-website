@@ -253,6 +253,7 @@
 
         /* STATS */
         .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin: 48px 0; }
+        .stats-row-4col { grid-template-columns: repeat(4, 1fr); }
         .stat-box { text-align: center; padding: 32px 20px; background: rgba(255,255,255,0.14); border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.25); }
         .stat-number { font-size: 42px; font-weight: 900; letter-spacing: -2px; background: linear-gradient(135deg, #44B878, #B8D432); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
         .stat-label { font-size: 14px; opacity: 0.92; margin-top: 8px; }
@@ -571,6 +572,7 @@
             .lh-laser-plus { justify-self: center; }
             .lh-rings { max-width: 340px; }
             .lh-ring-item { font-size: 10px; padding: 6px 9px; white-space: normal; max-width: 118px; text-align: center; line-height: 1.25; }
+            .stats-row-4col { grid-template-columns: repeat(2, 1fr); }
             .hero-stats { justify-content: center; }
             .hero-stats-full { justify-content: center; flex-wrap: wrap; }
             .hero-bullets-full { justify-content: center; }
@@ -600,6 +602,7 @@
             .comparison-table { font-size: 12px; }
             .comparison-table td, .comparison-table th { padding: 10px 12px; }
             .stats-row { grid-template-columns: 1fr 1fr; }
+            .stats-row-4col { grid-template-columns: 1fr; }
             .story-steps { grid-template-columns: 1fr !important; gap: 16px; }
             .story-step { text-align: left; display: flex; gap: 12px; align-items: flex-start; }
             .story-step-num { margin: 0; flex-shrink: 0; }
@@ -1926,7 +1929,7 @@
                 <h2 class="section-title">Help Prevent Tomorrow&rsquo;s Catastrophic Claim From Becoming Today&rsquo;s Unavoidable Surprise.</h2>
                 <p class="section-subtitle">For self-funded employers, a single serious illness can become a major balance-sheet event. And the market is getting harder.</p>
             </div>
-            <div class="stats-row fade-in">
+            <div class="stats-row stats-row-4col fade-in">
                 <div class="stat-box"><div class="stat-number">67%</div><div class="stat-label">of covered U.S. workers were enrolled in self-funded health plans in 2025 &mdash; 80% at firms with 200+ employees (KFF)</div></div>
                 <div class="stat-box"><div class="stat-number">75%</div><div class="stat-label">of self-funded workers at firms of 200+ were in plans with stop-loss protection (KFF)</div></div>
                 <div class="stat-box"><div class="stat-number">23%</div><div class="stat-label">average medical stop-loss renewal increase for Mercer&rsquo;s January 2026 cycle (Mercer)</div></div>
