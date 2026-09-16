@@ -9,7 +9,10 @@
     { "source": "/MeHSA", "destination": "/" },
     { "source": "/hsa", "destination": "/" },
     { "source": "/me", "destination": "/" },
-    { "source": "/lh-insurance", "destination": "/" }
+    { "source": "/lh-insurance", "destination": "/" },
+    { "source": "/life", "destination": "/" },
+    { "source": "/benefits", "destination": "/" },
+    { "source": "/stoploss", "destination": "/" }
   ],
   "headers": [
     {
@@ -68,6 +71,24 @@
     },
     {
       "source": "/lh-insurance",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    },
+    {
+      "source": "/life",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    },
+    {
+      "source": "/benefits",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    },
+    {
+      "source": "/stoploss",
       "headers": [
         { "key": "Cache-Control", "value": "no-store" }
       ]
