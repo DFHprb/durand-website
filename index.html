@@ -1534,7 +1534,7 @@
                     <div class="pricing-card featured" style="text-align: left;">
                         <div style="text-align: center;">
                             <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--teal); margin-bottom: 8px;">Complete Health Intelligence</div>
-                            <div class="pricing-price">$899<span> Local Currency</span></div>
+                            <div class="pricing-price">$899<span id="pricing-currency-label"> USD</span></div>
                             <p style="color: var(--gray-500); font-size: 14px; margin-top: 8px;">One-time purchase with membership access plan<sup><a href="#footnote-membership" onclick="expandFootnote('footnote-membership');" style="color: var(--teal); font-weight: 700; text-decoration: none;">1</a></sup>.</p>
                         </div>
                         <ul class="pricing-features">
@@ -2190,6 +2190,12 @@ const observer = new IntersectionObserver((entries) => { entries.forEach(entry =
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 function createParticles() { const c = document.getElementById('particles'); for (let i = 0; i < 30; i++) { const p = document.createElement('div'); p.className = 'particle'; p.style.left = Math.random()*100+'%'; p.style.animationDuration = (8+Math.random()*12)+'s'; p.style.animationDelay = Math.random()*10+'s'; p.style.width = (2+Math.random()*4)+'px'; p.style.height = p.style.width; c.appendChild(p); } }
 createParticles();
+
+// Show the assessment price in CAD for Canadian visitors, USD for everyone else
+fetch('https://ipapi.co/json/').then(r => r.json()).then(data => {
+    const label = document.getElementById('pricing-currency-label');
+    if (label && data && data.country_code === 'CA') label.textContent = ' CAD';
+}).catch(() => {});
 
 // Route the active tab through a real URL: sync on back/forward and on initial load
 window.addEventListener('popstate', (e) => {
